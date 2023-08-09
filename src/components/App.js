@@ -6,7 +6,8 @@ import io from 'socket.io-client';
 import { nanoid } from 'nanoid';
 
 import { Div } from './App.styled';
-const socket = io.connect('http://localhost:3001');
+// const socket = io.connect('http://localhost:3001');
+const socket = io.connect('https://chat-back-end-6mf9.onrender.com');
 
 function App() {
   const [nickName, setNickname] = useState('');
