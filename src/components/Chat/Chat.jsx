@@ -1,18 +1,21 @@
 import React from 'react';
-import { Div, User, You } from './Chat.staled';
+import { Container, User, You, DivYou, DivUser} from './Chat.staled';
 
 const Chat = ({ items }) => {
-  console.log(items)
   return (
-    <Div items={items}  >
+    <Container>
       {items.map(({ id, type, message }) =>
-        type === 'you' ? (
-          <You key={id}>{message}</You>
-        ) : (
-          <User key={id}>{message}</User>
-        )
+        type === 'you'?(
+        <DivYou key={id}>
+          <You>{message}</You>
+        </DivYou>
+        ):(
+        <DivUser key={id}>
+          <User>{message}</User>
+        </DivUser>
+        ) 
       )}
-    </Div>
+    </Container>
   );
 };
 
