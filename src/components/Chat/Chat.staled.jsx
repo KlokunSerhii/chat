@@ -20,10 +20,8 @@ export const Div = styled.div`
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  align-items:${({type})=>{
-    if (type === 'you'){
-      return flex-end
-    }
-    return  flex-start
+  align-items:${({items}) => {
+    items.map(({type}) => type === 'you' ? "flex-end" : "flex-start" 
+    )
   }}
 `;
