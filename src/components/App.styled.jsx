@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 
-export const Div = styled.div`
+export const Loader = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 50px auto;
+  align-content: center;
+  height: 500px;
 `;

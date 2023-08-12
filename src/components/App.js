@@ -1,53 +1,66 @@
-import Chat from 'components/Chat';
-import ChatForm from 'components/ChatForm';
-import SigningChatForm from 'components/SigningChatForm';
-import { useCallback, useEffect, useState } from 'react';
-import io from 'socket.io-client';
-import { nanoid } from 'nanoid';
+import { Route, Routes } from 'react-router-dom';
+import ChatView from 'views/ChatView';
+import RegisterViews from 'views/RegisterViews';
+import LoginViews from 'views/LoginViews';
+import SharedLayout from './SharedLayout';
+import HomeViews from 'views/HomeViews';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
+import { useDispatch } from 'react-redux';
+import { useAuth } from 'huks/auth';
+import { useEffect } from 'react';
+import { refreshUser } from 'redux/auth/operations';
+import { AppLoader } from './Loader/Loader';
+import { Loader } from './App.styled';
 
-import { Div } from './App.styled';
-const socket = io.connect('https://chat-back-end-6mf9.onrender.com');
+const App = () => {
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
 
-function App() {
-  const [nickName, setNickname] = useState('');
-  const [message, setMessages] = useState([]);
   useEffect(() => {
-    socket.on('chat-message', message => {
-      setMessages(prevMessages => {
-        const newMessage = {
-          id: nanoid(),
-          type: 'user',
-          message,
-        };
+    dispatch(refreshUser());
+  }, [dispatch]);
 
-        return [newMessage, ...prevMessages];
-      });
-    });
-  }, []);
+  return isRefreshing ? (
+    <Loader>
+      <AppLoader />
+    </Loader>
+  ) : (
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<HomeViews />} />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute
+              redirectto="/chat"
+              component={LoginViews}
+            />
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute
+              redirectto="/chat"
+              component={RegisterViews}
+            />
+          }
+        />
 
-  const addNickname = useCallback(name => setNickname(name), []);
-
-  const addMessage = useCallback(({ message }) => {
-    setMessages(prevMessages => {
-      const newMessage = {
-        id: nanoid(),
-        type: 'you',
-        message,
-      };
-
-      return [newMessage, ...prevMessages];
-    });
-
-    socket.emit('chat-message', message);
-  }, []);
-
-  return (
-    <Div>
-      {!nickName && <SigningChatForm onSubmit={addNickname} />}
-      {nickName && <ChatForm onSubmit={addMessage} />}
-      {nickName && <Chat items={message} />}
-    </Div>
+        <Route
+          path="/chat"
+          element={
+            <PrivateRoute
+              redirectto="/login"
+              component={ChatView}
+            />
+          }
+        />
+        <Route path="*" element={<div>NotFound </div>} />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
