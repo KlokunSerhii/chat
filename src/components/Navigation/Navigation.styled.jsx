@@ -8,16 +8,14 @@ export const MainNav = styled.nav`
 `;
 
 export const MainNavLink = styled(NavLink)`
-  margin: 0px;
   margin-left: 28px;
   padding: 5px;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 24px;
-  color: #4b0082;
-
+  color: #f0f0f0;
   :hover,
   :focus {
-    color: rgba(255, 191, 0, 0.84);
+    color: #ffbf00;
   }
 `;

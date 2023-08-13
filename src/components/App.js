@@ -1,14 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
 import ChatView from 'views/ChatView';
 import RegisterViews from 'views/RegisterViews';
 import LoginViews from 'views/LoginViews';
 import SharedLayout from './SharedLayout';
-import HomeViews from 'views/HomeViews';
-import { PrivateRoute } from './PrivateRoute';
-import { RestrictedRoute } from './RestrictedRoute';
-import { useDispatch } from 'react-redux';
+import HomeViews from 'views/HomeViews/HomeViews';
+import PrivateRoute from './PrivateRoute';
+import RestrictedRoute from './RestrictedRoute';
 import { useAuth } from 'huks/auth';
-import { useEffect } from 'react';
 import { refreshUser } from 'redux/auth/operations';
 import { AppLoader } from './Loader/Loader';
 import { Loader } from './App.styled';

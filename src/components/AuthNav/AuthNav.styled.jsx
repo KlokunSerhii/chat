@@ -5,16 +5,16 @@ export const AuthNavLink = styled(NavLink)`
   margin: 0;
   margin-left: 38px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
   border-radius: 6px;
-  color: #4b0082;
+  color: #f0f0f0;
   :last-child {
     margin-right: 28px;
   }
 
   :hover,
   :focus {
-    color: rgba(255, 191, 0, 0.84);
+    color: #ffbf00;
   }
 `;

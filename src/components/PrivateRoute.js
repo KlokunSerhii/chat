@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from 'huks/auth';
 
-export const PrivateRoute = ({
+const PrivateRoute = ({
   component: Component,
   redirectto = '/',
 }) => {
@@ -14,3 +14,5 @@ export const PrivateRoute = ({
     <Component />
   );
 };
+
+export default PrivateRoute;

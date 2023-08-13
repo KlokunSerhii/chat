@@ -43,15 +43,39 @@ function Register() {
               placeholder="login"
             />
           </Label>
-          <ErrorMessage name="name" />
+          <ErrorMessage
+            name="name"
+            render={() => (
+              <div
+                style={{
+                  color: '#f0f0f0',
+                  fontSize: '24px',
+                }}
+              >
+                {'Please enter your login'}
+              </div>
+            )}
+          />
           <Label>
             <Input
-              type="email"
               name="email"
+              type="email"
               placeholder="email"
             />
           </Label>
-          <ErrorMessage name="email" />
+          <ErrorMessage
+            name="email"
+            render={() => (
+              <div
+                style={{
+                  color: '#f0f0f0',
+                  fontSize: '24px',
+                }}
+              >
+                {'Please enter your email'}
+              </div>
+            )}
+          />
           <Label>
             <Input
               type="text"
@@ -59,7 +83,19 @@ function Register() {
               placeholder="password"
             />
           </Label>
-          <ErrorMessage name="password" />
+          <ErrorMessage
+            name="password"
+            render={() => (
+              <div
+                style={{
+                  color: '#f0f0f0',
+                  fontSize: '24px',
+                }}
+              >
+                {'Please enter your password'}
+              </div>
+            )}
+          />
           <ButtonSubmit type="submit">
             Register
           </ButtonSubmit>

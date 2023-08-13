@@ -1,6 +1,13 @@
 import React from 'react';
 import { ErrorMessage, Formik } from 'formik';
-import { Div, Forma, Input, ButtonSubmit, Title, Label } from './Login.styled';
+import {
+  Div,
+  Forma,
+  Input,
+  ButtonSubmit,
+  Title,
+  Label,
+} from './Login.styled';
 import { SignupSchemaLogin } from 'options/validForm';
 import { useDispatch } from 'react-redux';
 import { login } from 'redux/auth/operations';
@@ -10,7 +17,10 @@ function Login() {
   const password = '';
   const dispatch = useDispatch();
 
-  const handleSubmitLogin = ({ email, password }, { resetForm }) => {
+  const handleSubmitLogin = (
+    { email, password },
+    { resetForm }
+  ) => {
     dispatch(login({ email, password }));
     resetForm();
   };
@@ -24,16 +34,48 @@ function Login() {
       >
         <Forma>
           <Label>
-            <Input type="email" name="email" placeholder="email" />
+            <Input
+              type="email"
+              name="email"
+              placeholder="email"
+            />
           </Label>
 
-          <ErrorMessage name="email" />
+          <ErrorMessage
+            name="email"
+            render={() => (
+              <div
+                style={{
+                  color: '#f0f0f0',
+                  fontSize: '24px',
+                }}
+              >
+                {'Please enter your email'}
+              </div>
+            )}
+          />
 
           <Label>
-            <Input type="password" name="password" placeholder="password" />
+            <Input
+              type="password"
+              name="password"
+              placeholder="password"
+            />
           </Label>
 
-          <ErrorMessage name="password" />
+          <ErrorMessage
+            name="password"
+            render={() => (
+              <div
+                style={{
+                  color: '#f0f0f0',
+                  fontSize: '24px',
+                }}
+              >
+                {'Please enter your password'}
+              </div>
+            )}
+          />
 
           <ButtonSubmit type="submit">LogIn</ButtonSubmit>
         </Forma>

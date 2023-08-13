@@ -13,7 +13,7 @@ export const Title = styled.h1`
   font-size: 50px;
   font-weight: 700;
   font-style: italic;
-  color: #4b0082;
+  color: #f0f0f0;
 `;
 
 export const Forma = styled(Form)`
@@ -31,7 +31,7 @@ export const Label = styled.label`
 
 export const Input = styled(Field)`
   width: 370px;
-  height: 40px;
+  height: 25px;
   font-size: 16px;
   padding: 7px 15px;
   margin-top: 10px;
@@ -39,18 +39,18 @@ export const Input = styled(Field)`
   color: #4b0082;
   outline: none;
   &:focus {
-    border: 2px solid rgba(255, 191, 0, 0.84);
+    border: 2px solid #ffbf00;
   }
 `;
 export const ButtonSubmit = styled.button`
-  height: 40px;
+  height: 35px;
   width: 150px;
   color: #4b0082;
   outline: none;
+  margin-top: 15px;
   border-radius: 5px;
-  font-size: 24px;
+  font-size: 16px;
   :hover {
-    font-weight: 500;
-    color: rgba(255, 191, 0, 0.84);
+    color: #ffbf00;
   }
 `;

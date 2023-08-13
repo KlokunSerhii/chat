@@ -1,5 +1,13 @@
 import React from 'react';
-import { Container, User, You, DivYou, DivUser } from './Chat.staled';
+import {
+  Container,
+  User,
+  You,
+  DivYou,
+  DivUser,
+  NameYou,
+  NameUser,
+} from './Chat.staled';
 
 const Chat = ({ items }) => {
   return (
@@ -7,12 +15,12 @@ const Chat = ({ items }) => {
       {items.map(({ id, message, type }) =>
         type === 'you' ? (
           <DivYou key={id}>
-            <p>you</p>
+            <NameYou>you</NameYou>
             <You>{message}</You>
           </DivYou>
         ) : (
           <DivUser key={id}>
-            <p>user</p>
+            <NameUser>user</NameUser>
             <User>{message}</User>
           </DivUser>
         )

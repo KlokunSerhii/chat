@@ -44,8 +44,8 @@ function ChatView() {
 
   return (
     <Div>
-      <ChatForm onSubmit={addMessage} />
       <Chat items={message} />
+      <ChatForm onSubmit={addMessage} />
     </Div>
   );
 }

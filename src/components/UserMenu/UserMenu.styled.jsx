@@ -1,17 +1,18 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
-  display: flex;
-  align-items: center;
-`;
+// export const Container = styled.div`
+//   display: flex;
+//   align-items: center;
+// `;
 export const ButtonSubmit = styled.button`
-  margin: 0px 28px;
-  padding: 5px;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 24px;
-  color: #4b0082;
+  height: 35px;
+  width: 100px;
+  color: #f0f0f0;
+  background: transparent;
+  border: medium none;
+  margin-right: 28px;
+  font-size: 20px;
   :hover {
-    color: rgba(255, 191, 0, 0.84);
+    color: #ffbf00;
   }
 `;

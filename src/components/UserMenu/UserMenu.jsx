@@ -7,14 +7,14 @@ import { logout } from 'redux/auth/operations';
 function UserMenu() {
   const dispatch = useDispatch();
   return (
-    <Container>
+    <>
       <ButtonSubmit
         type="button"
         onClick={() => dispatch(logout())}
       >
         Logout
       </ButtonSubmit>
-    </Container>
+    </>
   );
 }
 

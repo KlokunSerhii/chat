@@ -1,25 +1,27 @@
 import styled from '@emotion/styled';
 
 export const Input = styled.input`
-  width: 370px;
+  min-width: 200px;
   font-size: 16px;
   padding: 7px 15px;
   border-radius: 5px;
   color: #4b0082;
   outline: none;
   &:focus {
-    border: 2px solid rgba(255, 191, 0, 0.84);
+    border: 2px solid #ffbf00;
   }
 `;
 export const ButtonSubmit = styled.button`
-  padding: 7px 15px;
+  height: 35px;
+  width: 80px;
   color: #4b0082;
   outline: none;
+  margin-top: 15px;
+  margin-left: 20px;
   border-radius: 5px;
   font-size: 16px;
   :hover {
-    font-weight: 500;
-    color: rgba(255, 191, 0, 0.84);
+    color: #ffbf00;
   }
 `;
 
