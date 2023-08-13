@@ -30,9 +30,9 @@ export const NameYou = styled.p`
 `;
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  min-width: 500px;
-  height: 480px;
+  flex-direction: column-reverse;
+  min-width: 400px;
+  max-height: 480px;
   border: 1px solid;
   border-radius: 10px;
   overflow-y: scroll;
