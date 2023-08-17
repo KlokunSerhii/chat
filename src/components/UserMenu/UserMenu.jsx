@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, ButtonSubmit } from './UserMenu.styled';
+import { ButtonSubmit } from './UserMenu.styled';
 import { useDispatch } from 'react-redux';
 
 import { logout } from 'redux/auth/operations';

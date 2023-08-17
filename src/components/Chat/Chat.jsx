@@ -7,20 +7,21 @@ import {
   DivUser,
   NameYou,
   NameUser,
-} from './Chat.staled';
+} from './Chat.styled';
 
 const Chat = ({ items }) => {
+console.log(items)
   return (
     <Container>
-      {items.map(({ id, message, type }) =>
-        type === 'you' ? (
+      {items.map(({ id, message, type, nickName  }) =>
+        (type === 'you') ? (
           <DivYou key={id}>
-            <NameYou>you</NameYou>
+            <NameYou>{nickName.name}</NameYou>
             <You>{message}</You>
           </DivYou>
         ) : (
           <DivUser key={id}>
-            <NameUser>user</NameUser>
+            <NameUser>{nickName.name}</NameUser>
             <User>{message}</User>
           </DivUser>
         )
