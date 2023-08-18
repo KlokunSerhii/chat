@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Input = styled.input`
-  width: 250px;
+  width: 200px;
   font-size: 16px;
   padding: 7px 15px;
   border-radius: 5px;
@@ -13,13 +13,12 @@ export const Input = styled.input`
 `;
 export const ButtonSubmit = styled.button`
   height: 35px;
-  width: 80px;
-  color: #4b0082;
-  outline: none;
-  margin-top: 15px;
-  margin-left: 20px;
-  border-radius: 5px;
-  font-size: 16px;
+  width: 50px;
+  color: #f0f0f0;
+  background: transparent;
+  border: medium none;
+  margin-right: 28px;
+  font-size: 20px;
   :hover {
     color: #ffbf00;
   }
@@ -28,4 +27,5 @@ export const ButtonSubmit = styled.button`
 export const Div = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 15px;
 `;

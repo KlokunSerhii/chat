@@ -15,15 +15,14 @@ import { register } from 'redux/auth/operations';
 function Register() {
   const email = '';
   const password = '';
-  const name = '';
 
   const dispatch = useDispatch();
 
   const handleSubmitRegister = (
-    { email, password, name },
+    { email, password },
     { resetForm }
   ) => {
-    dispatch(register({ email, password, name }));
+    dispatch(register({ email, password }));
     resetForm();
   };
 
@@ -31,31 +30,11 @@ function Register() {
     <Div>
       <Title>Hello, let's get to know each other</Title>
       <Formik
-        initialValues={{ email, password, name }}
+        initialValues={{ email, password }}
         validationSchema={SignupSchemaRegister}
         onSubmit={handleSubmitRegister}
       >
         <Forma>
-          <Label>
-            <Input
-              type="text"
-              name="name"
-              placeholder="login"
-            />
-          </Label>
-          <ErrorMessage
-            name="name"
-            render={() => (
-              <div
-                style={{
-                  color: '#f0f0f0',
-                  fontSize: '24px',
-                }}
-              >
-                {'Please enter your login'}
-              </div>
-            )}
-          />
           <Label>
             <Input
               name="email"

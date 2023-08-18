@@ -31,7 +31,7 @@ export const NameYou = styled.p`
 export const Container = styled.div`
   display: flex;
   flex-direction: column-reverse;
-  min-width: 400px;
+  min-width: 320px;
   max-height: 480px;
   border: 1px solid;
   border-radius: 10px;

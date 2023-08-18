@@ -9,7 +9,7 @@ import {
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: { email: null, name: null },
+    user: { email: null },
     token: null,
     isLoggedIn: false,
     isRefreshing: false,

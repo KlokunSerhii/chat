@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { ButtonSubmit, Div, Input } from './SigningChatForm.styled';
+import {
+  ButtonSubmit,
+  Div,
+  Input,
+} from './SigningChatForm.styled';
 
 function SigningChatForm({ onSubmit }) {
   const [state, setState] = useState({
     name: '',
   });
-
   const handleChange = ({ target }) => {
     const { name, value } = target;
     setState(prevState => ({

@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { ButtonSubmit, Div, Input } from './ChatForm.styled';
+import {
+  ButtonSubmit,
+  Div,
+  Input,
+} from './ChatForm.styled';
 
 function ChatForm({ onSubmit }) {
   const [state, setState] = useState({

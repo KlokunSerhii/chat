@@ -10,18 +10,18 @@ import {
 } from './Chat.styled';
 
 const Chat = ({ items }) => {
-console.log(items)
+  console.log(items);
   return (
     <Container>
-      {items.map(({ id, message, type, nickName  }) =>
-        (type === 'you') ? (
+      {items.map(({ id, message, type, nickName }) =>
+        type === 'you' ? (
           <DivYou key={id}>
-            <NameYou>{nickName.name}</NameYou>
+            <NameYou></NameYou>
             <You>{message}</You>
           </DivYou>
         ) : (
           <DivUser key={id}>
-            <NameUser>{nickName.name}</NameUser>
+            <NameUser></NameUser>
             <User>{message}</User>
           </DivUser>
         )
