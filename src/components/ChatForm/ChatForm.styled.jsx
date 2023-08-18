@@ -10,6 +10,14 @@ export const Input = styled.input`
   &:focus {
     border: 2px solid #ffbf00;
   }
+  @media (min-width: 768px) and (max-width: 1199px) {
+    width: 320px;
+    font-size: 20px;
+  }
+  @media (min-width: 1200px) {
+    width: 850px;
+    font-size: 24px;
+  }
 `;
 export const ButtonSubmit = styled.button`
   height: 35px;
@@ -19,8 +27,17 @@ export const ButtonSubmit = styled.button`
   border: medium none;
   margin-right: 28px;
   font-size: 20px;
+  cursor: pointer;
   :hover {
     color: #ffbf00;
+  }
+  @media (min-width: 768px) and (max-width: 1199px) {
+    width: 50px;
+    font-size: 24px;
+  }
+  @media (min-width: 1200px) {
+    width: 50px;
+    font-size: 26px;
   }
 `;
 

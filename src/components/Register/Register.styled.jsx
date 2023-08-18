@@ -40,17 +40,34 @@ export const Input = styled(Field)`
   &:focus {
     border: 2px solid #ffbf00;
   }
+  @media (min-width: 768px) and (max-width: 1199px) {
+    width: 400px;
+    font-size: 18px;
+  }
+  @media (min-width: 1200px) {
+    width: 400px;
+    font-size: 20px;
+  }
 `;
 export const ButtonSubmit = styled.button`
   height: 35px;
   width: 150px;
   margin-top: 15px;
   margin-bottom: 15px;
-  color: #4b0082;
+  color: #f0f0f0;
+  background: transparent;
+  border: medium none;
   outline: none;
   border-radius: 5px;
   font-size: 16px;
+  cursor: pointer;
   :hover {
     color: #ffbf00;
+  }
+  @media (min-width: 768px) and (max-width: 1199px) {
+    font-size: 18px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 20px;
   }
 `;
