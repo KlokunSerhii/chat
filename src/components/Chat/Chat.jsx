@@ -7,8 +7,7 @@ import ChatForm from 'components/ChatForm/ChatForm';
 import Messerger from 'components/Messages/Messages';
 
 const socket = io.connect(
-  // 'https://chat-back-end-6mf9.onrender.com'
-  'http://localhost:3001'
+  'https://chat-back-end-6mf9.onrender.com'
 );
 
 const Chat = () => {
