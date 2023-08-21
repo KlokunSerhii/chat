@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   width: 320px;
   height: 480px;
   border: 1px solid;
