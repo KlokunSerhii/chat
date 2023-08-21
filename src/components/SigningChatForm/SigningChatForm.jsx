@@ -3,40 +3,68 @@ import {
   ButtonSubmit,
   Div,
   Input,
+  Form,
 } from './SigningChatForm.styled';
+import { Link } from 'react-router-dom';
 
-function SigningChatForm({ onSubmit }) {
-  const [state, setState] = useState({
-    name: '',
+const FIELDS = {
+  NAME: 'name',
+  ROOM: 'room',
+};
+
+function SigningChatForm() {
+  const { NAME, ROOM } = FIELDS;
+
+  const [values, setValues] = useState({
+    [NAME]: '',
+    [ROOM]: '',
   });
+
   const handleChange = ({ target }) => {
     const { name, value } = target;
-    setState(prevState => ({
+    setValues(prevState => ({
       ...prevState,
       [name]: value,
     }));
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    onSubmit({ ...state });
-    setState({
-      name: '',
-    });
+  const handleClick = e => {
+    const isDidabled = Object.values(values).some(
+      value => !value
+    );
+    if (isDidabled) e.preventDefault();
   };
 
-  const { name } = state;
   return (
     <Div>
-      <form onSubmit={handleSubmit}>
+      <h1>Join</h1>
+      <Form>
         <Input
-          value={name}
+          type="text"
+          value={values[NAME]}
           name="name"
           onChange={handleChange}
           placeholder="enter name"
+          autoComplete="off"
+          required
         />
-        <ButtonSubmit type="submit">Send</ButtonSubmit>
-      </form>
+        <Input
+          type="text"
+          value={values[ROOM]}
+          name="room"
+          onChange={handleChange}
+          placeholder="enter RoomID"
+          autoComplete="off"
+          required
+        />
+        <Link
+          to={`/chat?name=${values[NAME]}&room=${values[ROOM]}`}
+        >
+          <ButtonSubmit type="submit" onClick={handleClick}>
+            Join
+          </ButtonSubmit>
+        </Link>
+      </Form>
     </Div>
   );
 }

@@ -8,7 +8,7 @@ const Navigation = () => {
     <MainNav>
       <MainNavLink to="/">Home</MainNavLink>
       {isLoggedIn && (
-        <MainNavLink to="/chat">Chat</MainNavLink>
+        <MainNavLink to="/join">Chat</MainNavLink>
       )}
     </MainNav>
   );

@@ -13,6 +13,7 @@ import { useAuth } from 'huks/auth';
 import { refreshUser } from 'redux/auth/operations';
 import { AppLoader } from './Loader/Loader';
 import { Loader } from './App.styled';
+import SigningChat from 'views/SigningChat';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const App = () => {
           path="/login"
           element={
             <RestrictedRoute
-              redirectto="/chat"
+              redirectto="/"
               component={LoginViews}
             />
           }
@@ -43,7 +44,7 @@ const App = () => {
           path="/register"
           element={
             <RestrictedRoute
-              redirectto="/chat"
+              redirectto="/"
               component={RegisterViews}
             />
           }
@@ -58,6 +59,10 @@ const App = () => {
             />
           }
         />
+        <Route
+          path="/join"
+          element={<SigningChat />}
+        ></Route>
         <Route path="*" element={<div>NotFound </div>} />
       </Route>
     </Routes>
