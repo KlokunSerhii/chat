@@ -4,8 +4,7 @@ import Notiflix from 'notiflix';
 import { options } from 'options/configMessage';
 
 axios.defaults.baseURL =
-  // 'https://chat-back-end-6mf9.onrender.com/chat';
-  'http://localhost:3001/chat';
+  'https://chat-back-end-6mf9.onrender.com/chat';
 
 const message = Notiflix.Notify;
 
