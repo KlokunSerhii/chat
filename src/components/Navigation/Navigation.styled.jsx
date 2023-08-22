@@ -12,7 +12,7 @@ export const MainNavLink = styled(NavLink)`
   padding: 5px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 18px;
   color: #f0f0f0;
   :hover,
   :focus {

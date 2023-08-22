@@ -61,7 +61,12 @@ const App = () => {
         />
         <Route
           path="/join"
-          element={<SigningChat />}
+          element={
+            <PrivateRoute
+              redirectto="/"
+              component={SigningChat}
+            />
+          }
         ></Route>
         <Route path="*" element={<div>NotFound </div>} />
       </Route>

@@ -11,6 +11,8 @@ import {
 import { SignupSchemaRegister } from 'options/validForm';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import { MdOutlineEmail } from 'react-icons/md';
+import { RiLockPasswordFill } from 'react-icons/ri';
 
 function Register() {
   const email = '';
@@ -28,20 +30,31 @@ function Register() {
 
   return (
     <Div>
-      <Title>Hello, let's get to know each other</Title>
+      <Title>Hello, sign up</Title>
       <Formik
         initialValues={{ email, password }}
         validationSchema={SignupSchemaRegister}
         onSubmit={handleSubmitRegister}
       >
         <Forma>
-          <Label>
+        <Label>
             <Input
-              name="email"
               type="email"
-              placeholder="email"
+              name="email"
+              placeholder='enter your email'
+              autoComplete='off'
             />
+            
+            <MdOutlineEmail style={{ 
+              marginLeft: "5px", 
+              stroke:"0",
+              fill:"#000000",    
+              position: 'absolute',
+              top: '14px',
+              left: '10px',
+ }}/>
           </Label>
+
           <ErrorMessage
             name="email"
             render={() => (
@@ -55,13 +68,26 @@ function Register() {
               </div>
             )}
           />
+
           <Label>
             <Input
-              type="text"
+              type="password"
               name="password"
-              placeholder="password"
+              placeholder="enter your password"
+              autoComplete='off'
+            />
+            <RiLockPasswordFill
+            style={{ 
+              marginLeft: "5px", 
+              stroke:"0",
+              fill:"#000000",    
+              position: 'absolute',
+              top: '14px',
+              left: '10px',
+            }}
             />
           </Label>
+
           <ErrorMessage
             name="password"
             render={() => (
@@ -75,8 +101,9 @@ function Register() {
               </div>
             )}
           />
+
           <ButtonSubmit type="submit">
-            Register
+          SignUp
           </ButtonSubmit>
         </Forma>
       </Formik>

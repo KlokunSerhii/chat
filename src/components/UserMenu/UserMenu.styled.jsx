@@ -7,7 +7,8 @@ export const ButtonSubmit = styled.button`
   background: transparent;
   border: medium none;
   margin-right: 28px;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 700;
   :hover {
     color: #ffbf00;
   }

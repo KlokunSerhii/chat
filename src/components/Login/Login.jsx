@@ -11,6 +11,8 @@ import {
 import { SignupSchemaLogin } from 'options/validForm';
 import { useDispatch } from 'react-redux';
 import { login } from 'redux/auth/operations';
+import { MdOutlineEmail } from 'react-icons/md';
+import { RiLockPasswordFill } from 'react-icons/ri';
 
 function Login() {
   const email = '';
@@ -37,8 +39,18 @@ function Login() {
             <Input
               type="email"
               name="email"
-              placeholder="email"
+              placeholder='enter your email'
+              autoComplete='off'
             />
+            
+            <MdOutlineEmail style={{ 
+              marginLeft: "5px", 
+              stroke:"0",
+              fill:"#000000",    
+              position: 'absolute',
+              top: '14px',
+              left: '10px',
+ }}/>
           </Label>
 
           <ErrorMessage
@@ -59,7 +71,18 @@ function Login() {
             <Input
               type="password"
               name="password"
-              placeholder="password"
+              placeholder="enter your"
+              autoComplete='off'
+            />
+            <RiLockPasswordFill
+            style={{ 
+              marginLeft: "5px", 
+              stroke:"0",
+              fill:"#000000",    
+              position: 'absolute',
+              top: '14px',
+              left: '10px',
+            }}
             />
           </Label>
 

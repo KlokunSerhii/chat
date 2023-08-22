@@ -9,10 +9,9 @@ export const Div = styled.div`
   height: 90vh;
 `;
 export const Title = styled.h1`
-  padding-bottom: 70px;
+  padding-bottom: 50px;
   font-size: 50px;
-  font-weight: 700;
-  font-style: italic;
+  font-weight: 500;
   color: #f0f0f0;
 `;
 
@@ -20,10 +19,10 @@ export const Forma = styled(Form)`
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-direction: column;
 `;
 export const Label = styled.label`
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
@@ -32,9 +31,8 @@ export const Label = styled.label`
 export const Input = styled(Field)`
   width: 250px;
   height: 25px;
-  font-size: 16px;
-  padding: 7px 15px;
-  margin-top: 10px;
+  font-size: 14px;
+  padding: 7px 15px 7px 35px;
   border-radius: 5px;
   color: #4b0082;
   outline: none;
