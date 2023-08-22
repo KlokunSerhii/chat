@@ -13,18 +13,19 @@ import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import { MdOutlineEmail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
+import { AiOutlineUser } from 'react-icons/ai';
 
 function Register() {
   const email = '';
   const password = '';
-
+  const name = '';
   const dispatch = useDispatch();
 
-  const handleSubmitRegister = (
-    { email, password },
+  const handleSubmitR = (
+    { email, password, name },
     { resetForm }
-  ) => {
-    dispatch(register({ email, password }));
+    ) => {
+    dispatch(register({ email, password, name }));
     resetForm();
   };
 
@@ -32,19 +33,48 @@ function Register() {
     <Div>
       <Title>Hello, sign up</Title>
       <Formik
-        initialValues={{ email, password }}
+        initialValues={{ email, password, name }}
         validationSchema={SignupSchemaRegister}
-        onSubmit={handleSubmitRegister}
+        onSubmit={handleSubmitR}
       >
         <Forma>
         <Label>
+            <Input
+              type="text"
+              name="name"
+              placeholder='enter your name'
+              autoComplete='off'
+            />
+            <AiOutlineUser style={{ 
+              marginLeft: "5px", 
+              stroke:"0",
+              fill:"#000000",    
+              position: 'absolute',
+              top: '14px',
+              left: '10px',
+          }}/>
+          </Label>
+
+          <ErrorMessage
+            name="name"
+            render={() => (
+              <div
+                style={{
+                  color: '#f0f0f0',
+                  fontSize: '24px',
+                }}
+              >
+                {'Please enter your email'}
+              </div>
+            )}
+          />
+          <Label>
             <Input
               type="email"
               name="email"
               placeholder='enter your email'
               autoComplete='off'
             />
-            
             <MdOutlineEmail style={{ 
               marginLeft: "5px", 
               stroke:"0",
@@ -73,11 +103,10 @@ function Register() {
             <Input
               type="password"
               name="password"
-              placeholder="enter your password"
+              placeholder="enter your"
               autoComplete='off'
             />
-            <RiLockPasswordFill
-            style={{ 
+            <RiLockPasswordFill style={{ 
               marginLeft: "5px", 
               stroke:"0",
               fill:"#000000",    
@@ -102,9 +131,7 @@ function Register() {
             )}
           />
 
-          <ButtonSubmit type="submit">
-          SignUp
-          </ButtonSubmit>
+          <ButtonSubmit type="submit">SingUp</ButtonSubmit>
         </Forma>
       </Formik>
     </Div>

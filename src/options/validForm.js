@@ -4,8 +4,7 @@ export const SignupSchemaRegister = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
-    .required('Please enter your login'),
-
+    .required('Please enter your name'),
   password: Yup.string()
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')

@@ -6,6 +6,7 @@ import {
   Form,
 } from './SigningChatForm.styled';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../huks/auth';
 
 const FIELDS = {
   NAME: 'name',
@@ -14,6 +15,8 @@ const FIELDS = {
 
 function SigningChatForm() {
   const { NAME, ROOM } = FIELDS;
+
+  const {user} = useAuth()
 
   const [values, setValues] = useState({
     [NAME]: '',
@@ -29,10 +32,7 @@ function SigningChatForm() {
   };
 
   const handleClick = e => {
-    const isDidabled = Object.values(values).some(
-      value => !value
-    );
-    if (isDidabled) e.preventDefault();
+  if(!values[ROOM])e.preventDefault();
   };
 
   return (
@@ -41,7 +41,7 @@ function SigningChatForm() {
       <Form>
         <Input
           type="text"
-          value={values[NAME]}
+          value={user.name}
           name="name"
           onChange={handleChange}
           placeholder="enter name"
@@ -58,7 +58,7 @@ function SigningChatForm() {
           required
         />
         <Link
-          to={`/chat?name=${values[NAME]}&room=${values[ROOM]}`}
+          to={`/chat?name=${user.name}&room=${values[ROOM]}`}
         >
           <ButtonSubmit type="submit" onClick={handleClick}>
             Join
