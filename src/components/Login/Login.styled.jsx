@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import { Field, Form } from 'formik';
+import { MdOutlineEmail } from 'react-icons/md';
+import { RiLockPasswordFill } from 'react-icons/ri';
 
 export const Div = styled.div`
   display: flex;
@@ -10,9 +12,15 @@ export const Div = styled.div`
 `;
 export const Title = styled.h1`
   padding-bottom: 50px;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 500;
   color: #f0f0f0;
+  @media (min-width: 768px) and (max-width: 1199px) {
+    font-size: 40px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 50px;
+  }
 `;
 
 export const Forma = styled(Form)`
@@ -25,7 +33,7 @@ export const Label = styled.label`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 `;
 
 export const Input = styled(Field)`
@@ -68,4 +76,27 @@ export const ButtonSubmit = styled.button`
   @media (min-width: 1200px) {
     font-size: 20px;
   }
+`;
+
+export const IconEmail = styled(MdOutlineEmail)`
+  margin-left: 5px;
+  stroke: 0;
+  fill: #000000;
+  position: absolute;
+  top: 14px;
+  left: 10px;
+`;
+
+export const IconPassword = styled(RiLockPasswordFill)`
+  margin-left: 5px;
+  stroke: 0;
+  fill: #000000;
+  position: absolute;
+  top: 14px;
+  left: 10px;
+`;
+export const ErrorMessageDiv = styled.div`
+  color: #f0f0f0;
+  margin-bottom: 5px;
+  fontsize: 20px;
 `;

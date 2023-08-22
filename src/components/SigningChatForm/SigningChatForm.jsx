@@ -4,9 +4,12 @@ import {
   Div,
   Input,
   Form,
+  IconUser,
+  IconPassword,
 } from './SigningChatForm.styled';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../huks/auth';
+import { Title } from 'components/Login/Login.styled';
 
 const FIELDS = {
   NAME: 'name',
@@ -16,7 +19,7 @@ const FIELDS = {
 function SigningChatForm() {
   const { NAME, ROOM } = FIELDS;
 
-  const {user} = useAuth()
+  const { user } = useAuth();
 
   const [values, setValues] = useState({
     [NAME]: '',
@@ -32,12 +35,12 @@ function SigningChatForm() {
   };
 
   const handleClick = e => {
-  if(!values[ROOM])e.preventDefault();
+    if (!values[ROOM]) e.preventDefault();
   };
 
   return (
     <Div>
-      <h1>Join</h1>
+      <Title>Join</Title>
       <Form>
         <Input
           type="text"
@@ -46,8 +49,10 @@ function SigningChatForm() {
           onChange={handleChange}
           placeholder="enter name"
           autoComplete="off"
+          disabled
           required
         />
+        <IconUser />
         <Input
           type="text"
           value={values[ROOM]}
@@ -57,6 +62,7 @@ function SigningChatForm() {
           autoComplete="off"
           required
         />
+        <IconPassword />
         <Link
           to={`/chat?name=${user.name}&room=${values[ROOM]}`}
         >

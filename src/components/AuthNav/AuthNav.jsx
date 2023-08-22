@@ -1,17 +1,20 @@
 import React from 'react';
-import { AuthNavLink, AuthNavContainer } from './AuthNav.styled';
-import { CiLogin } from 'react-icons/ci';
+import {
+  AuthNavLink,
+  AuthNavContainer,
+  Icon,
+} from './AuthNav.styled';
 
 function AuthNav() {
   return (
     <AuthNavContainer>
-      <AuthNavLink to="/register">Registration
-        <CiLogin style={{ marginLeft: "5px", strokeWidth: "2" }}
-        />
+      <AuthNavLink to="/login">
+        Login
+        <Icon />
       </AuthNavLink>
-      <AuthNavLink to="/login">Login
-        <CiLogin style={{ marginLeft: "5px", strokeWidth: "2" }}
-        />
+      <AuthNavLink to="/register">
+        Registration
+        <Icon />
       </AuthNavLink>
     </AuthNavContainer>
   );

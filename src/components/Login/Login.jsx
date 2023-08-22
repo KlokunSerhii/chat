@@ -7,12 +7,13 @@ import {
   ButtonSubmit,
   Title,
   Label,
+  IconPassword,
+  IconEmail,
+  ErrorMessageDiv,
 } from './Login.styled';
-import { SignupSchemaLogin } from 'options/validForm';
+import { SignupSchemaLogin } from '../../options/validForm';
 import { useDispatch } from 'react-redux';
-import { login } from 'redux/auth/operations';
-import { MdOutlineEmail } from 'react-icons/md';
-import { RiLockPasswordFill } from 'react-icons/ri';
+import { login } from '../../redux/auth/operations';
 
 function Login() {
   const email = '';
@@ -23,7 +24,6 @@ function Login() {
     { email, password },
     { resetForm }
   ) => {
-
     dispatch(login({ email, password }));
     resetForm();
   };
@@ -40,31 +40,17 @@ function Login() {
             <Input
               type="email"
               name="email"
-              placeholder='enter your email'
-              autoComplete='off'
+              placeholder="enter your email"
+              autoComplete="off"
             />
-            
-            <MdOutlineEmail style={{ 
-              marginLeft: "5px", 
-              stroke:"0",
-              fill:"#000000",    
-              position: 'absolute',
-              top: '14px',
-              left: '10px',
- }}/>
+            <IconEmail />
           </Label>
-
           <ErrorMessage
             name="email"
             render={() => (
-              <div
-                style={{
-                  color: '#f0f0f0',
-                  fontSize: '24px',
-                }}
-              >
+              <ErrorMessageDiv>
                 {'Please enter your email'}
-              </div>
+              </ErrorMessageDiv>
             )}
           />
 
@@ -73,34 +59,18 @@ function Login() {
               type="password"
               name="password"
               placeholder="enter your"
-              autoComplete='off'
+              autoComplete="off"
             />
-            <RiLockPasswordFill
-            style={{ 
-              marginLeft: "5px", 
-              stroke:"0",
-              fill:"#000000",    
-              position: 'absolute',
-              top: '14px',
-              left: '10px',
-            }}
-            />
+            <IconPassword />
           </Label>
-
           <ErrorMessage
             name="password"
             render={() => (
-              <div
-                style={{
-                  color: '#f0f0f0',
-                  fontSize: '24px',
-                }}
-              >
+              <ErrorMessageDiv>
                 {'Please enter your password'}
-              </div>
+              </ErrorMessageDiv>
             )}
           />
-
           <ButtonSubmit type="submit">LogIn</ButtonSubmit>
         </Forma>
       </Formik>

@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import Notiflix from 'notiflix';
+import { options } from 'options/configMessage';
 
 axios.defaults.baseURL =
-  'https://chat-back-end-6mf9.onrender.com/chat';
+  // 'https://chat-back-end-6mf9.onrender.com/chat';
+  'http://localhost:3001/chat';
 
 const message = Notiflix.Notify;
 
@@ -26,20 +28,7 @@ export const register = createAsyncThunk(
     } catch (e) {
       message.failure(
         '😡 Sorry, something went wrong. This user may not exist. Please try again',
-        {
-          width: '280px',
-          position: 'center-top',
-          distance: '10px',
-          opacity: 0.8,
-          borderRadius: '10px',
-          timeout: 3000,
-          messageMaxLength: 110,
-          backOverlay: false,
-          plainText: true,
-          showOnlyTheLastOne: false,
-          clickToClose: true,
-          pauseOnHover: true,
-        }
+        options
       );
       return thunkAPI.rejectWithValue(e.message);
     }
@@ -59,20 +48,7 @@ export const login = createAsyncThunk(
     } catch (e) {
       message.failure(
         '😡 Sorry, something went wrong. Maybe this user already exists. Please try again',
-        {
-          width: '280px',
-          position: 'center-top',
-          distance: '10px',
-          opacity: 0.8,
-          borderRadius: '10px',
-          timeout: 3000,
-          messageMaxLength: 110,
-          backOverlay: false,
-          plainText: true,
-          showOnlyTheLastOne: false,
-          clickToClose: true,
-          pauseOnHover: true,
-        }
+        options
       );
       return thunkAPI.rejectWithValue(e.message);
     }

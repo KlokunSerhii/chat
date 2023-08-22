@@ -47,17 +47,17 @@ const Chat = () => {
   return (
     <>
       <Container>
-        {state.map(({ user, message }) => {
+        {state.map(({ user, message }, i) => {
           const you =
             user.name.trim().toLowerCase() ===
             params.name.trim().toLowerCase();
           return you ? (
-            <DivYou>
+            <DivYou key={i}>
               <NameYou>{user.name}</NameYou>
               <You>{message}</You>
             </DivYou>
           ) : (
-            <DivUser>
+            <DivUser key={i}>
               <NameUser>{user.name}</NameUser>
               <User>{message}</User>
             </DivUser>

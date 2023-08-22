@@ -1,6 +1,9 @@
-import { MainNav, MainNavLink } from './Navigation.styled';
-import { useAuth } from 'huks/auth';
-import { AiOutlineWechat } from 'react-icons/ai';
+import {
+  MainNav,
+  MainNavLink,
+  Icon,
+} from './Navigation.styled';
+import { useAuth } from '../../huks/auth';
 
 const Navigation = () => {
   const { isLoggedIn } = useAuth();
@@ -9,9 +12,9 @@ const Navigation = () => {
     <MainNav>
       <MainNavLink to="/">Home</MainNavLink>
       {isLoggedIn && (
-        <MainNavLink to="/join">Chat
-          <AiOutlineWechat style={{ marginLeft: "5px", strokeWidth: "2" }}
-          />
+        <MainNavLink to="/join">
+          Chat
+          <Icon />
         </MainNavLink>
       )}
     </MainNav>

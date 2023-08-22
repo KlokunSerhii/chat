@@ -25,19 +25,19 @@ export const ButtonSubmit = styled.button`
   color: #f0f0f0;
   background: transparent;
   border: medium none;
-  margin-right: 28px;
-  font-size: 20px;
+  margin-left: 12px;
+  font-size: 16px;
   cursor: pointer;
   :hover {
     color: #ffbf00;
   }
   @media (min-width: 768px) and (max-width: 1199px) {
-    width: 50px;
-    font-size: 24px;
+    width: 60px;
+    font-size: 20px;
   }
   @media (min-width: 1200px) {
-    width: 50px;
-    font-size: 26px;
+    width: 70px;
+    font-size: 24px;
   }
 `;
 

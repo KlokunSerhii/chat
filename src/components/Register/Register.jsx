@@ -7,13 +7,14 @@ import {
   ButtonSubmit,
   Title,
   Label,
+  IconEmail,
+  IconPassword,
+  IconUser,
+  ErrorMessageDiv,
 } from './Register.styled';
-import { SignupSchemaRegister } from 'options/validForm';
+import { SignupSchemaRegister } from '../../options/validForm';
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/operations';
-import { MdOutlineEmail } from 'react-icons/md';
-import { RiLockPasswordFill } from 'react-icons/ri';
-import { AiOutlineUser } from 'react-icons/ai';
+import { register } from '../../redux/auth/operations';
 
 function Register() {
   const email = '';
@@ -24,7 +25,7 @@ function Register() {
   const handleSubmitR = (
     { email, password, name },
     { resetForm }
-    ) => {
+  ) => {
     dispatch(register({ email, password, name }));
     resetForm();
   };
@@ -38,64 +39,40 @@ function Register() {
         onSubmit={handleSubmitR}
       >
         <Forma>
-        <Label>
+          <Label>
             <Input
               type="text"
               name="name"
-              placeholder='enter your name'
-              autoComplete='off'
+              placeholder="enter your name"
+              autoComplete="off"
             />
-            <AiOutlineUser style={{ 
-              marginLeft: "5px", 
-              stroke:"0",
-              fill:"#000000",    
-              position: 'absolute',
-              top: '14px',
-              left: '10px',
-          }}/>
+            <IconUser />
           </Label>
 
           <ErrorMessage
             name="name"
             render={() => (
-              <div
-                style={{
-                  color: '#f0f0f0',
-                  fontSize: '24px',
-                }}
-              >
+              <ErrorMessageDiv>
                 {'Please enter your email'}
-              </div>
+              </ErrorMessageDiv>
             )}
           />
           <Label>
             <Input
               type="email"
               name="email"
-              placeholder='enter your email'
-              autoComplete='off'
+              placeholder="enter your email"
+              autoComplete="off"
             />
-            <MdOutlineEmail style={{ 
-              marginLeft: "5px", 
-              stroke:"0",
-              fill:"#000000",    
-              position: 'absolute',
-              top: '14px',
-              left: '10px',
- }}/>
+            <IconEmail />
           </Label>
 
           <ErrorMessage
             name="email"
             render={() => (
-              <div
-                style={{
-                  color: '#f0f0f0',
-                  fontSize: '24px',
-                }}
-              >
+              <ErrorMessageDiv>
                 {'Please enter your email'}
-              </div>
+              </ErrorMessageDiv>
             )}
           />
 
@@ -104,30 +81,17 @@ function Register() {
               type="password"
               name="password"
               placeholder="enter your"
-              autoComplete='off'
+              autoComplete="off"
             />
-            <RiLockPasswordFill style={{ 
-              marginLeft: "5px", 
-              stroke:"0",
-              fill:"#000000",    
-              position: 'absolute',
-              top: '14px',
-              left: '10px',
-            }}
-            />
+            <IconPassword />
           </Label>
 
           <ErrorMessage
             name="password"
             render={() => (
-              <div
-                style={{
-                  color: '#f0f0f0',
-                  fontSize: '24px',
-                }}
-              >
+              <ErrorMessageDiv>
                 {'Please enter your password'}
-              </div>
+              </ErrorMessageDiv>
             )}
           />
 
