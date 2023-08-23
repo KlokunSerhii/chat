@@ -6,10 +6,11 @@ import {
   Form,
   IconUser,
   IconPassword,
+  Title,
+  Img
 } from './SigningChatForm.styled';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../huks/auth';
-import { Title } from 'components/Login/Login.styled';
 
 const FIELDS = {
   NAME: 'name',
@@ -18,7 +19,6 @@ const FIELDS = {
 
 function SigningChatForm() {
   const { NAME, ROOM } = FIELDS;
-
   const { user } = useAuth();
 
   const [values, setValues] = useState({
@@ -41,6 +41,7 @@ function SigningChatForm() {
   return (
     <Div>
       <Title>Join</Title>
+      <Img src={user.avatarURL} alt="avatar" />
       <Form>
         <Input
           type="text"
@@ -64,7 +65,7 @@ function SigningChatForm() {
         />
         <IconPassword />
         <Link
-          to={`/chat?name=${user.name}&room=${values[ROOM]}`}
+          to={`/chat?name=${user.name}&room=${values[ROOM]}&avatar=${user.avatarURL}`}
         >
           <ButtonSubmit type="submit" onClick={handleClick}>
             Join

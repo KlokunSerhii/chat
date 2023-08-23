@@ -24,6 +24,7 @@ const Chat = () => {
   const [params, setParams] = useState({
     room: '',
     user: '',
+    avatar:''
   });
 
   useEffect(() => {
@@ -54,19 +55,17 @@ const Chat = () => {
             params.name.trim().toLowerCase();
           return you ? (
             <DivYou key={i}>
-              <NameYou>{user.name}</NameYou>
               <MessageContainer>
                 <You>{message}</You>
               </MessageContainer>
-              
+              <NameYou>{user.name}</NameYou>
             </DivYou>
           ) : (
             <DivUser key={i}>
-              <NameUser>{user.name}</NameUser>
               <MessageContainer>
                 <User>{message}</User>
               </MessageContainer>
-              
+              <NameUser>{user.name}</NameUser>
             </DivUser>
           );
         })}

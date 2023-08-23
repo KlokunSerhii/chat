@@ -19,7 +19,7 @@ export const Container = styled.div`
 export const User = styled.p`
   padding: 3px 3px;
   border-radius: 5px;
-  margin: 0 5px 5px 15px;
+  margin-top: 5px;
   outline: none;
   font-size: 16px;
   background-color: #ffbf00;
@@ -33,14 +33,14 @@ export const User = styled.p`
 `;
 export const NameUser = styled.p`
   border-radius: 5px;
-  margin: 5px 0 5px 15px;
-  outline: none;
+  margin-top: 5px;
+    outline: none;
   font-size: 10px;
 `;
 export const You = styled.p`
   padding: 3px 3px;
   border-radius: 5px;
-  margin: 0 15px 5px 5px;
+  margin-top:5px;
   outline: none;
   font-size: 16px;
   background-color: #4b0082;
@@ -54,7 +54,7 @@ export const You = styled.p`
 `;
 export const NameYou = styled.p`
   border-radius: 5px;
-  margin: 5px 15px 5px 0;
+  margin-top: 5px;
   outline: none;
   font-size: 10px;
 `;

@@ -62,7 +62,7 @@ export const Form = styled.form`
   align-items: center;
 `;
 export const Title = styled.h1`
-  padding-bottom: 50px;
+  padding-bottom: 10px;
   font-size: 30px;
   font-weight: 500;
   color: #f0f0f0;
@@ -78,7 +78,7 @@ export const IconUser = styled(AiOutlineUser)`
   stroke: 0;
   fill: #000000;
   position: absolute;
-  top: 12px;
+  top: 13px;
   left: 10px;
 `;
 export const IconPassword = styled(RiLockPasswordFill)`
@@ -86,6 +86,11 @@ export const IconPassword = styled(RiLockPasswordFill)`
   stroke: 0;
   fill: #000000;
   position: absolute;
-  top: 59px;
+  top: 62px;
   left: 10px;
 `;
+
+export const Img = styled.img`
+border-radius: 50px;
+margin-bottom: 10px;
+`
