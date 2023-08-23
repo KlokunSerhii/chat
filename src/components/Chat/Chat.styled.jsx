@@ -33,15 +33,15 @@ export const User = styled.p`
 `;
 export const NameUser = styled.p`
   border-radius: 5px;
-  margin-top: 5px;
-    outline: none;
+  margin-left: 5px;
+  outline: none;
   font-size: 10px;
 `;
 export const You = styled.p`
   padding: 3px 3px;
   border-radius: 5px;
   margin-top:5px;
-  outline: none;
+    outline: none;
   font-size: 16px;
   background-color: #4b0082;
   color: #f0f0f0;
@@ -54,7 +54,7 @@ export const You = styled.p`
 `;
 export const NameYou = styled.p`
   border-radius: 5px;
-  margin-top: 5px;
+  margin-right: 5px;
   outline: none;
   font-size: 10px;
 `;
@@ -70,7 +70,10 @@ export const DivYou = styled.div`
   align-items: flex-end;
 `;
 
-export const MessageContainer = styled.div`
+export const MessageContainerYou = styled.div`
+display: flex;
+align-items: center;
+flex-direction: row-reverse;
 max-width: 290px;
 @media (min-width: 768px) and (max-width: 1199px) {
   max-width: 400px;
@@ -79,3 +82,21 @@ max-width: 290px;
   max-width: 600px;
 }
 `
+export const MessageContainerUser = styled.div`
+display: flex;
+align-items: center;
+max-width: 290px;
+@media (min-width: 768px) and (max-width: 1199px) {
+  max-width: 400px;
+}
+@media (min-width: 1200px) {
+  max-width: 600px;
+}
+`
+
+export const Img = styled.img`
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 50px;
+`;

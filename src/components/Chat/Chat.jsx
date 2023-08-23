@@ -10,9 +10,12 @@ import {
   NameYou,
   User,
   You,
-  MessageContainer
+  MessageContainerYou,
+  MessageContainerUser,
+  Img
 } from './Chat.styled';
 import ChatForm from 'components/ChatForm/ChatForm';
+import imgDefault from '../../img/bot.jpg'
 
 const socket = io.connect(
   'https://chat-back-end-6mf9.onrender.com'
@@ -24,14 +27,14 @@ const Chat = () => {
   const [params, setParams] = useState({
     room: '',
     user: '',
-    avatar:''
+    avatar: imgDefault
   });
-
   useEffect(() => {
     const searchParams = Object.fromEntries(
       new URLSearchParams(search)
     );
     setParams(searchParams);
+    
     socket.emit('join', searchParams);
   }, [search]);
 
@@ -50,21 +53,24 @@ const Chat = () => {
     <>
       <Container >
         {state.map(({ user, message }, i) => {
+          const avatar = user.avatar ? user.avatar : imgDefault
           const you =
             user.name.trim().toLowerCase() ===
             params.name.trim().toLowerCase();
           return you ? (
             <DivYou key={i}>
-              <MessageContainer>
+              <MessageContainerYou>
+                <Img src={avatar} alt="avatar" />
                 <You>{message}</You>
-              </MessageContainer>
+              </MessageContainerYou>
               <NameYou>{user.name}</NameYou>
             </DivYou>
           ) : (
             <DivUser key={i}>
-              <MessageContainer>
+              <MessageContainerUser>
+                <Img src={avatar} alt="avatar" />
                 <User>{message}</User>
-              </MessageContainer>
+              </MessageContainerUser>
               <NameUser>{user.name}</NameUser>
             </DivUser>
           );
