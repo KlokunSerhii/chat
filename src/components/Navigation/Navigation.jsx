@@ -10,7 +10,6 @@ const Navigation = () => {
 
   return (
     <MainNav>
-      <MainNavLink to="/">Home</MainNavLink>
       {isLoggedIn && (
         <MainNavLink to="/join">
           Chat

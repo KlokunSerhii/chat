@@ -6,7 +6,6 @@ import ChatView from 'views/ChatView';
 import RegisterViews from 'views/RegisterViews';
 import LoginViews from 'views/LoginViews';
 import SharedLayout from './SharedLayout';
-import HomeViews from 'views/HomeViews/HomeViews';
 import PrivateRoute from './PrivateRoute';
 import RestrictedRoute from './RestrictedRoute';
 import { useAuth } from 'huks/auth';
@@ -30,21 +29,23 @@ const App = () => {
   ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<HomeViews />} />
+        <Route index element={<LoginViews />} />
+
         <Route
           path="/login"
           element={
             <RestrictedRoute
-              redirectto="/"
+              redirectto="/join"
               component={LoginViews}
             />
           }
         />
+
         <Route
           path="/register"
           element={
             <RestrictedRoute
-              redirectto="/"
+              redirectto="/join"
               component={RegisterViews}
             />
           }
@@ -59,15 +60,16 @@ const App = () => {
             />
           }
         />
+
         <Route
           path="/join"
           element={
             <PrivateRoute
-              redirectto="/"
+              redirectto="/login"
               component={SigningChat}
             />
           }
-        ></Route>
+        />
         <Route path="*" element={<div>NotFound </div>} />
       </Route>
     </Routes>
