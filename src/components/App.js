@@ -26,14 +26,46 @@ const App = () => {
     <Loader>
       <AppLoader />
     </Loader>
-    ) : (
+  ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<LoginViews />} />
-        <Route path="login" element={<RestrictedRoute redirectto="/join" component={LoginViews}/>}/>
-        <Route path="register" element={<RestrictedRoute redirectto="/join" component={RegisterViews}/>}/>
-        <Route path="join" element={<PrivateRoute redirectto="/login" component={SigningChat}/>}/> 
-        <Route path="chat" element={<PrivateRoute redirectto="/login" component={ChatView} />} />
+        <Route
+          path="login"
+          element={
+            <RestrictedRoute
+              redirectto="/join"
+              component={LoginViews}
+            />
+          }
+        />
+        <Route
+          path="register"
+          element={
+            <RestrictedRoute
+              redirectto="/join"
+              component={RegisterViews}
+            />
+          }
+        />
+        <Route
+          path="join"
+          element={
+            <PrivateRoute
+              redirectto="/login"
+              component={SigningChat}
+            />
+          }
+        />
+        <Route
+          path="chat"
+          element={
+            <PrivateRoute
+              redirectto="/login"
+              component={ChatView}
+            />
+          }
+        />
         <Route path="*" element={<div>NotFound </div>} />
       </Route>
     </Routes>

@@ -6,23 +6,23 @@ export const MainNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-left: 20px;
 `;
 
 export const MainNavLink = styled(NavLink)`
-  margin-left: 10px;
   padding: 5px;
   text-decoration: none;
-  font-size: 18px;
-  color: #f0f0f0;
+  font-size: 14px;
+  color: #000000;
   :hover,
   :focus {
     color: #ffbf00;
   }
   @media (min-width: 768px) and (max-width: 1199px) {
-    margin-left: 15px;
+    font-size: 16px;
   }
   @media (min-width: 1200px) {
-    margin-left: 28px;
+    font-size: 24px;
   }
 `;
 export const Icon = styled(AiOutlineWechat)`

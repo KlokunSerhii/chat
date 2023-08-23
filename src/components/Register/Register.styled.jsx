@@ -15,7 +15,7 @@ export const Title = styled.h1`
   padding-bottom: 50px;
   font-size: 30px;
   font-weight: 500;
-  color: #f0f0f0;
+  color: #000000;
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 40px;
   }
@@ -43,7 +43,7 @@ export const Input = styled(Field)`
   font-size: 14px;
   padding: 7px 15px 7px 35px;
   border-radius: 5px;
-  color: #4b0082;
+  color: #000000;
   outline: none;
   &:focus {
     border: 2px solid #ffbf00;
@@ -63,7 +63,8 @@ export const ButtonSubmit = styled.button`
   width: 150px;
   margin-top: 15px;
   margin-bottom: 15px;
-  color: #f0f0f0;
+  color: #000000;
+  font-weight: 700;
   background: transparent;
   border: medium none;
   outline: none;
@@ -77,7 +78,7 @@ export const ButtonSubmit = styled.button`
     font-size: 18px;
   }
   @media (min-width: 1200px) {
-    font-size: 20px;
+    font-size: 24px;
   }
 `;
 
@@ -108,7 +109,7 @@ export const IconUser = styled(AiOutlineUser)`
 `;
 
 export const ErrorMessageDiv = styled.div`
-  color: #f0f0f0;
+  color: #000000;
   margin-bottom: 5px;
   fontsize: 20px;
 `;

@@ -1,43 +1,45 @@
 import styled from '@emotion/styled';
 
 export const Input = styled.input`
-  width: 200px;
-  font-size: 16px;
-  padding: 7px 15px;
+  width: 250px;
+  font-size: 14px;
+  padding: 5px 10px;
   border-radius: 5px;
-  color: #4b0082;
+  color: #000000;
   outline: none;
   &:focus {
     border: 2px solid #ffbf00;
   }
   @media (min-width: 768px) and (max-width: 1199px) {
     width: 320px;
-    font-size: 20px;
+    font-size: 16px;
   }
   @media (min-width: 1200px) {
     width: 850px;
-    font-size: 24px;
+    font-size: 20px;
   }
 `;
 export const ButtonSubmit = styled.button`
-  height: 35px;
-  width: 50px;
+  height: 25px;
+  width: 40px;
   color: #f0f0f0;
+  font-weight: 700;
   background: transparent;
   border: medium none;
-  margin-left: 12px;
-  font-size: 16px;
+  margin-left: 8px;
+  padding: 0;
+  font-size: 14px;
   cursor: pointer;
   :hover {
     color: #ffbf00;
   }
   @media (min-width: 768px) and (max-width: 1199px) {
     width: 60px;
-    font-size: 20px;
+    font-size: 16px;
   }
   @media (min-width: 1200px) {
     width: 70px;
-    font-size: 24px;
+    font-size: 20px;
   }
 `;
 

@@ -19,7 +19,7 @@ export const AuthNavLink = styled(NavLink)`
   text-decoration: none;
   font-size: 18px;
   border-radius: 6px;
-  color: #f0f0f0;
+  color: #000000;
   :last-child {
     margin-right: 15px;
   }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import {
   ButtonSubmit,
   Div,
@@ -9,7 +10,6 @@ function ChatForm({ onSubmit }) {
   const [state, setState] = useState({
     message: '',
   });
-
   const handleChange = ({ target }) => {
     const { name, value } = target;
     setState(prevState => ({

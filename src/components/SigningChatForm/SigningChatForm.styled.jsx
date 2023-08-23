@@ -8,7 +8,7 @@ export const Input = styled.input`
   font-size: 14px;
   padding: 7px 15px 7px 35px;
   border-radius: 5px;
-  color: #4b0082;
+  color: #000000;
   outline: none;
   margin-bottom: 5px;
   &:focus {
@@ -16,7 +16,7 @@ export const Input = styled.input`
   }
   &:disabled {
     background-color: #ffffff;
-    color: #4b0082;
+    color: #000000;
     opacity: 1;
   }
   @media (min-width: 768px) and (max-width: 1199px) {
@@ -31,7 +31,8 @@ export const Input = styled.input`
 export const ButtonSubmit = styled.button`
   height: 35px;
   width: 150px;
-  color: #f0f0f0;
+  color: #000000;
+  font-weight: 700;
   outline: none;
   margin-top: 15px;
   border-radius: 5px;
@@ -46,7 +47,7 @@ export const ButtonSubmit = styled.button`
     font-size: 18px;
   }
   @media (min-width: 1200px) {
-    font-size: 20px;
+    font-size: 24px;
   }
 `;
 
@@ -65,7 +66,7 @@ export const Title = styled.h1`
   padding-bottom: 10px;
   font-size: 30px;
   font-weight: 500;
-  color: #f0f0f0;
+  color: #000000;
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 40px;
   }
@@ -91,6 +92,6 @@ export const IconPassword = styled(RiLockPasswordFill)`
 `;
 
 export const Img = styled.img`
-border-radius: 50px;
-margin-bottom: 10px;
-`
+  border-radius: 50px;
+  margin-bottom: 10px;
+`;
