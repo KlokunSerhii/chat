@@ -1,43 +1,63 @@
 import React, { useState } from 'react';
-
+import EmojiPicker from 'emoji-picker-react';
+import smail from '../../img/smail.jpg';
 import {
   ButtonSubmit,
   Div,
+  IconDiv,
   Input,
+  Form,
+  Icon,
 } from './ChatForm.styled';
 
 function ChatForm({ onSubmit }) {
-  const [state, setState] = useState({
-    message: '',
-  });
+  const [message, setMessage] = useState('');
+  const [isOpen, setOpen] = useState(false);
+
   const handleChange = ({ target }) => {
-    const { name, value } = target;
-    setState(prevState => ({
-      ...prevState,
-      [name]: value,
-    }));
+    const { value } = target;
+    setMessage(value);
+  };
+
+  const onEmojiClick = ({ emoji }) => {
+    setMessage(prevMessage => prevMessage + emoji);
+    setOpen(false);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit({ ...state });
-    setState({
-      message: '',
-    });
+    onSubmit({ message });
+    setMessage('');
   };
 
-  const { message } = state;
   return (
     <Div>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Input
           value={message}
           name="message"
           onChange={handleChange}
           placeholder="write a message"
         />
+        <IconDiv>
+          <Icon
+            src={smail}
+            alt=""
+            onClick={() => setOpen(!isOpen)}
+          />
+        </IconDiv>
         <ButtonSubmit type="submit">Send</ButtonSubmit>
-      </form>
+        {isOpen && (
+          <div>
+            <EmojiPicker
+              onEmojiClick={onEmojiClick}
+              width="100%"
+              height="400px"
+              size="50"
+            />
+          </div>
+        )}
+      </Form>
     </Div>
   );
 }

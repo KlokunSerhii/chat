@@ -1,5 +1,25 @@
 import styled from '@emotion/styled';
 
+export const Form = styled.form`
+  position: relative;
+`;
+export const IconDiv = styled.div`
+  position: absolute;
+  top: 3px;
+  right: 55px;
+  @media (min-width: 768px) and (max-width: 1199px) {
+    right: 75px;
+  }
+  @media (min-width: 1200px) {
+    right: 85px;
+  }
+`;
+export const Icon = styled.img`
+  width: 25px;
+  @media (min-width: 1200px) {
+    width: 30px;
+  }
+`;
 export const Input = styled.input`
   width: 250px;
   font-size: 14px;
@@ -42,7 +62,6 @@ export const ButtonSubmit = styled.button`
     font-size: 20px;
   }
 `;
-
 export const Div = styled.div`
   display: flex;
   align-items: center;
