@@ -10,6 +10,7 @@ import {
   NameYou,
   User,
   You,
+  MessageContainer
 } from './Chat.styled';
 import ChatForm from 'components/ChatForm/ChatForm';
 
@@ -43,10 +44,10 @@ const Chat = () => {
     if (!message) return;
     socket.emit('send', { message, params });
   };
-
+  
   return (
     <>
-      <Container>
+      <Container >
         {state.map(({ user, message }, i) => {
           const you =
             user.name.trim().toLowerCase() ===
@@ -54,12 +55,18 @@ const Chat = () => {
           return you ? (
             <DivYou key={i}>
               <NameYou>{user.name}</NameYou>
-              <You>{message}</You>
+              <MessageContainer>
+                <You>{message}</You>
+              </MessageContainer>
+              
             </DivYou>
           ) : (
             <DivUser key={i}>
               <NameUser>{user.name}</NameUser>
-              <User>{message}</User>
+              <MessageContainer>
+                <User>{message}</User>
+              </MessageContainer>
+              
             </DivUser>
           );
         })}

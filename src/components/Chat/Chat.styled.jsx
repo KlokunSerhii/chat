@@ -17,7 +17,7 @@ export const Container = styled.div`
   }
 `;
 export const User = styled.p`
-  padding: 5px 10px;
+  padding: 3px 3px;
   border-radius: 5px;
   margin: 0 5px 5px 15px;
   outline: none;
@@ -25,10 +25,10 @@ export const User = styled.p`
   background-color: #ffbf00;
   color: #f0f0f0;
   @media (min-width: 768px) and (max-width: 1199px) {
-    font-size: 20px;
+    font-size: 18px;
   }
   @media (min-width: 1200px) {
-    font-size: 24px;
+    font-size: 20px;
   }
 `;
 export const NameUser = styled.p`
@@ -38,7 +38,7 @@ export const NameUser = styled.p`
   font-size: 10px;
 `;
 export const You = styled.p`
-  padding: 5px 10px;
+  padding: 3px 3px;
   border-radius: 5px;
   margin: 0 15px 5px 5px;
   outline: none;
@@ -46,10 +46,10 @@ export const You = styled.p`
   background-color: #4b0082;
   color: #f0f0f0;
   @media (min-width: 768px) and (max-width: 1199px) {
-    font-size: 20px;
+    font-size: 18px;
   }
   @media (min-width: 1200px) {
-    font-size: 24px;
+    font-size: 20px;
   }
 `;
 export const NameYou = styled.p`
@@ -69,3 +69,13 @@ export const DivYou = styled.div`
   flex-direction: column;
   align-items: flex-end;
 `;
+
+export const MessageContainer = styled.div`
+max-width: 290px;
+@media (min-width: 768px) and (max-width: 1199px) {
+  max-width: 400px;
+}
+@media (min-width: 1200px) {
+  max-width: 600px;
+}
+`
