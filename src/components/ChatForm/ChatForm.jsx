@@ -8,6 +8,7 @@ import {
   Input,
   Form,
   Icon,
+  ContainerEmoji,
 } from './ChatForm.styled';
 
 function ChatForm({ onSubmit }) {
@@ -21,7 +22,6 @@ function ChatForm({ onSubmit }) {
 
   const onEmojiClick = ({ emoji }) => {
     setMessage(prevMessage => prevMessage + emoji);
-    setOpen(false);
   };
 
   const handleSubmit = e => {
@@ -48,14 +48,14 @@ function ChatForm({ onSubmit }) {
         </IconDiv>
         <ButtonSubmit type="submit">Send</ButtonSubmit>
         {isOpen && (
-          <div>
+          <ContainerEmoji>
             <EmojiPicker
               onEmojiClick={onEmojiClick}
+              height={400}
               width="100%"
-              height="400px"
-              size="50"
+              autoFocusSearch={false}
             />
-          </div>
+          </ContainerEmoji>
         )}
       </Form>
     </Div>

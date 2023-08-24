@@ -5,7 +5,7 @@ export const Form = styled.form`
 `;
 export const IconDiv = styled.div`
   position: absolute;
-  top: 3px;
+  top: 5px;
   right: 55px;
   @media (min-width: 768px) and (max-width: 1199px) {
     right: 75px;
@@ -15,9 +15,24 @@ export const IconDiv = styled.div`
   }
 `;
 export const Icon = styled.img`
-  width: 25px;
+  cursor: pointer;
+  width: 20px;
   @media (min-width: 1200px) {
-    width: 30px;
+    width: 25px;
+  }
+`;
+export const ContainerEmoji = styled.div`
+  position: absolute;
+  top: -430px;
+  left: 15px;
+  @media (min-width: 768px) and (max-width: 1199px) {
+    top: -430px;
+    left: 50px;
+  }
+  @media (min-width: 1200px) {
+    top: -430px;
+    right: 50px;
+    left: 500px;
   }
 `;
 export const Input = styled.input`
