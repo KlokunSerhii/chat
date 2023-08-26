@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import EmojiPicker from 'emoji-picker-react';
 import smail from '../../img/smail.jpg';
 import styles from './Chat.module.css';
+import { AiOutlineSend } from 'react-icons/ai';
 
 function ChatForm({ onSubmit }) {
   const [message, setMessage] = useState('');
@@ -41,7 +42,7 @@ function ChatForm({ onSubmit }) {
           />
         </div>
         <button className={styles.button} type="submit">
-          Send
+          <AiOutlineSend className={styles.iconSend} />
         </button>
         {isOpen && (
           <div className={styles.containerEmoji}>

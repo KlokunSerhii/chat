@@ -9,6 +9,8 @@
   border-radius: 10px;
   overflow-y: scroll;
   background-color: #0d0d0d;
+  border: 2px solid #f0f0f0;
+
   @media (min-width: 768px) and (max-width: 1199px) {
     width: 97%;
     height: 440px;
@@ -26,11 +28,11 @@
 .containerRoom {
   position: fixed;
   display: flex;
-  align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   width: 180px;
-  height: 520px;
+  height: 530px;
+  border-right: 2px solid #f0f0f0;
   background-color: #0d0d0d;
   color: #f0f0f0;
 }
@@ -138,13 +140,12 @@
 .avatar {
   width: 38px;
   height: 38px;
-  margin-bottom: 5px;
   border-radius: 10px;
 }
 .avatarRoom {
   width: 25px;
   height: 25px;
-  margin-right: 20px;
+  margin-right: 10px;
   margin-bottom: 5px;
   border-radius: 10px;
 }
@@ -166,13 +167,13 @@
   color: #f0f0f0;
 }
 .room {
-  font-size: 14px;
+  font-size: 16px;
   color: #f0f0f0;
 }
 .users {
-  font-size: 14px;
+  font-size: 16px;
   color: #f0f0f0;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 .roomOnline {
   display: flex;
