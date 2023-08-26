@@ -62,7 +62,7 @@ function SigningChatForm() {
           required
         />
         <RiLockPasswordFill
-          className={styles.conPassword}
+          className={styles.iconPassword}
         />
         <Link
           to={`/chat?name=${user.name}&room=${values[ROOM]}&avatar=${user.avatarURL}`}

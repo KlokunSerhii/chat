@@ -12,6 +12,7 @@ const socket = io.connect(
 const Chat = () => {
   const messagesEndRef = useRef(null);
   const [users, setUsers] = useState(0);
+  const [userList, setUserList] = useState('');
   const [state, setState] = useState([]);
   const { search } = useLocation();
   const [params, setParams] = useState({
@@ -37,6 +38,7 @@ const Chat = () => {
   useEffect(() => {
     socket.on('joinRoom', ({ data: { users } }) => {
       setUsers(users.length);
+      setUserList(users);
     });
   }, []);
 
@@ -55,52 +57,99 @@ const Chat = () => {
     scrollToBottom();
   }, [state]);
 
+  const date = new Date();
+  const Hours = date.getHours().toString().padStart(2, 0);
+  const Minutes = date
+    .getMinutes()
+    .toString()
+    .padStart(2, 0);
+  const Seconds = date
+    .getSeconds()
+    .toString()
+    .padStart(2, 0);
+  console.log(userList);
   return (
     <>
       <div className={styles.container}>
         <div className={styles.containerRoom}>
-          <p>Room: {params.room}</p>
-          <p>Users online: {users}</p>
+          <div className={styles.roomOnline}>
+            <p className={styles.room}>
+              Room: {params.room}
+            </p>
+            <p className={styles.users}>
+              Users online: {users}
+            </p>
+          </div>
+          <ul className={styles.roomList}>
+            {userList &&
+              userList.map(({ name, avatar }, i) => (
+                <li key={i} className={styles.roomItem}>
+                  <img
+                    className={styles.avatarRoom}
+                    src={avatar}
+                    alt="avatar"
+                  />
+                  <p lassName={styles.nameYou}>{name}</p>
+                </li>
+              ))}
+          </ul>
         </div>
-        {state.map(({ user, message }, i) => {
-          const avatar = user.avatar
-            ? user.avatar
-            : imgDefault;
-          const you =
-            user.name.trim().toLowerCase() ===
-            params.name.trim().toLowerCase();
-          return you ? (
-            <div key={i} className={styles.containerYou}>
-              <div className={styles.messageContainerYou}>
+        <div className={styles.containerChat}>
+          {state.map(({ user, message }, i) => {
+            const avatar = user.avatar
+              ? user.avatar
+              : imgDefault;
+            const you =
+              user.name.trim().toLowerCase() ===
+              params.name.trim().toLowerCase();
+            return you ? (
+              <div key={i} className={styles.containerYou}>
                 <img
                   src={avatar}
                   alt="avatar"
                   className={styles.avatar}
                 />
-                <p className={styles.nameYou}>
-                  {user.name}
-                </p>
+                <div className={styles.messageContainerYou}>
+                  <div className={styles.infoMessage}>
+                    <p className={styles.time}>
+                      {Hours}:{Minutes}:{Seconds}
+                    </p>
+                    <p className={styles.nameYou}>
+                      {user.name}
+                    </p>
+                  </div>
+                  <p className={styles.you}>{message}</p>
+                </div>
               </div>
-              <p className={styles.you}>{message}</p>
-            </div>
-          ) : (
-            <div key={i} className={styles.containerUser}>
-              <div className={styles.messageContainerUser}>
+            ) : (
+              <div key={i} className={styles.containerUser}>
                 <img
                   src={avatar}
                   alt="avatar"
                   className={styles.avatar}
                 />
-                <p className={styles.nameUser}>
-                  {user.name}
-                </p>
+                <div
+                  className={styles.messageContainerUser}
+                >
+                  <div className={styles.infoMessageUser}>
+                    <p className={styles.time}>
+                      {Hours}:{Minutes}:{Seconds}
+                    </p>
+                    <p className={styles.nameUser}>
+                      {user.name}
+                    </p>
+                  </div>
+
+                  <p className={styles.user}>{message}</p>
+                </div>
               </div>
-              <p className={styles.user}>{message}</p>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+
         <div ref={messagesEndRef} />
       </div>
+
       <ChatForm onSubmit={addMessage} />
     </>
   );

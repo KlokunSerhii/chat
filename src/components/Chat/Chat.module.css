@@ -1,30 +1,48 @@
 .container {
   display: flex;
-  flex-direction: column;
-  width: 97%;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
   height: 400px;
-  margin-top: 15px;
   padding: 10px;
   border: 1px solid;
   border-radius: 10px;
   overflow-y: scroll;
-  background-color: #000000;
+  background-color: #0d0d0d;
   @media (min-width: 768px) and (max-width: 1199px) {
     width: 97%;
     height: 440px;
   }
   @media (min-width: 1200px) {
     width: 100%;
-    height: 480px;
+    height: 520px;
   }
+}
+.containerChat {
+  width: 100%;
+  height: 100%;
+  padding-left: 190px;
+}
+.containerRoom {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 180px;
+  height: 520px;
+  background-color: #0d0d0d;
+  color: #f0f0f0;
 }
 
 .user {
-  padding: 2px 2px;
+  display: flex;
+  padding: 3px 5px;
   border-radius: 5px;
-  margin-left: 5px;
   font-size: 16px;
-  color: #f0f0f0;
+  color: #0d0d0d;
+  background-color: #f0f0f0;
+  border-radius: 10px;
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 18px;
   }
@@ -34,11 +52,15 @@
 }
 
 .you {
-  padding: 2px 2px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 3px 5px;
   border-radius: 5px;
-  margin-right: 5px;
   font-size: 16px;
-  color: #f0f0f0;
+  color: #0d0d0d;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  min-width: 150px;
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 18px;
   }
@@ -48,16 +70,24 @@
 }
 
 .nameUser {
+  margin-left: 5px;
+  margin-right: 10px;
   border-radius: 5px;
   outline: none;
-  font-size: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: italic;
   color: #f0f0f0;
 }
 
 .nameYou {
+  margin-left: 10px;
+  margin-right: 5px;
   border-radius: 5px;
   outline: none;
-  font-size: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: italic;
   color: #f0f0f0;
 }
 
@@ -77,9 +107,11 @@
 
 .messageContainerYou {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex-direction: column;
   max-width: 290px;
+  margin-right: 10px;
+  padding: 5px 10px;
   @media (min-width: 768px) and (max-width: 1199px) {
     max-width: 400px;
   }
@@ -90,9 +122,11 @@
 
 .messageContainerUser {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   max-width: 290px;
+  margin-left: 10px;
   flex-direction: column;
+
   @media (min-width: 768px) and (max-width: 1199px) {
     max-width: 400px;
   }
@@ -102,16 +136,48 @@
 }
 
 .avatar {
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 38px;
   margin-bottom: 5px;
-  border-radius: 50px;
+  border-radius: 10px;
+}
+.avatarRoom {
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+.roomList {
+  margin-top: 10px;
 }
 
-.containerRoom {
-  background-color: #000000;
-  color: #f0f0f0;
+.infoMessage {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+}
+.infoMessageUser {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.time {
+  font-size: 10px;
+  color: #f0f0f0;
+}
+.room {
+  font-size: 14px;
+  color: #f0f0f0;
+}
+.users {
+  font-size: 14px;
+  color: #f0f0f0;
+  margin-left: 15px;
+}
+.roomOnline {
+  display: flex;
+}
+.roomItem {
+  display: flex;
+  flex-direction: row;
 }

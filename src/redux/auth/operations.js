@@ -66,7 +66,6 @@ export const logout = createAsyncThunk(
   }
 );
 
-
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {

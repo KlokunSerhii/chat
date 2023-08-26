@@ -16,7 +16,7 @@
   border: none;
   padding: 0;
   font-size: 14px;
-  :hover {
+  &:hover {
     color: #ffbf00;
   }
   @media (min-width: 768px) and (max-width: 1199px) {
