@@ -1,8 +1,4 @@
-import styled from '@emotion/styled';
-import { AiOutlineUser } from 'react-icons/ai';
-import { RiLockPasswordFill } from 'react-icons/ri';
-
-export const Input = styled.input`
+.input {
   width: 250px;
   height: 25px;
   font-size: 14px;
@@ -27,8 +23,8 @@ export const Input = styled.input`
     width: 400px;
     font-size: 20px;
   }
-`;
-export const ButtonSubmit = styled.button`
+}
+.button {
   height: 35px;
   width: 150px;
   color: #000000;
@@ -49,20 +45,20 @@ export const ButtonSubmit = styled.button`
   @media (min-width: 1200px) {
     font-size: 24px;
   }
-`;
+}
 
-export const Div = styled.div`
+.container {
   display: flex;
   align-items: center;
   flex-direction: column;
-`;
-export const Form = styled.form`
+}
+.form {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-export const Title = styled.h1`
+}
+.title {
   padding-bottom: 10px;
   font-size: 30px;
   font-weight: 500;
@@ -73,25 +69,26 @@ export const Title = styled.h1`
   @media (min-width: 1200px) {
     font-size: 50px;
   }
-`;
-export const IconUser = styled(AiOutlineUser)`
+}
+
+.iconUser {
   margin-left: 5px;
   stroke: 0;
   fill: #000000;
   position: absolute;
   top: 13px;
   left: 10px;
-`;
-export const IconPassword = styled(RiLockPasswordFill)`
+}
+.iconPassword {
   margin-left: 5px;
   stroke: 0;
   fill: #000000;
   position: absolute;
   top: 62px;
   left: 10px;
-`;
+}
 
-export const Img = styled.img`
+.avatar {
   border-radius: 50px;
   margin-bottom: 10px;
-`;
+}

@@ -1,12 +1,11 @@
 import Chat from '../components/Chat';
-
-import { Div } from './ChatView.styled';
+import styles from './ChatView.module.css';
 
 function ChatView() {
   return (
-    <Div>
+    <div className={styles.container}>
       <Chat />
-    </Div>
+    </div>
   );
 }
 

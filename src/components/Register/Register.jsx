@@ -1,21 +1,12 @@
 import React from 'react';
-import { ErrorMessage, Formik } from 'formik';
-import {
-  Div,
-  Forma,
-  Input,
-  ButtonSubmit,
-  Title,
-  Label,
-  IconEmail,
-  IconPassword,
-  IconUser,
-  ErrorMessageDiv,
-} from './Register.styled';
+import { ErrorMessage, Formik, Field, Form } from 'formik';
+import { MdOutlineEmail } from 'react-icons/md';
+import { RiLockPasswordFill } from 'react-icons/ri';
+import { AiOutlineUser } from 'react-icons/ai';
 import { SignupSchemaRegister } from '../../options/validForm';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations';
-
+import styles from '../Login/Login.module.css';
 function Register() {
   const email = '';
   const password = '';
@@ -31,74 +22,81 @@ function Register() {
   };
 
   return (
-    <Div>
-      <Title>Hello, sign up</Title>
+    <div className={styles.container}>
+      <hi className={styles.titel}>Hello, sign up</hi>
       <Formik
         initialValues={{ email, password, name }}
         validationSchema={SignupSchemaRegister}
         onSubmit={handleSubmitR}
       >
-        <Forma>
-          <Label>
-            <Input
+        <Form className={styles.form}>
+          <label className={styles.label}>
+            <Field
+              className={styles.input}
               type="text"
               name="name"
               placeholder="enter your name"
               autoComplete="off"
             />
-            <IconUser />
-          </Label>
+            <AiOutlineUser className={styles.iconUser} />
+          </label>
 
           <ErrorMessage
             name="name"
             render={() => (
-              <ErrorMessageDiv>
+              <div className={styles.errorMessage}>
                 {'Please enter your email'}
-              </ErrorMessageDiv>
+              </div>
             )}
           />
-          <Label>
-            <Input
+          <label className={styles.label}>
+            <Field
+              className={styles.input}
               type="email"
               name="email"
               placeholder="enter your email"
               autoComplete="off"
             />
-            <IconEmail />
-          </Label>
+            <MdOutlineEmail className={styles.iconEmail} />
+          </label>
 
           <ErrorMessage
             name="email"
             render={() => (
-              <ErrorMessageDiv>
+              <div className={styles.errorMessage}>
                 {'Please enter your email'}
-              </ErrorMessageDiv>
+              </div>
             )}
           />
 
-          <Label>
-            <Input
+          <label className={styles.label}>
+            <Field
+              className={styles.input}
               type="password"
               name="password"
               placeholder="enter your"
               autoComplete="off"
             />
-            <IconPassword />
-          </Label>
+            <RiLockPasswordFill
+              className={styles.iconPassword}
+            />
+          </label>
 
           <ErrorMessage
             name="password"
             render={() => (
-              <ErrorMessageDiv>
+              <div className={styles.errorMessage}>
                 {'Please enter your password'}
-              </ErrorMessageDiv>
+              </div>
             )}
           />
 
-          <ButtonSubmit type="submit">SingUp</ButtonSubmit>
-        </Forma>
+          <button className={styles.button} type="submit">
+            SingUp
+          </button>
+        </Form>
       </Formik>
-    </Div>
+    </div>
   );
 }
 

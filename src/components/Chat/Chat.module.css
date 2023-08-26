@@ -1,9 +1,7 @@
-import styled from '@emotion/styled';
-
-export const Container = styled.div`
+.container {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 97%;
   height: 400px;
   margin-top: 15px;
   padding: 10px;
@@ -12,15 +10,16 @@ export const Container = styled.div`
   overflow-y: scroll;
   background-color: #000000;
   @media (min-width: 768px) and (max-width: 1199px) {
-    width: 450px;
+    width: 97%;
     height: 440px;
   }
   @media (min-width: 1200px) {
-    width: 1000px;
+    width: 100%;
     height: 480px;
   }
-`;
-export const User = styled.p`
+}
+
+.user {
   padding: 2px 2px;
   border-radius: 5px;
   margin-left: 5px;
@@ -32,8 +31,9 @@ export const User = styled.p`
   @media (min-width: 1200px) {
     font-size: 20px;
   }
-`;
-export const You = styled.p`
+}
+
+.you {
   padding: 2px 2px;
   border-radius: 5px;
   margin-right: 5px;
@@ -45,34 +45,37 @@ export const You = styled.p`
   @media (min-width: 1200px) {
     font-size: 20px;
   }
-`;
-export const NameUser = styled.p`
-  border-radius: 5px;
-  outline: none;
-  font-size: 10px;
-  color: #f0f0f0;
-`;
-export const NameYou = styled.p`
-  border-radius: 5px;
-  outline: none;
-  font-size: 10px;
-  color: #f0f0f0;
-`;
+}
 
-export const DivUser = styled.div`
+.nameUser {
+  border-radius: 5px;
+  outline: none;
+  font-size: 10px;
+  color: #f0f0f0;
+}
+
+.nameYou {
+  border-radius: 5px;
+  outline: none;
+  font-size: 10px;
+  color: #f0f0f0;
+}
+
+.containerUser {
   display: flex;
   align-items: center;
   flex-direction: row;
   margin-bottom: 5px;
-`;
-export const DivYou = styled.div`
+}
+
+.containerYou {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   margin-bottom: 5px;
-`;
+}
 
-export const MessageContainerYou = styled.div`
+.messageContainerYou {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -83,8 +86,9 @@ export const MessageContainerYou = styled.div`
   @media (min-width: 1200px) {
     max-width: 600px;
   }
-`;
-export const MessageContainerUser = styled.div`
+}
+
+.messageContainerUser {
   display: flex;
   align-items: center;
   max-width: 290px;
@@ -95,19 +99,19 @@ export const MessageContainerUser = styled.div`
   @media (min-width: 1200px) {
     max-width: 600px;
   }
-`;
+}
 
-export const Img = styled.img`
+.avatar {
   width: 30px;
   height: 30px;
   margin-bottom: 5px;
   border-radius: 50px;
-`;
+}
 
-export const Room = styled.div`
+.containerRoom {
   background-color: #000000;
   color: #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: space-around;
-`;
+}

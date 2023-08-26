@@ -1,6 +1,4 @@
-import styled from '@emotion/styled';
-
-export const Container = styled.div`
+.container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -10,8 +8,9 @@ export const Container = styled.div`
     align-items: center;
     margin-right: 0;
   }
-`;
-export const ButtonSubmit = styled.button`
+}
+
+.button {
   color: #000000;
   background: transparent;
   border: none;
@@ -28,8 +27,8 @@ export const ButtonSubmit = styled.button`
     font-size: 24px;
     margin-left: 20px;
   }
-`;
-export const Span = styled.span`
+}
+.span {
   display: flex;
   align-items: center;
   font-size: 14px;
@@ -40,16 +39,16 @@ export const Span = styled.span`
   @media (min-width: 1200px) {
     font-size: 24px;
   }
-`;
+}
 
-export const UserName = styled.p`
+.name {
   margin-left: 5px;
   color: #000000;
-`;
+}
 
-export const Img = styled.img`
+.avatar {
   width: 30px;
   height: 30px;
   margin-left: 5px;
   border-radius: 50px;
-`;
+}

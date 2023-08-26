@@ -1,22 +1,20 @@
-import {
-  MainNav,
-  MainNavLink,
-  Icon,
-} from './Navigation.styled';
+import { NavLink } from 'react-router-dom';
+import { AiOutlineWechat } from 'react-icons/ai';
+import styles from './Navigation.module.css';
 import { useAuth } from '../../huks/auth';
 
 const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <MainNav>
+    <nav className={styles.nav}>
       {isLoggedIn && (
-        <MainNavLink to="/join">
+        <NavLink className={styles.navLink} to="/join">
           Chat
-          <Icon />
-        </MainNavLink>
+          <AiOutlineWechat className={styles.icon} />
+        </NavLink>
       )}
-    </MainNav>
+    </nav>
   );
 };
 export default Navigation;

@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
 import EmojiPicker from 'emoji-picker-react';
 import smail from '../../img/smail.jpg';
-import {
-  ButtonSubmit,
-  Div,
-  IconDiv,
-  Input,
-  Form,
-  Icon,
-  ContainerEmoji,
-} from './ChatForm.styled';
+import styles from './Chat.module.css';
 
 function ChatForm({ onSubmit }) {
   const [message, setMessage] = useState('');
@@ -31,34 +23,38 @@ function ChatForm({ onSubmit }) {
   };
 
   return (
-    <Div>
-      <Form onSubmit={handleSubmit}>
-        <Input
+    <div className={styles.container}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input
+          className={styles.input}
           value={message}
           name="message"
           onChange={handleChange}
           placeholder="write a message"
         />
-        <IconDiv>
-          <Icon
+        <div className={styles.iconContainer}>
+          <img
+            className={styles.icon}
             src={smail}
             alt=""
             onClick={() => setOpen(!isOpen)}
           />
-        </IconDiv>
-        <ButtonSubmit type="submit">Send</ButtonSubmit>
+        </div>
+        <button className={styles.button} type="submit">
+          Send
+        </button>
         {isOpen && (
-          <ContainerEmoji>
+          <div className={styles.containerEmoji}>
             <EmojiPicker
               onEmojiClick={onEmojiClick}
               height={400}
               width="100%"
               autoFocusSearch={false}
             />
-          </ContainerEmoji>
+          </div>
         )}
-      </Form>
-    </Div>
+      </form>
+    </div>
   );
 }
 

@@ -1,21 +1,17 @@
-import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
-import { AiOutlineWechat } from 'react-icons/ai';
-
-export const MainNav = styled.nav`
+.nav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin-left: 20px;
-`;
+}
 
-export const MainNavLink = styled(NavLink)`
+.navLink {
   padding: 5px;
   text-decoration: none;
   font-size: 14px;
   color: #000000;
-  :hover,
-  :focus {
+  &:hover,
+  &:focus {
     color: #ffbf00;
   }
   @media (min-width: 768px) and (max-width: 1199px) {
@@ -24,8 +20,9 @@ export const MainNavLink = styled(NavLink)`
   @media (min-width: 1200px) {
     font-size: 24px;
   }
-`;
-export const Icon = styled(AiOutlineWechat)`
+}
+
+.icon {
   margin-left: 5px;
   stroke-width: 2;
-`;
+}

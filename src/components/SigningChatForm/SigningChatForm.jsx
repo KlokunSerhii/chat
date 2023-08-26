@@ -1,17 +1,9 @@
 import React, { useState } from 'react';
-import {
-  ButtonSubmit,
-  Div,
-  Input,
-  Form,
-  IconUser,
-  IconPassword,
-  Title,
-  Img
-} from './SigningChatForm.styled';
+import { AiOutlineUser } from 'react-icons/ai';
+import { RiLockPasswordFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../huks/auth';
-
+import styles from './SigningChatForm.module.css';
 const FIELDS = {
   NAME: 'name',
   ROOM: 'room',
@@ -39,11 +31,16 @@ function SigningChatForm() {
   };
 
   return (
-    <Div>
-      <Title>Join</Title>
-      <Img src={user.avatarURL} alt="avatar" />
-      <Form>
-        <Input
+    <div className={styles.container}>
+      <h1 className={styles.titel}>Join</h1>
+      <img
+        src={user.avatarURL}
+        alt="avatar"
+        className={styles.avatar}
+      />
+      <form className={styles.form}>
+        <input
+          className={styles.input}
           type="text"
           value={user.name}
           name="name"
@@ -53,8 +50,9 @@ function SigningChatForm() {
           disabled
           required
         />
-        <IconUser />
-        <Input
+        <AiOutlineUser className={styles.iconUser} />
+        <input
+          className={styles.input}
           type="text"
           value={values[ROOM]}
           name="room"
@@ -63,16 +61,22 @@ function SigningChatForm() {
           autoComplete="off"
           required
         />
-        <IconPassword />
+        <RiLockPasswordFill
+          className={styles.conPassword}
+        />
         <Link
           to={`/chat?name=${user.name}&room=${values[ROOM]}&avatar=${user.avatarURL}`}
         >
-          <ButtonSubmit type="submit" onClick={handleClick}>
+          <button
+            className={styles.button}
+            type="submit"
+            onClick={handleClick}
+          >
             Join
-          </ButtonSubmit>
+          </button>
         </Link>
-      </Form>
-    </Div>
+      </form>
+    </div>
   );
 }
 

@@ -11,7 +11,7 @@ import RestrictedRoute from './RestrictedRoute';
 import { useAuth } from 'huks/auth';
 import { refreshUser } from 'redux/auth/operations';
 import { AppLoader } from './Loader/Loader';
-import { Loader } from './App.styled';
+import stales from './App.module.css';
 import SigningChat from 'views/SigningChat';
 
 const App = () => {
@@ -23,9 +23,9 @@ const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <Loader>
+    <div className={stales.loader}>
       <AppLoader />
-    </Loader>
+    </div>
   ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>

@@ -1,20 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import io from 'socket.io-client';
 import { useLocation } from 'react-router-dom';
-
-import {
-  Container,
-  DivUser,
-  DivYou,
-  NameUser,
-  NameYou,
-  User,
-  You,
-  MessageContainerYou,
-  MessageContainerUser,
-  Img,
-  Room,
-} from './Chat.styled';
+import styles from './Chat.module.css';
 import ChatForm from 'components/ChatForm/ChatForm';
 import imgDefault from '../../img/bot.jpg';
 
@@ -70,11 +57,11 @@ const Chat = () => {
 
   return (
     <>
-      <Container>
-        <Room>
+      <div className={styles.container}>
+        <div className={styles.containerRoom}>
           <p>Room: {params.room}</p>
           <p>Users online: {users}</p>
-        </Room>
+        </div>
         {state.map(({ user, message }, i) => {
           const avatar = user.avatar
             ? user.avatar
@@ -83,25 +70,37 @@ const Chat = () => {
             user.name.trim().toLowerCase() ===
             params.name.trim().toLowerCase();
           return you ? (
-            <DivYou key={i}>
-              <MessageContainerYou>
-                <Img src={avatar} alt="avatar" />
-                <NameYou>{user.name}</NameYou>
-              </MessageContainerYou>
-              <You>{message}</You>
-            </DivYou>
+            <div key={i} className={styles.containerYou}>
+              <div className={styles.messageContainerYou}>
+                <img
+                  src={avatar}
+                  alt="avatar"
+                  className={styles.avatar}
+                />
+                <p className={styles.nameYou}>
+                  {user.name}
+                </p>
+              </div>
+              <p className={styles.you}>{message}</p>
+            </div>
           ) : (
-            <DivUser key={i}>
-              <MessageContainerUser>
-                <Img src={avatar} alt="avatar" />
-                <NameUser>{user.name}</NameUser>
-              </MessageContainerUser>
-              <User>{message}</User>
-            </DivUser>
+            <div key={i} className={styles.containerUser}>
+              <div className={styles.messageContainerUser}>
+                <img
+                  src={avatar}
+                  alt="avatar"
+                  className={styles.avatar}
+                />
+                <p className={styles.nameUser}>
+                  {user.name}
+                </p>
+              </div>
+              <p className={styles.user}>{message}</p>
+            </div>
           );
         })}
         <div ref={messagesEndRef} />
-      </Container>
+      </div>
       <ChatForm onSubmit={addMessage} />
     </>
   );

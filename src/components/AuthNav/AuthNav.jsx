@@ -1,22 +1,20 @@
 import React from 'react';
-import {
-  AuthNavLink,
-  AuthNavContainer,
-  Icon,
-} from './AuthNav.styled';
+import { CiLogin } from 'react-icons/ci';
+import styles from './AuthNav.module.css';
+import { NavLink } from 'react-router-dom';
 
 function AuthNav() {
   return (
-    <AuthNavContainer>
-      <AuthNavLink to="/login">
+    <div className={styles.div}>
+      <NavLink className={styles.navLink} to="/login">
         Login
-        <Icon />
-      </AuthNavLink>
-      <AuthNavLink to="/register">
+        <CiLogin className={styles.icon} />
+      </NavLink>
+      <NavLink className={styles.navLink} to="/register">
         Registration
-        <Icon />
-      </AuthNavLink>
-    </AuthNavContainer>
+        <CiLogin className={styles.icon} />
+      </NavLink>
+    </div>
   );
 }
 

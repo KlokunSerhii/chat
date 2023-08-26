@@ -1,14 +1,8 @@
 import React from 'react';
-import {
-  ButtonSubmit,
-  Container,
-  UserName,
-  Span,
-  Img,
-} from './UserMenu.styled';
+
 import { useDispatch } from 'react-redux';
 import { useAuth } from '../../huks/auth';
-
+import styles from './UserMenu.module.css';
 import { logout } from '../../redux/auth/operations';
 
 function UserMenu() {
@@ -16,19 +10,24 @@ function UserMenu() {
   const { user } = useAuth();
 
   return (
-    <Container>
-      <Span>
+    <div className={styles.container}>
+      <span className={styles.span}>
         <p>Hello,</p>
-        <Img src={user.avatarURL} alt="avatar" />
-        <UserName>{user.name}</UserName>
-      </Span>
-      <ButtonSubmit
+        <img
+          className={styles.avatar}
+          src={user.avatarURL}
+          alt="avatar"
+        />
+        <p className={styles.name}> {user.name}</p>
+      </span>
+      <button
+        className={styles.button}
         type="button"
         onClick={() => dispatch(logout())}
       >
         Logout
-      </ButtonSubmit>
-    </Container>
+      </button>
+    </div>
   );
 }
 
