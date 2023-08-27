@@ -1,8 +1,9 @@
 .container {
+  position: relative;
   display: flex;
   align-items: center;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: column;
+  width: 290px;
   height: 400px;
   padding: 10px;
   border: 1px solid;
@@ -12,22 +13,30 @@
   border: 2px solid #f0f0f0;
 
   @media (min-width: 768px) and (max-width: 1199px) {
-    width: 97%;
+    flex-direction: row;
+    width: 500px;
     height: 440px;
   }
   @media (min-width: 1200px) {
-    width: 100%;
+    flex-direction: row;
+    width: 1000px;
     height: 520px;
   }
 }
 .containerChat {
   width: 100%;
   height: 100%;
-  padding-left: 190px;
+
+  @media (min-width: 768px) and (max-width: 1199px) {
+    padding-left: 190px;
+  }
+  @media (min-width: 1200px) {
+    padding-left: 190px;
+  }
 }
 .containerRoom {
   position: fixed;
-  display: flex;
+  display: none;
   justify-content: flex-start;
   flex-direction: column;
   width: 180px;
@@ -35,39 +44,47 @@
   border-right: 2px solid #f0f0f0;
   background-color: #0d0d0d;
   color: #f0f0f0;
+  @media (min-width: 768px) and (max-width: 1199px) {
+    display: flex;
+    height: 440px;
+  }
+  @media (min-width: 1200px) {
+    display: flex;
+    height: 530px;
+  }
 }
 
 .user {
   display: flex;
-  padding: 3px 5px;
+  padding: 3px 7px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 10px;
   color: #0d0d0d;
   background-color: #f0f0f0;
   border-radius: 10px;
   @media (min-width: 768px) and (max-width: 1199px) {
-    font-size: 18px;
+    font-size: 14px;
   }
   @media (min-width: 1200px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
 .you {
   display: flex;
   flex-direction: row-reverse;
-  padding: 3px 5px;
+  padding: 3px 7px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 10px;
   color: #0d0d0d;
   background-color: #f0f0f0;
   border-radius: 10px;
-  min-width: 150px;
+
   @media (min-width: 768px) and (max-width: 1199px) {
-    font-size: 18px;
+    font-size: 14px;
   }
   @media (min-width: 1200px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
@@ -76,10 +93,16 @@
   margin-right: 10px;
   border-radius: 5px;
   outline: none;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 500;
   font-style: italic;
   color: #f0f0f0;
+  @media (min-width: 768px) and (max-width: 1199px) {
+    font-size: 12px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 14px;
+  }
 }
 
 .nameYou {
@@ -87,10 +110,16 @@
   margin-right: 5px;
   border-radius: 5px;
   outline: none;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 500;
   font-style: italic;
   color: #f0f0f0;
+  @media (min-width: 768px) and (max-width: 1199px) {
+    font-size: 12px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 14px;
+  }
 }
 
 .containerUser {
@@ -112,8 +141,8 @@
   align-items: flex-end;
   flex-direction: column;
   max-width: 290px;
-  margin-right: 10px;
-  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
   @media (min-width: 768px) and (max-width: 1199px) {
     max-width: 400px;
   }
@@ -127,6 +156,7 @@
   align-items: flex-start;
   max-width: 290px;
   margin-left: 10px;
+  margin-bottom: 5px;
   flex-direction: column;
 
   @media (min-width: 768px) and (max-width: 1199px) {
@@ -138,9 +168,17 @@
 }
 
 .avatar {
-  width: 38px;
-  height: 38px;
+  width: 20px;
+  height: 20px;
   border-radius: 10px;
+  @media (min-width: 768px) and (max-width: 1199px) {
+    width: 25px;
+    height: 25px;
+  }
+  @media (min-width: 1200px) {
+    width: 38px;
+    height: 38px;
+  }
 }
 .avatarRoom {
   width: 25px;
@@ -163,8 +201,14 @@
   flex-direction: row-reverse;
 }
 .time {
-  font-size: 10px;
+  font-size: 8px;
   color: #f0f0f0;
+  @media (min-width: 768px) and (max-width: 1199px) {
+    font-size: 12px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 14px;
+  }
 }
 .room {
   font-size: 16px;
@@ -181,4 +225,73 @@
 .roomItem {
   display: flex;
   flex-direction: row;
+}
+.containerRoomMobile {
+  position: fixed;
+  left: 0;
+  top: 90px;
+  width: 60vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow-y: scroll;
+  transform: translateX(60%);
+  background-color: #f0f0f0;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    150ms;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.roomMobile {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0d0d0d;
+}
+.usersMobile {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0d0d0d;
+}
+.roomOnlineMobile {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.buttonClose {
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border: none;
+}
+.nameMobile {
+  margin-left: 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: italic;
+  color: #0d0d0d;
+}
+
+.roomItemMobile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.buttonOpen {
+  width: 150px;
+  height: 15px;
+  border: none;
+  margin-bottom: 5px;
+  background: transparent;
+  font-weight: 500;
+  font-size: 16px;
+  color: #0d0d0d;
 }

@@ -11,6 +11,7 @@ const socket = io.connect(
 
 const Chat = () => {
   const messagesEndRef = useRef(null);
+  const [isOpen, setOpen] = useState(false);
   const [users, setUsers] = useState(0);
   const [userList, setUserList] = useState('');
   const [state, setState] = useState([]);
@@ -70,6 +71,15 @@ const Chat = () => {
   console.log(userList);
   return (
     <>
+      <button
+        type="button"
+        className={styles.buttonOpen}
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        Users Online
+      </button>
       <div className={styles.container}>
         <div className={styles.containerRoom}>
           <div className={styles.roomOnline}>
@@ -151,6 +161,45 @@ const Chat = () => {
       </div>
 
       <ChatForm onSubmit={addMessage} />
+      {isOpen && (
+        <div className={styles.containerRoomMobile}>
+          <button
+            type="button"
+            className={styles.buttonClose}
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            X
+          </button>
+          <div className={styles.roomOnlineMobile}>
+            <p className={styles.roomMobile}>
+              Room: {params.room}
+            </p>
+            <p className={styles.usersMobile}>
+              Users online: {users}
+            </p>
+          </div>
+          <ul className={styles.roomList}>
+            {userList &&
+              userList.map(({ name, avatar }, i) => (
+                <li
+                  key={i}
+                  className={styles.roomItemMobile}
+                >
+                  <img
+                    className={styles.avatarRoom}
+                    src={avatar}
+                    alt="avatar"
+                  />
+                  <p className={styles.nameMobile}>
+                    {name}
+                  </p>
+                </li>
+              ))}
+          </ul>
+        </div>
+      )}
     </>
   );
 };

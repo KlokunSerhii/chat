@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import EmojiPicker from 'emoji-picker-react';
 import smail from '../../img/smail.jpg';
-import styles from './Chat.module.css';
+import styles from './ChatForm.module.css';
 import { AiOutlineSend } from 'react-icons/ai';
 
 function ChatForm({ onSubmit }) {
@@ -21,6 +21,7 @@ function ChatForm({ onSubmit }) {
     e.preventDefault();
     onSubmit({ message });
     setMessage('');
+    setOpen(false);
   };
 
   return (
