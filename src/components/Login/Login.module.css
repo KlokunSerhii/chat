@@ -9,7 +9,7 @@
 .title {
   padding-bottom: 50px;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 700;
   color: #000000;
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 40px;
@@ -57,7 +57,7 @@
 .button {
   height: 35px;
   width: 150px;
-  color: #000000;
+  color: #f0f0f0;
   font-weight: 700;
   outline: none;
   margin-top: 15px;

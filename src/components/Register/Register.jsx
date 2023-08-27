@@ -23,7 +23,7 @@ function Register() {
 
   return (
     <div className={styles.container}>
-      <hi className={styles.titel}>Hello, sign up</hi>
+      <h1 className={styles.title}>Hello, sign up</h1>
       <Formik
         initialValues={{ email, password, name }}
         validationSchema={SignupSchemaRegister}

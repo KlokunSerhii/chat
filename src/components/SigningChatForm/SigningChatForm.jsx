@@ -32,7 +32,7 @@ function SigningChatForm() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.titel}>Join</h1>
+      <h1 className={styles.title}>Join</h1>
       <img
         src={user.avatarURL}
         alt="avatar"

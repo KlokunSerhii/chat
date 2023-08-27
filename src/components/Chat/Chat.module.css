@@ -28,10 +28,10 @@
   height: 100%;
 
   @media (min-width: 768px) and (max-width: 1199px) {
-    padding-left: 190px;
+    padding-left: 210px;
   }
   @media (min-width: 1200px) {
-    padding-left: 190px;
+    padding-left: 210px;
   }
 }
 .containerRoom {
@@ -41,6 +41,7 @@
   flex-direction: column;
   width: 180px;
   height: 530px;
+  padding: 10px;
   border-right: 2px solid #f0f0f0;
   background-color: #0d0d0d;
   color: #f0f0f0;
@@ -50,7 +51,7 @@
   }
   @media (min-width: 1200px) {
     display: flex;
-    height: 530px;
+    height: 510px;
   }
 }
 
@@ -228,18 +229,16 @@
 }
 .containerRoomMobile {
   position: fixed;
-  left: 0;
   top: 90px;
-  width: 60vw;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  width: 250px;
+  padding: 10px;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   border-radius: 10px;
   overflow-y: scroll;
-  transform: translateX(60%);
+  transform: translateY(10%);
   background-color: #f0f0f0;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
     150ms;
@@ -260,14 +259,21 @@
 .roomOnlineMobile {
   display: flex;
   justify-content: space-around;
+  width: 200px;
   margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0d0d0d;
 }
 .buttonClose {
   position: absolute;
-  right: 10px;
-  width: 20px;
-  height: 20px;
+  display: flex;
+  right: 3px;
+  align-items: center;
+  justify-content: center;
   border: none;
+  &:hover {
+    color: #ffbf00;
+  }
 }
 .nameMobile {
   margin-left: 10px;
@@ -286,12 +292,28 @@
   align-items: center;
 }
 .buttonOpen {
-  width: 150px;
-  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
+  border-bottom: 1px solid #0d0d0d;
   margin-bottom: 5px;
   background: transparent;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   color: #0d0d0d;
+  &:hover {
+    color: #ffbf00;
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.iconClose {
+  width: 20px;
+  height: 20px;
+}
+.iconOpen {
+  width: 20px;
+  height: 20px;
 }

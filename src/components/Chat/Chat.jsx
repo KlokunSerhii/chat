@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom';
 import styles from './Chat.module.css';
 import ChatForm from 'components/ChatForm/ChatForm';
 import imgDefault from '../../img/bot.jpg';
+import { TiUserOutline } from 'react-icons/ti';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 const socket = io.connect(
   'https://chat-back-end-6mf9.onrender.com'
@@ -37,7 +39,7 @@ const Chat = () => {
   }, []);
 
   useEffect(() => {
-    socket.on('joinRoom', ({ data: { users } }) => {
+    socket.on('room', ({ data: { users } }) => {
       setUsers(users.length);
       setUserList(users);
     });
@@ -77,8 +79,12 @@ const Chat = () => {
         onClick={() => {
           setOpen(true);
         }}
+        onFocus={() => {
+          setOpen(true);
+        }}
       >
-        Users Online
+        <TiUserOutline className={styles.iconOpen} />
+        Online
       </button>
       <div className={styles.container}>
         <div className={styles.containerRoom}>
@@ -99,7 +105,7 @@ const Chat = () => {
                     src={avatar}
                     alt="avatar"
                   />
-                  <p lassName={styles.nameYou}>{name}</p>
+                  <p className={styles.nameYou}>{name}</p>
                 </li>
               ))}
           </ul>
@@ -170,7 +176,9 @@ const Chat = () => {
               setOpen(false);
             }}
           >
-            X
+            <AiFillCloseCircle
+              className={styles.iconClose}
+            />
           </button>
           <div className={styles.roomOnlineMobile}>
             <p className={styles.roomMobile}>
