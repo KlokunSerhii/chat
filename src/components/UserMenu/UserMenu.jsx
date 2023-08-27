@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import io from 'socket.io-client';
 import { useDispatch } from 'react-redux';
 import { useAuth } from '../../huks/auth';
 import styles from './UserMenu.module.css';
 import { logout } from '../../redux/auth/operations';
 import imgDefault from '../../img/bot.jpg';
 import { useLocation } from 'react-router-dom';
-
-const socket = io.connect(
-  'https://chat-back-end-6mf9.onrender.com'
-);
+import { socket } from '../../options/socket';
 
 function UserMenu() {
   const [params, setParams] = useState({
@@ -25,7 +21,6 @@ function UserMenu() {
     const searchParams = Object.fromEntries(
       new URLSearchParams(search)
     );
-    console.log(searchParams);
     setParams(searchParams);
   }, [search]);
 

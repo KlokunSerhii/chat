@@ -1,15 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import io from 'socket.io-client';
 import { useLocation } from 'react-router-dom';
 import styles from './Chat.module.css';
 import ChatForm from 'components/ChatForm/ChatForm';
 import imgDefault from '../../img/bot.jpg';
 import { TiUserOutline } from 'react-icons/ti';
 import { AiFillCloseCircle } from 'react-icons/ai';
-
-const socket = io.connect(
-  'https://chat-back-end-6mf9.onrender.com'
-);
+import { socket } from '../../options/socket';
 
 const Chat = () => {
   const messagesEndRef = useRef(null);
@@ -70,7 +66,6 @@ const Chat = () => {
     .getSeconds()
     .toString()
     .padStart(2, 0);
-  console.log(userList);
   return (
     <>
       <button
