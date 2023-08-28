@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Chat-lite/static/css/main.f775eff5.css",
+    "main.js": "/Chat-lite/static/js/main.a9a9d0b4.js",
+    "static/media/bg.jpg": "/Chat-lite/static/media/bg.20c8e195878c176c1b5d.jpg",
+    "static/media/bot.jpg": "/Chat-lite/static/media/bot.5e07e4ff49733c98e02b.jpg",
+    "index.html": "/Chat-lite/index.html",
+    "main.f775eff5.css.map": "/Chat-lite/static/css/main.f775eff5.css.map",
+    "main.a9a9d0b4.js.map": "/Chat-lite/static/js/main.a9a9d0b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f775eff5.css",
+    "static/js/main.a9a9d0b4.js"
+  ]
+}
