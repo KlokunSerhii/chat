@@ -2,7 +2,7 @@
   "name": "chat-front",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://KlokunSerhii.github.io/",
+  "homepage": "https://KlokunSerhii.github.io/Chat-lite",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
