@@ -20,7 +20,7 @@
   @media (min-width: 1200px) {
     flex-direction: row;
     width: 1000px;
-    height: 520px;
+    height: 450px;
   }
 }
 .containerChat {
@@ -51,7 +51,7 @@
   }
   @media (min-width: 1200px) {
     display: flex;
-    height: 510px;
+    height: 450px;
   }
 }
 
