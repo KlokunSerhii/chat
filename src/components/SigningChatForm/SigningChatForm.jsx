@@ -65,7 +65,7 @@ function SigningChatForm() {
           className={styles.iconPassword}
         />
         <Link
-          to={`/chat?name=${user.name}&room=${values[ROOM]}&avatar=${user.avatarURL}`}
+          to={`/chat-room?name=${user.name}&room=${values[ROOM]}&avatar=${user.avatarURL}`}
         >
           <button
             className={styles.button}

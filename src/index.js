@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-  <BrowserRouter>
+  <BrowserRouter basename="/">
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <App />
