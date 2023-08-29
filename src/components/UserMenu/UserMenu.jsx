@@ -6,8 +6,9 @@ import { logout } from '../../redux/auth/operations';
 import imgDefault from '../../img/bot.jpg';
 import { useLocation } from 'react-router-dom';
 import { socket } from '../../options/socket';
-
+import { RxExit } from 'react-icons/rx';
 function UserMenu() {
+
   const [params, setParams] = useState({
     room: '',
     user: '',
@@ -32,13 +33,16 @@ function UserMenu() {
   return (
     <div className={styles.container}>
       <span className={styles.span}>
-        <p>Hello,</p>
-        <img
+        <p className={styles.name}>Hello,</p>
+        <div className={styles.user}>
+          <img
           className={styles.avatar}
           src={user.avatarURL}
           alt="avatar"
         />
         <p className={styles.name}> {user.name}</p>
+        </div>
+        
       </span>
       <button
         className={styles.button}
@@ -46,6 +50,7 @@ function UserMenu() {
         onClick={leftRoom}
       >
         Logout
+        <RxExit className={styles.icon}/>
       </button>
     </div>
   );

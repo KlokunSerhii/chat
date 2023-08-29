@@ -11,7 +11,7 @@ function SharedLayout() {
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        minHeight: '100vh',
+        height: '100vh',
         marginLeft: 'auto',
         marginRight: 'auto',
       }}

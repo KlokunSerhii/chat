@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   width: 290px;
-  height: 400px;
+  height: 350px;
   padding: 10px;
   border: 1px solid;
   border-radius: 10px;
@@ -15,7 +15,7 @@
   @media (min-width: 768px) and (max-width: 1199px) {
     flex-direction: row;
     width: 500px;
-    height: 440px;
+    height: 400px;
   }
   @media (min-width: 1200px) {
     flex-direction: row;
@@ -47,7 +47,7 @@
   color: #f0f0f0;
   @media (min-width: 768px) and (max-width: 1199px) {
     display: flex;
-    height: 440px;
+    height: 400px;
   }
   @media (min-width: 1200px) {
     display: flex;
