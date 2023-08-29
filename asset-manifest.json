@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/KlokunSerhii/chat/static/css/main.f775eff5.css",
-    "main.js": "/KlokunSerhii/chat/static/js/main.df2ed285.js",
-    "static/media/bg.jpg": "/KlokunSerhii/chat/static/media/bg.20c8e195878c176c1b5d.jpg",
-    "static/media/bot.jpg": "/KlokunSerhii/chat/static/media/bot.5e07e4ff49733c98e02b.jpg",
-    "index.html": "/KlokunSerhii/chat/index.html",
-    "main.f775eff5.css.map": "/KlokunSerhii/chat/static/css/main.f775eff5.css.map",
-    "main.df2ed285.js.map": "/KlokunSerhii/chat/static/js/main.df2ed285.js.map"
+    "main.css": "/static/css/main.e2f2fefd.css",
+    "main.js": "/static/js/main.90324ebf.js",
+    "static/media/bg.jpg": "/static/media/bg.20c8e195878c176c1b5d.jpg",
+    "static/media/bot.jpg": "/static/media/bot.5e07e4ff49733c98e02b.jpg",
+    "index.html": "/index.html",
+    "main.e2f2fefd.css.map": "/static/css/main.e2f2fefd.css.map",
+    "main.90324ebf.js.map": "/static/js/main.90324ebf.js.map"
   },
   "entrypoints": [
-    "static/css/main.f775eff5.css",
-    "static/js/main.df2ed285.js"
+    "static/css/main.e2f2fefd.css",
+    "static/js/main.90324ebf.js"
   ]
 }
