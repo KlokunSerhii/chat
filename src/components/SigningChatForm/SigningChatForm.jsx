@@ -5,16 +5,14 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../huks/auth';
 import styles from './SigningChatForm.module.css';
 const FIELDS = {
-  NAME: 'name',
   ROOM: 'room',
 };
 
 function SigningChatForm() {
-  const { NAME, ROOM } = FIELDS;
+  const { ROOM } = FIELDS;
   const { user } = useAuth();
 
   const [values, setValues] = useState({
-    [NAME]: '',
     [ROOM]: '',
   });
 
@@ -65,7 +63,7 @@ function SigningChatForm() {
           className={styles.iconPassword}
         />
         <Link
-          to={`/chat-room?name=${user.name}&room=${values[ROOM]}&avatar=${user.avatarURL}`}
+          to={`/chat/:${values[ROOM]}?name=${user.name}&room=${values[ROOM]}&avatar=${user.avatarURL}`}
         >
           <button
             className={styles.button}

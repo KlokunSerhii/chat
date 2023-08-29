@@ -66,6 +66,8 @@ const Chat = () => {
     .getSeconds()
     .toString()
     .padStart(2, 0);
+
+  console.log(state);
   return (
     <>
       <button

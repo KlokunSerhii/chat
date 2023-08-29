@@ -58,7 +58,7 @@ const App = () => {
           }
         />
         <Route
-          path="chat-room"
+          path="chat/:id"
           element={
             <PrivateRoute
               redirectto="/login"
