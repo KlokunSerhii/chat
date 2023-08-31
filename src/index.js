@@ -12,13 +12,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   // <React.StrictMode>
-  <HashRouter basename='/'  >
+  <HashRouter basename="/">
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <App />
       </PersistGate>
     </Provider>
   </HashRouter>
-  //  </React.StrictMode>
+  // </React.StrictMode>
 );
 // basename='/'

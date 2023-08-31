@@ -1,16 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-    getMessages
-} from './operations';
+import { getMessages, addMessageDB } from './operations';
 
 const messageSlice = createSlice({
   name: 'message',
   initialState: {
-    items:[]
+    items: [],
   },
   extraReducers: {
     [getMessages.fulfilled](state, { payload }) {
-        state.items = payload
+      state.items = payload;
+    },
+    [addMessageDB.fulfilled](state, { payload }) {
+      state.items.push(payload);
     },
   },
 });
