@@ -1,26 +1,16 @@
-import { FallingLines, Bars } from 'react-loader-spinner';
-
-export function ContactsLoader() {
-  return (
-    <FallingLines
-      color="#4b0082"
-      width="100"
-      visible={true}
-      ariaLabel="falling-lines-loading"
-    />
-  );
-}
+import { Discuss } from 'react-loader-spinner';
 
 export function AppLoader() {
   return (
-    <Bars
-      height="80"
-      width="80"
-      color="#4b0082"
-      ariaLabel="bars-loading"
-      wrapperStyle={{}}
-      wrapperClass=""
-      visible={true}
-    />
+    <Discuss
+    visible={true}
+    height="80"
+    width="80"
+    ariaLabel="comment-loading"
+    wrapperStyle={{}}
+    wrapperClass="comment-wrapper"
+    color="#fff"
+    backgroundColor="#F4442E"
+  />
   );
 }

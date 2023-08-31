@@ -4,6 +4,7 @@ import smail from '../../img/smail.jpg';
 import styles from './ChatForm.module.css';
 import { AiOutlineSend } from 'react-icons/ai';
 
+
 function ChatForm({ onSubmit }) {
   const [message, setMessage] = useState('');
   const [isOpen, setOpen] = useState(false);
@@ -20,6 +21,7 @@ function ChatForm({ onSubmit }) {
   const handleSubmit = e => {
     e.preventDefault();
     onSubmit({ message });
+
     setMessage('');
     setOpen(false);
   };

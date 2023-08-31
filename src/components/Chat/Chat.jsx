@@ -6,19 +6,26 @@ import imgDefault from '../../img/bot.jpg';
 import { TiUserOutline } from 'react-icons/ti';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { socket } from '../../options/socket';
+import { getMessages } from 'redux/message/operations';
+import { useDispatch, useSelector } from 'react-redux';
+import { select } from '../../redux/message/selectors';
 
 const Chat = () => {
   const messagesEndRef = useRef(null);
   const [isOpen, setOpen] = useState(false);
   const [users, setUsers] = useState(0);
   const [userList, setUserList] = useState('');
-  const [state, setState] = useState([]);
+  const data = useSelector(select);
+  const [state, setState] = useState();
   const { search } = useLocation();
   const [params, setParams] = useState({
     room: '',
     user: '',
     avatar: imgDefault,
   });
+
+const dispatch = useDispatch();
+console.log(state)
 
   useEffect(() => {
     const searchParams = Object.fromEntries(
@@ -28,11 +35,18 @@ const Chat = () => {
     socket.emit('join', searchParams);
   }, [search]);
 
+
+
   useEffect(() => {
     socket.on('message', ({ data }) => {
       setState(prev => [...prev, data]);
     });
   }, []);
+
+  useEffect(() => {
+    dispatch(getMessages({ ...params }))
+  }, [state, params, dispatch ]);
+
 
   useEffect(() => {
     socket.on('room', ({ data: { users } }) => {
@@ -67,7 +81,6 @@ const Chat = () => {
     .toString()
     .padStart(2, 0);
 
-  console.log(state);
   return (
     <>
       <button
