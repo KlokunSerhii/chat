@@ -29,7 +29,6 @@ export const addMessageDB = createAsyncThunk(
           ...data,
         }
       );
-      console.log(response.data);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

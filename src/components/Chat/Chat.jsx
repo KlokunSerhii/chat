@@ -10,15 +10,16 @@ import {
   addMessageDB,
   getMessages,
 } from 'redux/message/operations';
-import { useDispatch, useSelector } from 'react-redux';
-import { select } from '../../redux/message/selectors';
+import { useDispatch } from 'react-redux';
+import { useMessage } from '../../huks/message'
+
 
 const Chat = () => {
   const messagesEndRef = useRef(null);
   const [isOpen, setOpen] = useState(false);
   const [users, setUsers] = useState(0);
   const [userList, setUserList] = useState('');
-  const data = useSelector(select);
+  const { items } = useMessage();
   const [state, setState] = useState([]);
   const { search } = useLocation();
   const [params, setParams] = useState({
@@ -28,9 +29,17 @@ const Chat = () => {
   });
   const dispatch = useDispatch();
 
+
   useEffect(() => {
-    data.map(e => setState(prev => [...prev, e]));
-  }, [data]);
+    items.map(e =>setState(prev => [...prev, e]))
+  }, [items]);
+
+  useEffect(() => {
+    socket.on('message', ({ data }) => {
+      dispatch(addMessageDB({ params, data }))
+    });
+  }, [params, state, dispatch]);
+
 
   useEffect(() => {
     const searchParams = Object.fromEntries(
@@ -43,17 +52,12 @@ const Chat = () => {
   useEffect(() => {
     socket.on('message', ({ data }) => {
       setState(prevState => [...prevState, data]);
-      dispatch(addMessageDB({ params, data }));
     });
-  }, [dispatch, params]);
+  }, [dispatch, params, state]);
 
   useEffect(() => {
     dispatch(getMessages({ ...params }));
   }, [params, dispatch]);
-
-  // useEffect(() => {
-  //   dispatch(addMessageDB({ params, state }));
-  // }, [state, params, dispatch]);
 
   useEffect(() => {
     socket.on('room', ({ data: { users } }) => {
