@@ -8,7 +8,6 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { socket } from '../../options/socket';
 import {
   addMessageDB,
-  getMessages,
 } from 'redux/message/operations';
 import { useDispatch } from 'react-redux';
 import { useMessage } from '../../huks/message'
@@ -55,9 +54,7 @@ const Chat = () => {
     });
   }, [dispatch, params, state]);
 
-  useEffect(() => {
-    dispatch(getMessages({ ...params }));
-  }, [params, dispatch]);
+
 
   useEffect(() => {
     socket.on('room', ({ data: { users } }) => {
@@ -81,16 +78,7 @@ const Chat = () => {
     scrollToBottom();
   }, [state]);
 
-  const date = new Date();
-  const Hours = date.getHours().toString().padStart(2, 0);
-  const Minutes = date
-    .getMinutes()
-    .toString()
-    .padStart(2, 0);
-  const Seconds = date
-    .getSeconds()
-    .toString()
-    .padStart(2, 0);
+
 
   return (
     <>
@@ -149,7 +137,7 @@ const Chat = () => {
                 <div className={styles.messageContainerYou}>
                   <div className={styles.infoMessage}>
                     <p className={styles.time}>
-                      {Hours}:{Minutes}:{Seconds}
+                      {}
                     </p>
                     <p className={styles.nameYou}>
                       {user.name}
@@ -170,7 +158,7 @@ const Chat = () => {
                 >
                   <div className={styles.infoMessageUser}>
                     <p className={styles.time}>
-                      {Hours}:{Minutes}:{Seconds}
+                      {}
                     </p>
                     <p className={styles.nameUser}>
                       {user.name}

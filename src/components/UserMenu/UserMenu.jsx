@@ -26,7 +26,9 @@ function UserMenu() {
   }, [search]);
 
   const leftRoom = () => {
-    socket.emit('leftRoom', { params });
+    if(params){
+      socket.emit('leftRoom', { params });
+    }
     dispatch(logout());
   };
 

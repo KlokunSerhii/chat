@@ -6,7 +6,7 @@ axios.defaults.baseURL =
 
 export const getMessages = createAsyncThunk(
   'message/getMessages',
-  async ({ room }, { rejectWithValue }) => {
+  async ( room , { rejectWithValue }) => {
     try {
       const response = await axios.get(
         `messages/chat/${room}`
