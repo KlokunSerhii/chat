@@ -25,7 +25,6 @@ const Chat = () => {
     avatar: imgDefault,
   });
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getMessages(params.room));
   }, [dispatch, params.room]);
@@ -43,7 +42,7 @@ const Chat = () => {
       setState(prevState => [...prevState, data]);
       dispatch(addMessageDB({ params, data }));
     });
-  }, [params, dispatch]);
+  }, [dispatch, params]);
 
   useEffect(() => {
     scrollToBottom();
@@ -53,9 +52,11 @@ const Chat = () => {
     if (!message) return;
     socket.emit('send', { message, params });
   };
+
   const toggleOpen = () => {
     setOpen(!isOpen);
   };
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({
       behavior: 'smooth',

@@ -43,7 +43,6 @@ function MessageListSocket({ state, params }) {
                   {user.name}
                 </p>
               </div>
-
               <p className={styles.user}>{message}</p>
             </div>
           </div>
