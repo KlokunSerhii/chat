@@ -53,14 +53,13 @@ const Chat = () => {
     if (!message) return;
     socket.emit('send', { message, params });
   };
-
+  const toggleOpen = () => {
+    setOpen(!isOpen);
+  };
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({
       behavior: 'smooth',
     });
-  };
-  const toggleOpen = () => {
-    setOpen(!isOpen);
   };
 
   return (
