@@ -11,7 +11,6 @@ const root = ReactDOM.createRoot(
   document.getElementById('root')
 );
 root.render(
-  <React.StrictMode>
   <HashRouter basename="/">
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -19,5 +18,4 @@ root.render(
       </PersistGate>
     </Provider>
   </HashRouter>
-  </React.StrictMode>
 );

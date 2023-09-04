@@ -6,11 +6,9 @@ axios.defaults.baseURL =
 
 export const getMessages = createAsyncThunk(
   'message/getMessages',
-  async ( room , { rejectWithValue }) => {
+  async (room, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
-        `messages/chat/${room}`
-      );
+      const response = await axios.get(`messages/${room}`);
       return response.data;
     } catch (e) {
       return rejectWithValue(e.message);
@@ -23,7 +21,7 @@ export const addMessageDB = createAsyncThunk(
   async ({ params, data }, thunkAPI) => {
     try {
       const response = await axios.post(
-        `messages/chat/${params.room}`,
+        `messages/${params.room}`,
         {
           roomId: params.room,
           ...data,
