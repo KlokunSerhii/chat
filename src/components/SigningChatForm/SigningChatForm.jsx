@@ -3,11 +3,6 @@ import { AiOutlineUser } from 'react-icons/ai';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../huks/auth';
-import { useDispatch } from 'react-redux';
-
-import {
-  getMessages,
-} from 'redux/message/operations';
 import styles from './SigningChatForm.module.css';
 const FIELDS = {
   ROOM: 'room',
@@ -16,7 +11,6 @@ const FIELDS = {
 function SigningChatForm() {
   const { ROOM } = FIELDS;
   const { user } = useAuth();
-  const dispatch = useDispatch();
 
   const [values, setValues] = useState({
     [ROOM]: '',
@@ -34,7 +28,6 @@ function SigningChatForm() {
   const handleClick = e => {
     if (!values[ROOM]) {
       e.preventDefault();
-      dispatch(getMessages( values[ROOM]));
     }
   };
 

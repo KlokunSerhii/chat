@@ -11,7 +11,7 @@ const messageSlice = createSlice({
       state.items = payload;
     },
     [addMessageDB.fulfilled](state, { payload }) {
-      state.items.push(payload);
+      // state.items.push(payload);
     },
   },
 });

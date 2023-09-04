@@ -7,6 +7,7 @@ import { TiUserOutline } from 'react-icons/ti';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { socket } from '../../options/socket';
 import {
+  getMessages,
   addMessageDB,
 } from 'redux/message/operations';
 import { useDispatch } from 'react-redux';
@@ -28,17 +29,9 @@ const Chat = () => {
   });
   const dispatch = useDispatch();
 
-
   useEffect(() => {
-    items.map(e =>setState(prev => [...prev, e]))
-  }, [items]);
-
-  useEffect(() => {
-    socket.on('message', ({ data }) => {
-      dispatch(addMessageDB({ params, data }))
-    });
-  }, [params, state, dispatch]);
-
+    dispatch(getMessages(params.room))
+  }, [dispatch, params.room]);
 
   useEffect(() => {
     const searchParams = Object.fromEntries(
@@ -51,9 +44,9 @@ const Chat = () => {
   useEffect(() => {
     socket.on('message', ({ data }) => {
       setState(prevState => [...prevState, data]);
+      dispatch(addMessageDB({params , data}))
     });
-  }, [dispatch, params, state]);
-
+  }, [params, dispatch ]);
 
 
   useEffect(() => {
@@ -120,6 +113,56 @@ const Chat = () => {
           </ul>
         </div>
         <div className={styles.containerChat}>
+        {items.map(({ user, message }, i) => {
+            const avatar = user.avatar
+              ? user.avatar
+              : imgDefault;
+            const you =
+              user.name.trim().toLowerCase() ===
+              params.name.trim().toLowerCase();
+            return you ? (
+              <div key={i} className={styles.containerYou}>
+                <img
+                  src={avatar}
+                  alt="avatar"
+                  className={styles.avatar}
+                />
+                <div className={styles.messageContainerYou}>
+                  <div className={styles.infoMessage}>
+                    <p className={styles.time}>
+                      {}
+                    </p>
+                    <p className={styles.nameYou}>
+                      {user.name}
+                    </p>
+                  </div>
+                  <p className={styles.you}>{message}</p>
+                </div>
+              </div>
+            ) : (
+              <div key={i} className={styles.containerUser}>
+                <img
+                  src={avatar}
+                  alt="avatar"
+                  className={styles.avatar}
+                />
+                <div
+                  className={styles.messageContainerUser}
+                >
+                  <div className={styles.infoMessageUser}>
+                    <p className={styles.time}>
+                      {}
+                    </p>
+                    <p className={styles.nameUser}>
+                      {user.name}
+                    </p>
+                  </div>
+
+                  <p className={styles.user}>{message}</p>
+                </div>
+              </div>
+            );
+          })}
           {state.map(({ user, message }, i) => {
             const avatar = user.avatar
               ? user.avatar
