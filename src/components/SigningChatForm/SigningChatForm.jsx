@@ -16,7 +16,6 @@ function SigningChatForm() {
     [ROOM]: '',
   });
 
-
   const handleChange = ({ target }) => {
     const { name, value } = target;
     setValues(prevState => ({
@@ -66,6 +65,7 @@ function SigningChatForm() {
           className={styles.iconPassword}
         />
         <Link
+          className={styles.buttonLink}
           to={`/chat/${values[ROOM]}?name=${user.name}&room=${values[ROOM]}&avatar=${user.avatarURL}`}
         >
           <button

@@ -5,3 +5,10 @@
   align-content: center;
   height: 500px;
 }
+.background {
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  max-width: 100%;
+}

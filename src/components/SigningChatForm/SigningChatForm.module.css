@@ -4,15 +4,20 @@
   font-size: 14px;
   padding: 7px 15px 7px 35px;
   border-radius: 5px;
-  color: #0d0d0d;
+  margin-bottom: 10px;
+  color: #f0f0f0;
   outline: none;
-  margin-bottom: 5px;
+  background-color: transparent;
+  border: 1px solid #f0f0f0;
+  &::placeholder {
+    color: #f0f0f0;
+  }
   &:focus {
     border: 2px solid #ffbf00;
   }
   &:disabled {
-    background-color: #ffffff;
-    color: #0d0d0d;
+    background-color: transparent;
+    color: #f0f0f0;
     opacity: 1;
   }
   @media (min-width: 768px) and (max-width: 1199px) {
@@ -25,17 +30,18 @@
   }
 }
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 35px;
   width: 150px;
   color: #f0f0f0;
   font-weight: 700;
-  outline: none;
-  margin-top: 15px;
-  border-radius: 5px;
   font-size: 16px;
   background: transparent;
-  border: medium none;
+  border: none;
   cursor: pointer;
+  text-decoration: none;
   :hover {
     color: #ffbf00;
   }
@@ -45,6 +51,9 @@
   @media (min-width: 1200px) {
     font-size: 24px;
   }
+}
+.buttonLink {
+  text-decoration: none;
 }
 
 .container {
@@ -59,10 +68,10 @@
   align-items: center;
 }
 .title {
-  padding-bottom: 10px;
+  padding-top: 50px;
   font-size: 30px;
-  font-weight: 500;
-  color: #0d0d0d;
+  font-weight: 700;
+  color: #1e053b;
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 40px;
   }
@@ -74,7 +83,7 @@
 .iconUser {
   margin-left: 5px;
   stroke: 0;
-  fill: #0d0d0d;
+  fill: #f0f0f0;
   position: absolute;
   top: 13px;
   left: 10px;
@@ -82,7 +91,7 @@
 .iconPassword {
   margin-left: 5px;
   stroke: 0;
-  fill: #0d0d0d;
+  fill: #f0f0f0;
   position: absolute;
   top: 62px;
   left: 10px;
@@ -90,5 +99,5 @@
 
 .avatar {
   border-radius: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import EmojiPicker from 'emoji-picker-react';
-import smail from '../../img/smail.jpg';
+import smail from '../../img/smail.png';
 import styles from './ChatForm.module.css';
 import { AiOutlineSend } from 'react-icons/ai';
-
 
 function ChatForm({ onSubmit }) {
   const [message, setMessage] = useState('');

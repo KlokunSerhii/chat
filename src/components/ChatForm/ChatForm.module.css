@@ -11,8 +11,13 @@
   font-size: 14px;
   padding: 5px 30px 5px 30px;
   border-radius: 10px;
-  color: #000000;
+  color: #f0f0f0;
+  background-color: transparent;
   outline: none;
+  border: 1px solid;
+  &::placeholder {
+    color: #f0f0f0;
+  }
   &:focus {
     border: 2px solid #ffbf00;
   }
@@ -38,7 +43,7 @@
     left: 7px;
   }
   @media (min-width: 1200px) {
-    top: 10px;
+    top: 8px;
     left: 15px;
   }
 }
@@ -47,6 +52,7 @@
   cursor: pointer;
   width: 20px;
   height: 20px;
+  background-color: transparent;
   @media (min-width: 768px) and (max-width: 1199px) {
     width: 20px;
     height: 20px;
@@ -73,7 +79,7 @@
   position: absolute;
   top: 4px;
   right: 1px;
-  color: #0d0d0d;
+  color: #f0f0f0;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -85,7 +91,7 @@
     right: 5px;
   }
   @media (min-width: 1200px) {
-    top: 10px;
+    top: 8px;
     right: 15px;
   }
 }

@@ -9,7 +9,7 @@
   border: 1px solid;
   border-radius: 10px;
   overflow-y: scroll;
-  background-color: #0d0d0d;
+  background-color: transparent;
   border: 2px solid #f0f0f0;
 
   @media (min-width: 768px) and (max-width: 1199px) {
@@ -43,10 +43,11 @@
   height: 530px;
   padding: 10px;
   border-right: 2px solid #f0f0f0;
-  background-color: #0d0d0d;
+  background-color: transparent;
   color: #f0f0f0;
   @media (min-width: 768px) and (max-width: 1199px) {
     display: flex;
+    width: 130px;
     height: 400px;
   }
   @media (min-width: 1200px) {
@@ -219,9 +220,15 @@
   font-size: 16px;
   color: #f0f0f0;
   margin-left: 10px;
+  @media (min-width: 768px) and (max-width: 1199px) {
+    margin-left: 0;
+  }
 }
 .roomOnline {
   display: flex;
+  @media (min-width: 768px) and (max-width: 1199px) {
+    flex-direction: column;
+  }
 }
 .roomItem {
   display: flex;
@@ -296,12 +303,12 @@
   justify-content: center;
   align-items: center;
   border: none;
-  border-bottom: 1px solid #0d0d0d;
+  border-bottom: 1px solid #f0f0f0;
   margin-bottom: 5px;
   background: transparent;
   font-weight: 500;
   font-size: 14px;
-  color: #0d0d0d;
+  color: #f0f0f0;
   &:hover {
     color: #ffbf00;
   }
