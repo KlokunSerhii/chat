@@ -20,6 +20,8 @@ export const addMessageDB = createAsyncThunk(
   'message/addMessageDB ',
   async ({ params, data }, thunkAPI) => {
     try {
+      console.log(data)
+      console.log(params)
       const response = await axios.post(
         `messages/${params.room}`,
         {
