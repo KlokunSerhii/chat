@@ -4,6 +4,7 @@ import {
   login,
   register,
   refreshUser,
+  updateAvatar,
 } from './operations';
 
 const authSlice = createSlice({
@@ -25,6 +26,10 @@ const authSlice = createSlice({
       state.user = payload.user;
       state.token = payload.token;
       state.isLoggedIn = true;
+    },
+
+    [updateAvatar.fulfilled](state, { payload }) {
+      state.user.avatarURL = payload;
     },
 
     [logout.fulfilled](state) {

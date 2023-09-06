@@ -13,6 +13,7 @@ import { refreshUser } from 'redux/auth/operations';
 import { AppLoader } from './Loader/Loader';
 import stales from './App.module.css';
 import SigningChat from 'views/SigningChat';
+import ProfileView from 'views/ProfileView';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -63,6 +64,15 @@ const App = () => {
             <PrivateRoute
               redirectto="/login"
               component={ChatView}
+            />
+          }
+        />
+        <Route
+          path="profile"
+          element={
+            <PrivateRoute
+              redirectto="/login"
+              component={ProfileView}
             />
           }
         />

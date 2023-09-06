@@ -27,7 +27,7 @@ const Chat = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getMessages(params.room));
+    if (params.room) dispatch(getMessages(params.room));
   }, [dispatch, params.room]);
 
   useEffect(() => {
@@ -40,15 +40,14 @@ const Chat = () => {
 
   useEffect(() => {
     socket.on('message', ({ data }) => {
-      setState(prevState =>[...prevState, data]);
+      setState(prevState => [...prevState, data]);
     });
   }, []);
 
   useEffect(() => {
     socket.on('message', ({ data }) => {
-      dispatch(addMessageDB({ params, data }))  
+      dispatch(addMessageDB({ params, data }));
     });
-       
   }, [dispatch, params]);
 
   useEffect(() => {
