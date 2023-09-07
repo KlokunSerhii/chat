@@ -7,6 +7,7 @@ import imgDefault from '../../img/bot.jpg';
 import { NavLink, useLocation } from 'react-router-dom';
 import { socket } from '../../options/socket';
 import { RxExit } from 'react-icons/rx';
+
 function UserMenu() {
   const [params, setParams] = useState({
     room: '',
