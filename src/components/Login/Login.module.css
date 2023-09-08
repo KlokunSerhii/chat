@@ -4,6 +4,11 @@
   text-align: center;
   justify-content: center;
   align-items: center;
+  background-image: url(../../img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 637px;
+  max-width: 100%;
 }
 
 .title {

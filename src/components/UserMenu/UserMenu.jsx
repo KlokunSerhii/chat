@@ -18,8 +18,6 @@ function UserMenu() {
   const dispatch = useDispatch();
   const { user } = useAuth();
 
-
-
   useEffect(() => {
     const searchParams = Object.fromEntries(
       new URLSearchParams(search)
@@ -27,7 +25,6 @@ function UserMenu() {
     setParams(searchParams);
   }, [search]);
 
-  
   const leftRoom = () => {
     if (!params) {
       socket.emit('leftRoom', { params });
@@ -38,9 +35,14 @@ function UserMenu() {
   return (
     <div className={styles.container}>
       <span className={styles.span}>
-        <p className={styles.name}>Hello,</p>
+        <p className={styles.name_title}>Hello,</p>
         <div className={styles.user}>
-          <NavLink to={`/profile`} onClick={()=>socket.emit('leftRoom', { params })}>
+          <NavLink
+            to={`/profile`}
+            onClick={() =>
+              socket.emit('leftRoom', { params })
+            }
+          >
             <img
               className={styles.avatar}
               src={user.avatarURL}

@@ -3,7 +3,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import Notiflix from 'notiflix';
 import { options } from 'options/configMessage';
 
-axios.defaults.baseURL ='https://chat-back-end-6mf9.onrender.com/chat';
+axios.defaults.baseURL =
+  'https://chat-back-end-6mf9.onrender.com/chat';
+// axios.defaults.baseURL = 'http://localhost:3001/chat';
 
 const message = Notiflix.Notify;
 

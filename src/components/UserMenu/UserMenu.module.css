@@ -60,7 +60,13 @@
   margin-left: 5px;
   color: #f0f0f0;
 }
-
+.name_title {
+  display: none;
+  @media (min-width: 768px) {
+    margin-left: 5px;
+    color: #f0f0f0;
+  }
+}
 .avatar {
   width: 20px;
   height: 20px;

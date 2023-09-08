@@ -70,7 +70,7 @@ const Chat = () => {
   };
 
   return (
-    <>
+    <div className={styles.chat}>
       <button
         type="button"
         className={styles.buttonOpen}
@@ -91,7 +91,7 @@ const Chat = () => {
         <div ref={messagesEndRef} />
       </div>
       <ChatForm onSubmit={addMessage} />
-    </>
+    </div>
   );
 };
 

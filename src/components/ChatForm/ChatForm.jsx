@@ -35,14 +35,7 @@ function ChatForm({ onSubmit }) {
           onChange={handleChange}
           placeholder="write a message"
         />
-        <div className={styles.iconContainer}>
-          <img
-            className={styles.icon}
-            src={smail}
-            alt=""
-            onClick={() => setOpen(!isOpen)}
-          />
-        </div>
+
         <button className={styles.button} type="submit">
           <AiOutlineSend className={styles.iconSend} />
         </button>
@@ -57,6 +50,14 @@ function ChatForm({ onSubmit }) {
           </div>
         )}
       </form>
+      <div className={styles.iconContainer}>
+        <img
+          className={styles.icon}
+          src={smail}
+          alt=""
+          onClick={() => setOpen(!isOpen)}
+        />
+      </div>
     </div>
   );
 }

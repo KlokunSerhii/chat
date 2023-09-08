@@ -4,6 +4,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 axios.defaults.baseURL =
   'https://chat-back-end-6mf9.onrender.com/chat/';
 
+// axios.defaults.baseURL = 'http://localhost:3001/chat';
+
 export const getMessages = createAsyncThunk(
   'message/getMessages',
   async (room, { rejectWithValue }) => {
