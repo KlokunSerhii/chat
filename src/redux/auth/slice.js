@@ -30,6 +30,9 @@ const authSlice = createSlice({
 
     [updateAvatar.fulfilled](state, { payload }) {
       state.user.avatarURL = payload;
+      state.isLoggedIn = true;
+      state.isRefreshing = false;
+
     },
 
     [logout.fulfilled](state) {

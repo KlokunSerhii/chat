@@ -1,22 +1,21 @@
-import React, { useEffect, useState } from 'react';
 import styles from './Profile.module.css';
 import { useDispatch } from 'react-redux';
-import { updateAvatar } from 'redux/auth/operations';
+import { updateAvatar, refreshUser } from 'redux/auth/operations';
+import { useAuth } from '../../huks/auth';
+
 
 function Profile() {
-  const [avatar, setAvatar] = useState(null);
   const dispatch = useDispatch();
+  const { user } = useAuth();
 
-  useEffect(() => {
-    if (avatar) dispatch(updateAvatar(avatar));
-  }, [avatar, dispatch]);
+
 
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
-    const formData = new FormData(form);
-
-    setAvatar(formData);
+    if (form)
+    dispatch(updateAvatar(form));
+    dispatch(refreshUser())
   };
 
   return (
@@ -39,6 +38,13 @@ function Profile() {
 
         <button className={styles.button}>Submit</button>
       </form>
+      <div>
+      <img
+        src={user.avatarURL}
+        alt="avatar"
+        // className={styles.avatar}
+      />
+      </div>
     </div>
   );
 }

@@ -13,8 +13,7 @@ function MessageListDB({ params }) {
           ? user.avatar
           : imgDefault;
         const you =
-          user.name.trim().toLowerCase() ===
-          params.name.trim().toLowerCase();
+          user.name ===params.name;
         return you ? (
           <div key={i} className={styles.containerYou}>
             <img

@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import Notiflix from 'notiflix';
 import { options } from 'options/configMessage';
 
-axios.defaults.baseURL = 'https://chat-back-end-6mf9.onrender.com/chat';
+axios.defaults.baseURL ='https://chat-back-end-6mf9.onrender.com/chat';
 
 const message = Notiflix.Notify;
 
@@ -89,9 +89,10 @@ export const updateAvatar = createAsyncThunk(
   'auth/updateAvatar',
   async (file, thunkAPI) => {
     try {
+      const formData = new FormData(file);
       const response = await axios.patch(
         '/users/avatars',
-        file
+        formData
       );
       return response.data;
     } catch (e) {

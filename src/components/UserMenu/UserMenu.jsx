@@ -18,6 +18,8 @@ function UserMenu() {
   const dispatch = useDispatch();
   const { user } = useAuth();
 
+
+
   useEffect(() => {
     const searchParams = Object.fromEntries(
       new URLSearchParams(search)
@@ -25,6 +27,7 @@ function UserMenu() {
     setParams(searchParams);
   }, [search]);
 
+  
   const leftRoom = () => {
     if (!params) {
       socket.emit('leftRoom', { params });
