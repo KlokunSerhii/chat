@@ -40,7 +40,7 @@ function UserMenu() {
       <span className={styles.span}>
         <p className={styles.name}>Hello,</p>
         <div className={styles.user}>
-          <NavLink to={`/profile`}>
+          <NavLink to={`/profile`} onClick={()=>socket.emit('leftRoom', { params })}>
             <img
               className={styles.avatar}
               src={user.avatarURL}
