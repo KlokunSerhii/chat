@@ -24,8 +24,19 @@ const Navigation = () => {
 
   return (
     <nav className={styles.nav}>
-      {isLoggedIn && (
-        <NavLink className={styles.navLink} to="/join" onClick={()=> socket.emit('leftRoom', { params })}>
+      {isLoggedIn ? (
+        <NavLink
+          className={styles.navLink}
+          to="/join"
+          onClick={() =>
+            socket.emit('leftRoom', { params })
+          }
+        >
+          Chat
+          <AiOutlineWechat className={styles.icon} />
+        </NavLink>
+      ) : (
+        <NavLink className={styles.navLink} to="/">
           Chat
           <AiOutlineWechat className={styles.icon} />
         </NavLink>

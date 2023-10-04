@@ -1,0 +1,8 @@
+.titleContainer {
+  font-size: 34px;
+  line-height: 1.17;
+  font-weight: 700;
+  margin-top: 50px;
+  width: 50%;
+  color: var(--main-text-color);
+}

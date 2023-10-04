@@ -9,10 +9,10 @@
   padding: 5px;
   text-decoration: none;
   font-size: 14px;
-  color: #f0f0f0;
+  color: #000;
   &:hover,
   &:focus {
-    color: #ffbf00;
+    color: var(--bg-btn-hover-color);
   }
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 16px;
