@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useAuth } from '../../huks/auth';
+import { useAuth } from '../../hooks/auth';
 import styles from './UserMenu.module.css';
 import { logout } from '../../redux/auth/operations';
 import imgDefault from '../../img/bot.jpg';
@@ -36,25 +36,23 @@ function UserMenu() {
     <div className={styles.container}>
       <span className={styles.span}>
         <p className={styles.name_title}>Hello,</p>
-        <div className={styles.user}>
-          <NavLink
-            to={`/profile`}
-            onClick={() =>
-              socket.emit('leftRoom', { params })
-            }
-          >
-            <img
-              className={styles.avatar}
-              src={user.avatarURL}
-              alt="avatar"
-            />
-          </NavLink>
-
-          <p className={styles.name}> {user.name}</p>
-        </div>
+        <NavLink
+          to={`/profile`}
+          onClick={() =>
+            socket.emit('leftRoom', { params })
+          }
+          className={styles.UserProfile}
+        >
+          <img
+            className={styles.avatar}
+            src={user.avatarURL}
+            alt="avatar"
+          />
+          {user.name}
+        </NavLink>
       </span>
       <button
-        className={styles.button}
+        className={styles.buttonIn}
         type="button"
         onClick={leftRoom}
       >

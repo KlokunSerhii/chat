@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../Chat/Chat.module.css';
-import { useMessage } from '../../huks/message';
+import { useMessage } from '../../hooks/message';
 import imgDefault from '../../img/bot.jpg';
 
 function MessageListDB({ params }) {

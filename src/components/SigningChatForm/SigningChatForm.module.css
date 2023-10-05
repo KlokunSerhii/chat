@@ -1,109 +1,90 @@
-.container {
+.ContainerJoin {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  background-image: url(../../img/bg.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  max-width: 100%;
-}
-.input {
-  width: 250px;
-  height: 25px;
-  font-size: 14px;
-  padding: 7px 15px 7px 35px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  color: #f0f0f0;
-  outline: none;
-  background-color: transparent;
-  border: 1px solid #f0f0f0;
-  &::placeholder {
-    color: #f0f0f0;
-  }
-  &:focus {
-    border: 2px solid #ffbf00;
-  }
-  &:disabled {
-    background-color: transparent;
-    color: #f0f0f0;
-    opacity: 1;
-  }
-  @media (min-width: 768px) and (max-width: 1199px) {
-    width: 400px;
-    font-size: 18px;
-  }
-  @media (min-width: 1200px) {
-    width: 400px;
-    font-size: 20px;
-  }
-}
-.button {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 35px;
-  width: 150px;
-  color: #f0f0f0;
-  font-weight: 700;
-  font-size: 16px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  :hover {
-    color: #ffbf00;
-  }
-  @media (min-width: 768px) and (max-width: 1199px) {
-    font-size: 18px;
-  }
-  @media (min-width: 1200px) {
-    font-size: 24px;
-  }
-}
-.buttonLink {
-  text-decoration: none;
 }
 
 .form {
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 15px 0 15px;
+}
+
+.label {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
-.title {
-  margin-top: 70px;
-  padding-top: 50px;
-  font-size: 30px;
-  font-weight: 700;
-  color: #1e053b;
-  @media (min-width: 768px) and (max-width: 1199px) {
-    font-size: 40px;
+
+.input {
+  height: 25px;
+  width: 250px;
+  font-size: 20px;
+  padding: 7px 10px 7px 35px;
+  border-radius: 12px;
+  color: var(--bg-btn-color);
+  outline: none;
+  background-color: transparent;
+  border: 1px solid var(--bg-btn-color);
+
+  &::placeholder {
+    color: var(--bg-btn-color);
   }
-  @media (min-width: 1200px) {
-    font-size: 50px;
+
+  &:focus {
+    border: 1px solid var(--bg-btn-hover-color);
   }
+}
+
+.buttonIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 136px;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 40px;
+  background: var(--bg-btn-color);
+  color: var(--bg-color);
+  border: 1px solid var(--bg-btn-hover-color);
+  border-radius: 12px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--bg-btn-hover-color);
+  }
+}
+
+.buttonLink {
+  text-decoration: none;
 }
 
 .iconUser {
   margin-left: 5px;
   stroke: 0;
-  fill: #f0f0f0;
+  fill: var(--bg-btn-color);
   position: absolute;
-  top: 13px;
+  top: 12px;
   left: 10px;
 }
+
 .iconPassword {
+  position: absolute;
   margin-left: 5px;
   stroke: 0;
-  fill: #f0f0f0;
-  position: absolute;
-  top: 62px;
+  fill: var(--bg-btn-color);
+  top: 12px;
   left: 10px;
 }
 
 .avatar {
   border-radius: 50px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  width: 100px;
+
 }

@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { AiOutlineWechat } from 'react-icons/ai';
 import styles from './Navigation.module.css';
-import { useAuth } from '../../huks/auth';
+import { useAuth } from '../../hooks/auth';
 import { useEffect, useState } from 'react';
 import imgDefault from '../../img/bot.jpg';
 import { socket } from '../../options/socket';

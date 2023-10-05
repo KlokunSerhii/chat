@@ -2,23 +2,24 @@ import { Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import ChatView from 'Page/ChatView';
-import RegisterPage from 'Page/SingUp';
-import LoginPage from 'Page/SingIn/';
+import ChatView from 'page/ChatView';
+import RegisterPage from 'page/SingUp';
+import LoginPage from 'page/SingIn';
 import SharedLayout from './SharedLayout';
 import PrivateRoute from './PrivateRoute';
 import RestrictedRoute from './RestrictedRoute';
-import { useAuth } from 'huks/auth';
+import { useAuth } from 'hooks/auth';
 import { refreshUser } from 'redux/auth/operations';
 import { AppLoader } from './Loader/Loader';
 import stales from './App.module.css';
-import SigningChat from 'Page/SigningChat';
-import ProfileView from 'Page/ProfileView';
-import WelcomPage from 'Page/Welcome';
+import SigningChat from 'page/SingInChat/SigningChat';
+import ProfileView from 'page/ProfileView';
+import WelcomPage from 'page/Welcome';
 
 const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
+
 
   useEffect(() => {
     dispatch(refreshUser());

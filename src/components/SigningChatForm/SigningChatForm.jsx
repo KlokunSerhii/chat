@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../huks/auth';
+import { useAuth } from '../../hooks/auth';
 import styles from './SigningChatForm.module.css';
 const FIELDS = {
   ROOM: 'room',
@@ -11,8 +11,6 @@ const FIELDS = {
 function SigningChatForm() {
   const { ROOM } = FIELDS;
   const { user } = useAuth();
-
-
 
   const [values, setValues] = useState({
     [ROOM]: '',
@@ -33,14 +31,14 @@ function SigningChatForm() {
   };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Join</h1>
+    <div className={styles.ContainerJoin}>
       <img
         src={user.avatarURL}
         alt="avatar"
         className={styles.avatar}
       />
       <form className={styles.form}>
+      <label className={styles.label}>
         <input
           className={styles.input}
           type="text"
@@ -53,6 +51,9 @@ function SigningChatForm() {
           required
         />
         <AiOutlineUser className={styles.iconUser} />
+        </label>
+        <label className={styles.label}>
+
         <input
           className={styles.input}
           type="text"
@@ -66,12 +67,13 @@ function SigningChatForm() {
         <RiLockPasswordFill
           className={styles.iconPassword}
         />
+         </label>
         <Link
           className={styles.buttonLink}
           to={`/chat/${values[ROOM]}?name=${user.name}&room=${values[ROOM]}&avatar=${user.avatarURL}`}
         >
           <button
-            className={styles.button}
+            className={styles.buttonIn}
             type="submit"
             onClick={handleClick}
           >

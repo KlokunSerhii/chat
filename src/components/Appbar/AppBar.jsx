@@ -1,6 +1,6 @@
 import Navigation from 'components/Navigation/Navigation';
 import UserMenu from 'components/UserMenu/UserMenu';
-import { useAuth } from '../../huks/auth';
+import { useAuth } from '../../hooks/auth';
 import styles from './App.module.css';
 import { useEffect, useState } from 'react';
 

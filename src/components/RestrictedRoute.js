@@ -1,4 +1,4 @@
-import { useAuth } from 'huks/auth';
+import { useAuth } from 'hooks/auth';
 import { Navigate } from 'react-router-dom';
 
 const RestrictedRoute = ({

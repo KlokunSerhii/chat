@@ -4,7 +4,7 @@ import {
   updateAvatar,
   refreshUser,
 } from 'redux/auth/operations';
-import { useAuth } from '../../huks/auth';
+import { useAuth } from '../../hooks/auth';
 
 function Profile() {
   const dispatch = useDispatch();

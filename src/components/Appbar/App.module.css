@@ -12,11 +12,12 @@
 }
 
 .headerLogin {
-  background-color: transparent;
+  background-color: var(--bg-color);
   justify-content: space-around;
   display: flex;
   align-items: center;
   width: 100%;
+  gap: 400px;
   height: 70px;
   margin: auto;
   padding-left: 16px;
