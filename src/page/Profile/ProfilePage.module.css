@@ -1,11 +1,15 @@
 .backGround {
   display: flex;
-  height: 558px;
+  height: 637px;
   background-color: var(--bg-color);
-
+}
+.userContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.ContainetTitle {
+.ContainerTitle {
   display: flex;
   width: 100%;
   text-align: center;

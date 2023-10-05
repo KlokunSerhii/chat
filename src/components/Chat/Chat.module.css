@@ -1,10 +1,15 @@
+.ChatBox {
+  display: flex;
+  width: 100%;
+}
+
 .chat {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #0d0d0d;
+  background-color: var(--main-text-color);
   @media (min-width: 1200px) {
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
   }
 }
 .container {
@@ -13,21 +18,20 @@
   align-items: center;
   flex-direction: column;
   overflow-y: scroll;
-  background-color: #9b9e9e;
-  margin-top: 5px;
+  background-color: var(--bg-chat-color);
+  border: 1px solid var(--main-text-color);
+
   width: 100%;
   height: 430px;
-
+  padding: 10px;
   @media (min-width: 768px) and (max-width: 1199px) {
     flex-direction: row;
-    margin-top: 70px;
     height: 400px;
   }
   @media (min-width: 1200px) {
     flex-direction: row;
-    margin-top: 65px;
     width: 100%;
-    height: 570px;
+    height: 549px;
   }
 }
 .containerChat {
@@ -38,20 +42,20 @@
     padding-left: 160px;
   }
   @media (min-width: 1200px) {
-    padding-left: 220px;
+    margin: 50px 15px 15px 220px;
   }
 }
 .containerRoom {
-  position: fixed;
+  /* position: fixed; */
   display: none;
   justify-content: flex-start;
   flex-direction: column;
-  width: 180px;
+  width: 350px;
   height: 530px;
   padding: 10px;
-  border-right: 2px solid #f0f0f0;
+  border: 1px solid var(--main-text-color);
   background-color: transparent;
-  color: #f0f0f0;
+  color: var(--main-text-color);
   @media (min-width: 768px) and (max-width: 1199px) {
     display: flex;
     width: 130px;
@@ -59,16 +63,16 @@
   }
   @media (min-width: 1200px) {
     display: flex;
-    height: 520px;
+    height: 549px;
   }
 }
 
 .user {
   display: flex;
-  padding: 10px 15px;
+  padding: 7px 20px;
   font-size: 10px;
-  color: #0d0d0d;
-  background-color: #f0f0f0;
+  color: var(--main-text-color);
+  background-color: var(--bg-color);
   border-radius: 15px 15px 15px 0;
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 14px;
@@ -81,11 +85,11 @@
 .you {
   display: flex;
   flex-direction: row-reverse;
-  padding: 10px 15px;
+  padding: 7px 20px;
   border-radius: 15px 15px 0 15px;
   font-size: 10px;
-  color: #0d0d0d;
-  background-color: #f0f0f0;
+  color: var(--main-text-color);
+  background-color: var(--bg-color);
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 14px;
   }
@@ -95,14 +99,12 @@
 }
 
 .nameUser {
-  margin-left: 5px;
-  margin-right: 10px;
-  border-radius: 5px;
+  margin: 5px 10px 0 5px;
   outline: none;
   font-size: 10px;
   font-weight: 500;
   font-style: italic;
-  color: #f0f0f0;
+  color: var(--main-text-color);
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 12px;
   }
@@ -112,14 +114,12 @@
 }
 
 .nameYou {
-  margin-left: 10px;
-  margin-right: 5px;
-  border-radius: 5px;
+  margin: 5px 5px 0 10px;
   outline: none;
   font-size: 10px;
   font-weight: 500;
   font-style: italic;
-  color: #f0f0f0;
+  color: var(--main-text-color);
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 12px;
   }
@@ -218,23 +218,25 @@
 }
 .room {
   font-size: 16px;
-  color: #f0f0f0;
+  color: var(--main-text-color);
 }
 .users {
   font-size: 16px;
-  color: #f0f0f0;
+  color: var(--main-text-color);
   margin-left: 10px;
   @media (min-width: 768px) and (max-width: 1199px) {
     margin-left: 0;
   }
 }
 .roomOnline {
+  color: var(--main-text-color);
   display: flex;
   @media (min-width: 768px) and (max-width: 1199px) {
     flex-direction: column;
   }
 }
 .roomItem {
+  color: var(--main-text-color);
   display: flex;
   flex-direction: row;
 }

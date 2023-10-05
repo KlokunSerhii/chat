@@ -27,6 +27,14 @@ function ChatForm({ onSubmit }) {
 
   return (
     <div className={styles.container}>
+      <div className={styles.iconContainer}>
+        <img
+          className={styles.icon}
+          src={smail}
+          alt=""
+          onClick={() => setOpen(!isOpen)}
+        />
+      </div>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           className={styles.input}
@@ -50,14 +58,6 @@ function ChatForm({ onSubmit }) {
           </div>
         )}
       </form>
-      <div className={styles.iconContainer}>
-        <img
-          className={styles.icon}
-          src={smail}
-          alt=""
-          onClick={() => setOpen(!isOpen)}
-        />
-      </div>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import ChatView from 'page/ChatView';
+import ChatView from 'page/Profile/ChatPage.jsx/ChatPage';
 import RegisterPage from 'page/SingUp';
 import LoginPage from 'page/SingIn';
 import SharedLayout from './SharedLayout';
@@ -19,7 +19,6 @@ import WelcomPage from 'page/Welcome';
 const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
-
 
   useEffect(() => {
     dispatch(refreshUser());

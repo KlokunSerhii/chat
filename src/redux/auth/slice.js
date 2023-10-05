@@ -27,13 +27,19 @@ const authSlice = createSlice({
       state.token = payload.token;
       state.isLoggedIn = true;
     },
+    // [updateAvatar.pending](state) {
+    //   state.isRefreshing = true;
+    // },
 
     [updateAvatar.fulfilled](state, { payload }) {
       state.user.avatarURL = payload;
       state.isLoggedIn = true;
       state.isRefreshing = false;
-
     },
+
+    // [updateAvatar.rejected](state) {
+    //   state.isRefreshing = false;
+    // },
 
     [logout.fulfilled](state) {
       state.user = { email: null, name: null };

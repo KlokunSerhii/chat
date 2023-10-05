@@ -11,8 +11,8 @@ import {
 } from 'redux/message/operations';
 import { useDispatch } from 'react-redux';
 import RoomList from 'components/RoomList/RoomList';
-import MessageListDB from 'components/MessageListDB/MessageListDB';
-import MessageListSocket from 'components/MessageListSocket/MessageListSocket';
+import MessageListDB from 'components/Chat/MessageListDB/MessageListDB';
+import MessageListSocket from 'components/Chat/MessageListSocket/MessageListSocket';
 
 const Chat = () => {
   const messagesEndRef = useRef(null);
@@ -64,7 +64,7 @@ const Chat = () => {
   };
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({
+    messagesEndRef.current.scrollIntoView({
       behavior: 'smooth',
     });
   };
@@ -79,17 +79,20 @@ const Chat = () => {
         <TiUserOutline className={styles.iconOpen} />
         Online
       </button>
-      <div className={styles.container}>
-        <RoomList isOpen={isOpen} params={params} />
-        <div className={styles.containerChat}>
-          <MessageListDB params={params} />
-          <MessageListSocket
-            state={state}
-            params={params}
-          />
+      <div className={styles.ChatBox}>
+        <div className={styles.container}>
+          <div className={styles.containerChat}>
+            <MessageListDB params={params} />
+            <MessageListSocket
+              state={state}
+              params={params}
+            />
+            <div ref={messagesEndRef} />
+          </div>
         </div>
-        <div ref={messagesEndRef} />
+        <RoomList isOpen={isOpen} params={params} />
       </div>
+
       <ChatForm onSubmit={addMessage} />
     </div>
   );

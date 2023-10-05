@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 function LoginViews() {
   return (
     <section className={styles.backGround}>
-      <div className={styles.ContainetTitle}>
+      <div className={styles.ContainerTitle}>
         <Title title={'Glad to see you again :)'} />
         <Login />
         <p className={styles.noaccount}>

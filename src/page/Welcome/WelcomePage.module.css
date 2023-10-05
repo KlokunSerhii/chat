@@ -1,5 +1,5 @@
 .backGround {
-  height: 569px;
+  height: 647px;
   background-color: var(--bg-color);
   background-image: url(../../img/4567777.jpg);
   background-position: bottom right -250px;
@@ -52,7 +52,7 @@
   align-items: center;
   justify-content: center;
 }
-.ContainetTitle {
+.ContainerTitle {
   display: flex;
   width: 70%;
   padding-top: 50px;

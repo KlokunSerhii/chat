@@ -8,7 +8,7 @@ function RegisterViews() {
   return (
     <>
       <section className={styles.backGround}>
-        <div className={styles.ContainetTitle}>
+        <div className={styles.ContainerTitle}>
           <Title title={'Hello, sign up'} />
           <Register />
           <p className={styles.noaccount}>

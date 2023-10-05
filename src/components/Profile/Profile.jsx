@@ -5,30 +5,32 @@ import {
   refreshUser,
 } from 'redux/auth/operations';
 import { useAuth } from '../../hooks/auth';
+import Title from 'components/Title';
 
 function Profile() {
   const dispatch = useDispatch();
   const { user } = useAuth();
 
   const handleSubmit = e => {
+    const file = e.target;
     e.preventDefault();
-    const form = e.target;
-    if (form) dispatch(updateAvatar(form));
-    dispatch(refreshUser());
+    if (file) {
+      dispatch(updateAvatar(file));
+      dispatch(refreshUser());
+    }
   };
 
   return (
+    <div className={styles.Container}>
+      <Title title={'Here you can change your avatar'} />
       <form
         onSubmit={handleSubmit}
         encType="multipart/form-data"
-        className={styles.pofileForm}
+        className={styles.profileForm}
       >
         <div className={styles.avatar_container}>
           <div className={styles.avatar}>
-          <img
-            src={user.avatarURL}
-            alt="avatar"
-          />
+            <img src={user.avatarURL} alt="avatar" />
           </div>
           <div className={styles.avatar_icon}></div>
           <input
@@ -38,7 +40,11 @@ function Profile() {
             className={styles.file_input}
           />
         </div>
+        <button className={styles.buttonUp} type="submit">
+          Save
+        </button>
       </form>
+    </div>
   );
 }
 

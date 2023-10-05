@@ -6,7 +6,7 @@ import Title from 'components/Title';
 function WelcomPage() {
   return (
     <section className={styles.backGround}>
-      <div className={styles.ContainetTitle}>
+      <div className={styles.ContainerTitle}>
         <Title
           title={
             'Welcome to Chat-Lite, where you can chat with your friends'

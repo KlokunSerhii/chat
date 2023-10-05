@@ -1,5 +1,10 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-.pofileForm {
+.profileForm {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -20,7 +25,6 @@
   overflow: hidden;
   border-radius: 50%;
   border: 1px solid var(--bg-btn-hover-color);
-
 }
 .avatar img {
   object-fit: cover;
@@ -57,4 +61,21 @@
   appearance: none;
   opacity: 0;
 }
-
+.buttonUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 136px;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 40px;
+  background: var(--bg-btn-color);
+  color: var(--bg-color);
+  border: 1px solid var(--bg-btn-hover-color);
+  border-radius: 12px;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--bg-btn-hover-color);
+  }
+}

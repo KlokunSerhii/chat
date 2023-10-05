@@ -6,7 +6,7 @@ import Title from 'components/Title';
 function SigningChat() {
   return (
     <section className={styles.backGround}>
-      <div className={styles.ContainetTitle}>
+      <div className={styles.ContainerTitle}>
         <Title title={'Join to room'} />
         <SigningChatForm />
       </div>

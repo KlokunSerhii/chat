@@ -1,14 +1,11 @@
 import React from 'react';
-import styles from '../Chat/Chat.module.css';
-import { useMessage } from '../../hooks/message';
-import imgDefault from '../../img/bot.jpg';
+import styles from '../Chat.module.css';
+import imgDefault from '../../../img/bot.jpg';
 
-function MessageListDB({ params }) {
-  const { items } = useMessage();
-
+function MessageListSocket({ state, params }) {
   return (
     <>
-      {items.map(({ user, message }, i) => {
+      {state.map(({ user, message }, i) => {
         const avatar = user.avatar
           ? user.avatar
           : imgDefault;
@@ -53,4 +50,4 @@ function MessageListDB({ params }) {
   );
 }
 
-export default MessageListDB;
+export default MessageListSocket;
