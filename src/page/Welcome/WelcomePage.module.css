@@ -1,7 +1,6 @@
 .backGround {
-  height: 647px;
+  height: 569px;
   background-color: var(--bg-color);
-  /* background-image: url(../../img/4535353.jpg); */
   background-image: url(../../img/4567777.jpg);
   background-position: bottom right -250px;
   background-repeat: no-repeat;

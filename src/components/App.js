@@ -13,7 +13,7 @@ import { refreshUser } from 'redux/auth/operations';
 import { AppLoader } from './Loader/Loader';
 import stales from './App.module.css';
 import SigningChat from 'page/SingInChat/SigningChat';
-import ProfileView from 'page/ProfileView';
+import ProfilePage from 'page/Profile/ProfilePage';
 import WelcomPage from 'page/Welcome';
 
 const App = () => {
@@ -74,7 +74,7 @@ const App = () => {
           element={
             <PrivateRoute
               redirectto="/login"
-              component={ProfileView}
+              component={ProfilePage}
             />
           }
         />

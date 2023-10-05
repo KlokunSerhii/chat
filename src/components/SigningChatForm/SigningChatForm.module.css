@@ -83,8 +83,10 @@
 }
 
 .avatar {
+  object-fit: cover;
   border-radius: 50px;
   margin-top: 30px;
   width: 100px;
+  height: 100px;
 
 }

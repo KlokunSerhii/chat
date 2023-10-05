@@ -7,6 +7,8 @@ import { SignupSchemaRegister } from '../../options/validForm';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations';
 import styles from './Register.module.css';
+
+
 function Register() {
   const email = '';
   const password = '';

@@ -18,33 +18,27 @@ function Profile() {
   };
 
   return (
-    <div className={styles.pofileContainet}>
       <form
         onSubmit={handleSubmit}
         encType="multipart/form-data"
         className={styles.pofileForm}
       >
-        <label htmlFor="file" className={styles.label}>
-          Choose file to upload
-        </label>
-
-        <input
-          name="avatar"
-          type="file"
-          accept="image/*"
-          className={styles.addAvatar}
-        />
-
-        <button className={styles.button}>Submit</button>
+        <div className={styles.avatar_container}>
+          <div className={styles.avatar}>
+          <img
+            src={user.avatarURL}
+            alt="avatar"
+          />
+          </div>
+          <div className={styles.avatar_icon}></div>
+          <input
+            name="avatar"
+            type="file"
+            accept="image/*"
+            className={styles.file_input}
+          />
+        </div>
       </form>
-      <div>
-        <img
-          src={user.avatarURL}
-          alt="avatar"
-          className={styles.avatar}
-        />
-      </div>
-    </div>
   );
 }
 

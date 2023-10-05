@@ -7,8 +7,7 @@
   width: 100%;
   height: 70px;
   margin: auto;
-  padding-left: 16px;
-  padding-right: 16px;
+
 }
 
 .headerLogin {
@@ -20,6 +19,4 @@
   gap: 400px;
   height: 70px;
   margin: auto;
-  padding-left: 16px;
-  padding-right: 16px;
 }

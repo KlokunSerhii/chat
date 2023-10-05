@@ -1,11 +1,11 @@
 .backGround {
-  height: 647px;
+  height: 579px;
   background-color: var(--bg-color);
   background-image: url(../../img/4535353.jpg);
-  background-position: bottom right -250px;
+  background-position: bottom right -260px;
   background-repeat: no-repeat;
   background-size: contain;
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .ContainetTitle {
@@ -30,5 +30,4 @@
   font-style: normal;
   font-weight: 400;
   line-height: calc(18 / 12);
-  margin-bottom: 121px;
 }
