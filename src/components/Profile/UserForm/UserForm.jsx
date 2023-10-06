@@ -36,8 +36,8 @@ function UserForm() {
             className={styles.input}
             type="text"
             name="name"
-            placeholder="enter your name"
-            autoComplete="off"
+            placeholder={user.name}
+
           />
           <AiOutlineUser className={styles.iconUser} />
         </label>
@@ -46,8 +46,8 @@ function UserForm() {
             className={styles.input}
             type="email"
             name="email"
-            placeholder="enter your email"
-            autoComplete="off"
+            placeholder={user.email}
+
           />
           <MdOutlineEmail className={styles.iconEmail} />
         </label>
@@ -55,10 +55,10 @@ function UserForm() {
         <label className={styles.label}>
           <Field
             className={styles.input}
-            type="password"
+            type="text"
             name="password"
-            placeholder="enter your password"
-            autoComplete="off"
+            placeholder={user.password}
+
           />
           <RiLockPasswordFill className={styles.iconPassword} />
         </label>
