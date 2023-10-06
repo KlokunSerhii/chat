@@ -23,10 +23,13 @@ function RoomList({ isOpen, params }) {
     });
   }, []);
 
-  const handlerAddFriends =()=>{
-    dispatch(addFriend({name: "alex", avatarURL:''}))
-   console.log('додати')
-  }
+  const handlerAddFriends = (name, avatar) => {
+    const { _id } = user;
+    console.log(user);
+    console.log(_id);
+    dispatch(addFriend({ name, avatarURL: avatar, _id }));
+    console.log('додати');
+  };
 
   return (
     <>
@@ -49,12 +52,18 @@ function RoomList({ isOpen, params }) {
                 </div>
                 <div className={styles.btnContainer}>
                   {user.name !== name && (
-                    <button className={styles.btnAdd} onClick={handlerAddFriends} >
+                    <button
+                      className={styles.btnAdd}
+                      onClick={handlerAddFriends(name, avatar)}
+                    >
                       <AiOutlineUsergroupAdd />
                     </button>
                   )}
                   {user.name !== name && (
-                    <button className={styles.btnDelete} onClick={()=> console.log('видалити')}>
+                    <button
+                      className={styles.btnDelete}
+                      onClick={() => console.log('видалити')}
+                    >
                       <AiOutlineUsergroupDelete />
                     </button>
                   )}

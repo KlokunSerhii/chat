@@ -3,9 +3,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import Notiflix from 'notiflix';
 import { options } from 'options/configMessage';
 
-axios.defaults.baseURL =
-  'https://chat-back-end-6mf9.onrender.com/chat';
-// axios.defaults.baseURL = 'http://localhost:3001/chat';
+// axios.defaults.baseURL =
+//   'https://chat-back-end-6mf9.onrender.com/chat';
+axios.defaults.baseURL = 'http://localhost:3001/chat';
 
 const message = Notiflix.Notify;
 
@@ -40,10 +40,7 @@ export const login = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
     try {
-      const response = await axios.post(
-        '/users/login',
-        credentials
-      );
+      const response = await axios.post('/users/login', credentials);
       setAuthHeader(response.data.token);
       return response.data;
     } catch (e) {
@@ -74,9 +71,7 @@ export const refreshUser = createAsyncThunk(
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
     if (!persistedToken) {
-      return thunkAPI.rejectWithValue(
-        'Unable to fetch user'
-      );
+      return thunkAPI.rejectWithValue('Unable to fetch user');
     }
     setAuthHeader(persistedToken);
     try {
@@ -93,10 +88,7 @@ export const updateAvatar = createAsyncThunk(
   async (file, thunkAPI) => {
     try {
       const formData = new FormData(file);
-      const response = await axios.patch(
-        '/users/avatars',
-        formData
-      );
+      const response = await axios.patch('/users/avatars', formData);
 
       return response.data;
     } catch (e) {
@@ -108,10 +100,12 @@ export const updateUserData = createAsyncThunk(
   'auth/updateUserData',
   async ({ email, password, name, avatarURL }, thunkAPI) => {
     try {
-      const response = await axios.patch(
-        '/users/current',
-        { email, password, name, avatarURL }
-      );
+      const response = await axios.patch('/users/current', {
+        email,
+        password,
+        name,
+        avatarURL,
+      });
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

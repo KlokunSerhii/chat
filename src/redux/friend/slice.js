@@ -6,16 +6,16 @@ const friendsSlice = createSlice({
   name: 'friends',
   initialState: {
     friendsList: {
-        name:'',
-        avatarURL:''
-    }
+      name: '',
+      avatarURL: '',
+    },
   },
   extraReducers: {
     [getAllFriends.fulfilled](state, { payload }) {
       state.friendsList = payload;
     },
     [addFriend.fulfilled](state, { payload }) {
-      state.friendsList.push(payload);
+      // state.friendsList.push(payload);
     },
   },
 });

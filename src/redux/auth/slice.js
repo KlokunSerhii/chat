@@ -5,13 +5,13 @@ import {
   register,
   refreshUser,
   updateAvatar,
-  updateUserData
+  updateUserData,
 } from './operations';
 
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: { email: '', name: '', avatarURL: '' },
+    user: { email: '', name: '', avatarURL: '', _id: '' },
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
@@ -40,7 +40,7 @@ const authSlice = createSlice({
       state.isLoggedIn = true;
       state.isRefreshing = false;
     },
-  
+
     [logout.fulfilled](state) {
       state.user = { email: null, name: null };
       state.token = null;
