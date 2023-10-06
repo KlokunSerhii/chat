@@ -1,9 +1,6 @@
 import styles from './Profile.module.css';
 import { useDispatch } from 'react-redux';
-import {
-  updateAvatar,
-  refreshUser,
-} from 'redux/auth/operations';
+import { updateAvatar, refreshUser } from 'redux/auth/operations';
 import { useAuth } from '../../hooks/auth';
 import Title from 'components/Title';
 
@@ -11,7 +8,7 @@ function Profile() {
   const dispatch = useDispatch();
   const { user } = useAuth();
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     const file = e.target;
     e.preventDefault();
     if (file) {

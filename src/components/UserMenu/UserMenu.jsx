@@ -43,12 +43,12 @@ function UserMenu() {
           }
           className={styles.UserProfile}
         >
-          <img
-            className={styles.avatar}
-            src={user.avatarURL}
-            alt="avatar"
-          />
-          {user.name}
+        <img
+          className={styles.avatar}
+          src={user.avatarURL}
+          alt="avatar"
+        />
+         {user.name}
         </NavLink>
       </span>
       <button

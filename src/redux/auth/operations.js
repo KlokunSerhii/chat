@@ -15,6 +15,7 @@ const setAuthHeader = token => {
 const clearAuthHeader = token => {
   axios.defaults.headers.common.Authorization = '';
 };
+
 export const register = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
@@ -95,6 +96,21 @@ export const updateAvatar = createAsyncThunk(
       const response = await axios.patch(
         '/users/avatars',
         formData
+      );
+      console.log(response.data)
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+export const updateUserData = createAsyncThunk(
+  'auth/updateUserData',
+  async ({ email, password, name, avatarURL }, thunkAPI) => {
+    try {
+      const response = await axios.patch(
+        '/users/current',
+        { email, password, name, avatarURL }
       );
       return response.data;
     } catch (e) {
