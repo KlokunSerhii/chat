@@ -1,0 +1,165 @@
+.containerRoomMobile {
+  position: fixed;
+  top: 90px;
+  width: 250px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow-y: scroll;
+  transform: translateY(10%);
+  background-color: #f0f0f0;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.containerRoom {
+  /* position: fixed; */
+  display: none;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 350px;
+  height: 530px;
+  padding: 10px;
+  border: 1px solid var(--main-text-color);
+  background-color: transparent;
+  color: var(--main-text-color);
+  @media (min-width: 768px) and (max-width: 1199px) {
+    display: flex;
+    width: 130px;
+    height: 350px;
+  }
+  @media (min-width: 1200px) {
+    display: flex;
+    height: 549px;
+  }
+}
+.roomOnline {
+  color: var(--main-text-color);
+  display: flex;
+  @media (min-width: 768px) and (max-width: 1199px) {
+    flex-direction: column;
+  }
+}
+.room {
+  font-size: 16px;
+  color: var(--main-text-color);
+}
+.users {
+  font-size: 16px;
+  color: var(--main-text-color);
+  margin-left: 10px;
+  @media (min-width: 768px) and (max-width: 1199px) {
+    margin-left: 0;
+  }
+}
+.roomList {
+  margin-top: 10px;
+}
+.roomItemMobile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.roomItem {
+  color: var(--main-text-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.avatarRoom {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+.roomOnlineMobile {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0d0d0d;
+}
+.roomMobile {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0d0d0d;
+}
+.usersMobile {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0d0d0d;
+}
+.nameMobile {
+  margin-left: 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: italic;
+  color: #0d0d0d;
+}
+.btnAdd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  background: var(--bg-btn-color);
+  color: var(--bg-color);
+  border: 1px solid var(--bg-btn-hover-color);
+  border-radius: 12px;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--bg-btn-hover-color);
+  }
+}
+.btnDelete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  background: var(--main-text-color);
+  color: var(--bg-color);
+  border-radius: 12px;
+  border: 1px solid var(--bg-color);
+  cursor: pointer;
+  &:hover {
+    border: 1px solid var(--bg-btn-hover-color);
+    color: var(--bg-btn-hover-color);
+  }
+}
+
+.nameUser {
+  outline: none;
+  font-size: 10px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--main-text-color);
+  @media (min-width: 768px) and (max-width: 1199px) {
+    font-size: 12px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 14px;
+  }
+}
+.userContainer {
+  display: flex;
+  align-items: center;
+}
+.btnContainer {
+  display: flex;
+  align-items: center;
+}
