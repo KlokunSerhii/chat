@@ -7,11 +7,14 @@ import {
   AiOutlineUsergroupDelete,
 } from 'react-icons/ai';
 import { useAuth } from 'hooks/auth';
+import { useDispatch } from 'react-redux';
+import { addFriend } from 'redux/friend/operations';
 
 function RoomList({ isOpen, params }) {
   const [users, setUsers] = useState(0);
   const [userList, setUserList] = useState('');
   const { user } = useAuth();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     socket.on('room', ({ data: { users } }) => {
@@ -19,6 +22,11 @@ function RoomList({ isOpen, params }) {
       setUserList(users);
     });
   }, []);
+
+  const handlerAddFriends =()=>{
+    dispatch(addFriend({name: "alex", avatarURL:''}))
+   console.log('додати')
+  }
 
   return (
     <>
@@ -41,7 +49,7 @@ function RoomList({ isOpen, params }) {
                 </div>
                 <div className={styles.btnContainer}>
                   {user.name !== name && (
-                    <button className={styles.btnAdd} onClick={()=> console.log('додати')} >
+                    <button className={styles.btnAdd} onClick={handlerAddFriends} >
                       <AiOutlineUsergroupAdd />
                     </button>
                   )}
