@@ -97,7 +97,7 @@ export const updateAvatar = createAsyncThunk(
         '/users/avatars',
         formData
       );
-      console.log(response.data)
+
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

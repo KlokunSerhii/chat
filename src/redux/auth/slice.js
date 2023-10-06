@@ -30,14 +30,12 @@ const authSlice = createSlice({
     },
 
     [updateAvatar.fulfilled](state, { payload }) {
-      console.log(payload)
       state.user.avatarURL = payload;
       state.isLoggedIn = true;
       state.isRefreshing = false;
     },
 
     [updateUserData.fulfilled](state, { payload }) {
-
       state.user = payload;
       state.isLoggedIn = true;
       state.isRefreshing = false;
