@@ -16,7 +16,7 @@ const friendsSlice = createSlice({
       state.friendsList = payload;
     },
     [addFriend.fulfilled](state, { payload }) {
-      state.friendsList = [...state.friendsList, payload];
+      // state.friendsList = [...state.friendsList, payload];
     },
 
     [deleteFriend.fulfilled](state, { payload }) {

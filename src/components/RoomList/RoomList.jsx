@@ -2,10 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './RoomList.module.css';
 
 import { socket } from '../../options/socket';
-import {
-  AiOutlineUsergroupAdd,
-  AiOutlineUsergroupDelete,
-} from 'react-icons/ai';
+import { AiOutlineUsergroupAdd } from 'react-icons/ai';
 import { useAuth } from 'hooks/auth';
 import { useDispatch } from 'react-redux';
 import { addFriend } from 'redux/friend/operations';
@@ -25,10 +22,7 @@ function RoomList({ isOpen, params }) {
 
   const handlerAddFriends = (name, avatar) => {
     const { _id } = user;
-    console.log(user);
-    console.log(_id);
     dispatch(addFriend({ name, avatarURL: avatar, _id }));
-    console.log('додати');
   };
 
   return (
@@ -59,14 +53,6 @@ function RoomList({ isOpen, params }) {
                       <AiOutlineUsergroupAdd />
                     </button>
                   )}
-                  {user.name !== name && (
-                    <button
-                      className={styles.btnDelete}
-                      onClick={() => console.log('видалити')}
-                    >
-                      <AiOutlineUsergroupDelete />
-                    </button>
-                  )}
                 </div>
               </li>
             ))}
@@ -84,12 +70,25 @@ function RoomList({ isOpen, params }) {
             {userList &&
               userList.map(({ name, avatar }, i) => (
                 <li key={i} className={styles.roomItemMobile}>
-                  <img
-                    className={styles.avatarRoom}
-                    src={avatar}
-                    alt="avatar"
-                  />
-                  <p className={styles.nameMobile}>{name}</p>
+                  <div className={styles.userContainer}>
+                    <img
+                      className={styles.avatarRoom}
+                      src={avatar}
+                      alt="avatar"
+                    />
+                    <p className={styles.nameMobile}>{name}</p>
+                  </div>
+
+                  <div className={styles.btnContainer}>
+                    {user.name !== name && (
+                      <button
+                        className={styles.btnAdd}
+                        onClick={handlerAddFriends(name, avatar)}
+                      >
+                        <AiOutlineUsergroupAdd />
+                      </button>
+                    )}
+                  </div>
                 </li>
               ))}
           </ul>

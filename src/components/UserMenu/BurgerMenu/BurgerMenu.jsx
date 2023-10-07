@@ -52,10 +52,18 @@ function BurgerMenu({ leftRoom, active, setActive }) {
           className={styles.wrapNav}
           onClick={e => e.stopPropagation()}
         >
-          <NavLink className={styles.navItem} to="/join">
+          <NavLink
+            className={styles.navItem}
+            to="/join"
+            onClick={closeMenu}
+          >
             Join
           </NavLink>
-          <NavLink className={styles.navItem} to="/profile">
+          <NavLink
+            className={styles.navItem}
+            to="/profile"
+            onClick={closeMenu}
+          >
             Profile
           </NavLink>
         </div>
