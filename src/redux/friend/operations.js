@@ -33,3 +33,16 @@ export const addFriend = createAsyncThunk(
     }
   }
 );
+
+export const deleteFriend = createAsyncThunk(
+  'friends/deleteFriend ',
+  async (_id, { rejectWithValue }) => {
+    try {
+      const response = await axios.delete(`friends/${_id}`);
+
+      return response.data;
+    } catch (e) {
+      return rejectWithValue(e.message);
+    }
+  }
+);

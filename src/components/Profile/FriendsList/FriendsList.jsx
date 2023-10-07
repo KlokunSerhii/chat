@@ -2,19 +2,22 @@ import { useFriends } from 'hooks/friend';
 import styles from './FriendsList.module.css';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getAllFriends } from 'redux/friend/operations';
+import { deleteFriend, getAllFriends } from 'redux/friend/operations';
 import { useAuth } from 'hooks/auth';
 import { AiOutlineUsergroupDelete } from 'react-icons/ai';
 
 function FriendsList() {
   const dispatch = useDispatch();
   const { user } = useAuth();
+  const { friendsList } = useFriends();
+
+  const handlerDelete = _id => {
+    dispatch(deleteFriend(_id));
+  };
 
   useEffect(() => {
     dispatch(getAllFriends(user._id));
   }, [dispatch, user._id]);
-
-  const { friendsList } = useFriends();
 
   return (
     <div className={styles.box}>
@@ -23,8 +26,8 @@ function FriendsList() {
         <ul className={styles.roomList}>
           {(friendsList.name !== '') &
             (friendsList.avatarURL !== '') &&
-            friendsList.map(({ name, avatarURL }, i) => (
-              <li key={i} className={styles.roomItem}>
+            friendsList.map(({ name, avatarURL, _id }) => (
+              <li key={_id} className={styles.roomItem}>
                 <div className={styles.userContainer}>
                   <img
                     className={styles.avatarRoom}
@@ -37,7 +40,7 @@ function FriendsList() {
                   {user.name !== name && (
                     <button
                       className={styles.btnDelete}
-                      onClick={() => console.log('видалити')}
+                      onClick={() => handlerDelete(_id)}
                     >
                       <AiOutlineUsergroupDelete />
                     </button>

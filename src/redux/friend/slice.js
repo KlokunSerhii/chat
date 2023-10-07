@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getAllFriends, addFriend } from './operations';
+import { getAllFriends, addFriend, deleteFriend } from './operations';
 
 const friendsSlice = createSlice({
   name: 'friends',
@@ -8,6 +8,7 @@ const friendsSlice = createSlice({
     friendsList: {
       name: '',
       avatarURL: '',
+      _id: '',
     },
   },
   extraReducers: {
@@ -15,7 +16,14 @@ const friendsSlice = createSlice({
       state.friendsList = payload;
     },
     [addFriend.fulfilled](state, { payload }) {
-      // state.friendsList.push(payload);
+      state.friendsList = [...state.friendsList, payload];
+    },
+
+    [deleteFriend.fulfilled](state, { payload }) {
+      const index = state.friendsList.findIndex(
+        friend => friend._id === payload._id
+      );
+      state.friendsList.splice(index, 1);
     },
   },
 });
