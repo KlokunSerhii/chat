@@ -6,14 +6,18 @@
   width: 136px;
   font-weight: 500;
   font-size: 20px;
-  margin-top: 40px;
+  margin-top: 10px;
+
   background: var(--bg-btn-color);
-  color: var(--bg-color);
+  color: var(--white-color);
   border: 1px solid var(--bg-btn-hover-color);
   border-radius: 12px;
   cursor: pointer;
   &:hover {
     background-color: var(--bg-btn-hover-color);
+  }
+  @media screen and (min-width: 1200px) {
+    margin-top: 40px;
   }
 }
 .form {
@@ -22,8 +26,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 20px;
-  padding: 50px 15px 0 15px;
+  gap: 5px;
+  padding: 15px 15px 0 15px;
+  @media screen and (min-width: 1200px) {
+    padding: 50px 15px 0 15px;
+    gap: 20px;
+  }
 }
 
 .label {
@@ -61,7 +69,7 @@
   left: 10px;
 }
 .errorMessage {
-  color: var(--main-text-color);
+  color: var(--black-color);
   font-size: 10px;
   margin: 0;
   padding: 0;

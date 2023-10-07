@@ -3,7 +3,7 @@ import styles from './WelcomePage.module.css';
 import { NavLink } from 'react-router-dom';
 import Title from 'components/Title';
 
-function WelcomPage() {
+function WelcomePage() {
   return (
     <section className={styles.backGround}>
       <div className={styles.ContainerTitle}>
@@ -13,16 +13,10 @@ function WelcomPage() {
           }
         />
         <div className={styles.btnContainer}>
-          <NavLink
-            className={styles.buttonIn}
-            to={'/login'}
-          >
+          <NavLink className={styles.buttonIn} to={'/login'}>
             Sing In
           </NavLink>
-          <NavLink
-            className={styles.buttonUp}
-            to={'/register'}
-          >
+          <NavLink className={styles.buttonUp} to={'/register'}>
             Sing Up
           </NavLink>
         </div>
@@ -31,4 +25,4 @@ function WelcomPage() {
   );
 }
 
-export default WelcomPage;
+export default WelcomePage;

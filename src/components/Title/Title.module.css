@@ -2,7 +2,10 @@
   font-size: 34px;
   line-height: 1.17;
   font-weight: 700;
-  margin-top: 50px;
-  width: 50%;
-  color: var(--main-text-color);
+  margin-top: 10px;
+  color: var(--black-color);
+  @media screen and (min-width: 1200px) {
+    width: 50%;
+    margin-top: 50px;
+  }
 }

@@ -7,6 +7,8 @@ import imgDefault from '../../img/bot.jpg';
 import { NavLink, useLocation } from 'react-router-dom';
 import { socket } from '../../options/socket';
 import { RxExit } from 'react-icons/rx';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import BurgerMenu from './BurgerMenu/BurgerMenu';
 
 function UserMenu() {
   const [params, setParams] = useState({
@@ -14,6 +16,8 @@ function UserMenu() {
     user: '',
     avatar: imgDefault,
   });
+  const [menuActive, setMenuActive] = useState(false);
+
   const { search } = useLocation();
   const dispatch = useDispatch();
   const { user } = useAuth();
@@ -33,32 +37,47 @@ function UserMenu() {
   };
 
   return (
-    <div className={styles.container}>
-      <span className={styles.span}>
-        <p className={styles.name_title}>Hello,</p>
-        <NavLink
-          to={`/profile`}
-          onClick={() =>
-            socket.emit('leftRoom', { params })
-          }
-          className={styles.UserProfile}
+    <div className={styles.containerMobile}>
+      <div className={styles.container}>
+        <span className={styles.span}>
+          <p className={styles.name_title}>Hello,</p>
+          <NavLink
+            to={`/profile`}
+            onClick={() => socket.emit('leftRoom', { params })}
+            className={styles.UserProfile}
+          >
+            <img
+              className={styles.avatar}
+              src={user.avatarURL}
+              alt="avatar"
+            />
+            {user.name}
+          </NavLink>
+        </span>
+        <button
+          className={styles.buttonIn}
+          type="button"
+          onClick={leftRoom}
         >
-        <img
-          className={styles.avatar}
-          src={user.avatarURL}
-          alt="avatar"
-        />
-         {user.name}
-        </NavLink>
-      </span>
+          Logout
+          <RxExit className={styles.icon} />
+        </button>
+      </div>
       <button
-        className={styles.buttonIn}
-        type="button"
-        onClick={leftRoom}
+        className={styles.btnBurger}
+        onClick={() => {
+          setMenuActive(true);
+        }}
       >
-        Logout
-        <RxExit className={styles.icon} />
+        <GiHamburgerMenu />
       </button>
+      {menuActive && (
+        <BurgerMenu
+          leftRoom={leftRoom}
+          active={menuActive}
+          setActive={setMenuActive}
+        />
+      )}
     </div>
   );
 }

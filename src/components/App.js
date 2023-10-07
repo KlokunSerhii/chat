@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Suspense, lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/auth/operations';
-import { AppLoader } from './Loader/Loader';
+import AppLoader from './Loader/AppLoader';
 import PrivateRoute from '../routes/PrivateRoute';
 import RestrictedRoute from '../routes/RestrictedRoute';
 

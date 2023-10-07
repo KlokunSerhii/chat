@@ -1,11 +1,16 @@
 .backGround {
-  height: 647px;
-  background-color: var(--bg-color);
+  height: 100vh;
+  background-color: var(--white-color);
   background-image: url(../../img/4567777.jpg);
-  background-position: bottom right -250px;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: contain;
-  padding-top: 60px;
+
+  @media screen and (min-width: 1200px) {
+    height: 647px;
+    padding-top: 60px;
+    background-position: bottom right -250px;
+  }
 }
 .buttonUp {
   display: flex;
@@ -15,13 +20,16 @@
   width: 136px;
   font-weight: 500;
   font-size: 20px;
-  margin-top: 40px;
+
   background: var(--bg-btn-color);
-  color: var(--bg-color);
+  color: var(--white-color);
   border-radius: 12px;
   cursor: pointer;
   &:hover {
     background-color: var(--bg-btn-hover-color);
+  }
+  @media screen and (min-width: 1200px) {
+    margin-top: 40px;
   }
 }
 .buttonIn {
@@ -32,32 +40,41 @@
   width: 130px;
   font-weight: 500;
   font-size: 20px;
-  margin-top: 40px;
-  background: var(--main-text-color);
-  color: var(--bg-color);
+
+  background: var(--black-color);
+  color: var(--white-color);
   border-radius: 12px;
-  border: 1px solid var(--bg-color);
+  border: 1px solid var(--white-color);
   cursor: pointer;
   &:hover {
     border: 1px solid var(--bg-btn-hover-color);
     color: var(--bg-btn-hover-color);
   }
+  @media screen and (min-width: 1200px) {
+    margin-top: 40px;
+  }
 }
 .btnContainer {
   display: flex;
   gap: 20px;
-  width: 50%;
   margin-top: 50px;
   text-align: center;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 1200px) {
+    width: 50%;
+  }
 }
 .ContainerTitle {
   display: flex;
-  width: 70%;
-  padding-top: 50px;
-  padding-left: 50px;
+  padding: 16px;
   text-align: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
+  @media screen and (min-width: 1200px) {
+    align-items: flex-start;
+    width: 70%;
+    padding-top: 50px;
+    padding-left: 50px;
+  }
 }

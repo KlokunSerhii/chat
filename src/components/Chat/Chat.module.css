@@ -7,9 +7,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--main-text-color);
+  background-color: var(--black-color);
   @media (min-width: 1200px) {
-    background-color: var(--bg-color);
+    background-color: var(--white-color);
   }
 }
 .container {
@@ -19,7 +19,7 @@
   flex-direction: column;
   overflow-y: scroll;
   background-color: var(--bg-chat-color);
-  border: 1px solid var(--main-text-color);
+  border: 1px solid var(--black-color);
 
   width: 100%;
   height: 430px;
@@ -46,9 +46,9 @@
   width: 350px;
   height: 530px;
   padding: 10px;
-  border: 1px solid var(--main-text-color);
+  border: 1px solid var(--black-color);
   background-color: transparent;
-  color: var(--main-text-color);
+  color: var(--black-color);
   @media (min-width: 768px) and (max-width: 1199px) {
     display: flex;
     width: 130px;
@@ -64,8 +64,8 @@
   display: flex;
   padding: 7px 20px;
   font-size: 10px;
-  color: var(--main-text-color);
-  background-color: var(--bg-color);
+  color: var(--black-color);
+  background-color: var(--white-color);
   border-radius: 15px 15px 15px 0;
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 14px;
@@ -81,8 +81,8 @@
   padding: 7px 20px;
   border-radius: 15px 15px 0 15px;
   font-size: 10px;
-  color: var(--main-text-color);
-  background-color: var(--bg-color);
+  color: var(--black-color);
+  background-color: var(--white-color);
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 14px;
   }
@@ -97,7 +97,7 @@
   font-size: 10px;
   font-weight: 500;
   font-style: italic;
-  color: var(--main-text-color);
+  color: var(--black-color);
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 12px;
   }
@@ -112,7 +112,7 @@
   font-size: 10px;
   font-weight: 500;
   font-style: italic;
-  color: var(--main-text-color);
+  color: var(--black-color);
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 12px;
   }
@@ -211,25 +211,25 @@
 }
 .room {
   font-size: 16px;
-  color: var(--main-text-color);
+  color: var(--black-color);
 }
 .users {
   font-size: 16px;
-  color: var(--main-text-color);
+  color: var(--black-color);
   margin-left: 10px;
   @media (min-width: 768px) and (max-width: 1199px) {
     margin-left: 0;
   }
 }
 .roomOnline {
-  color: var(--main-text-color);
+  color: var(--black-color);
   display: flex;
   @media (min-width: 768px) and (max-width: 1199px) {
     flex-direction: column;
   }
 }
 .roomItem {
-  color: var(--main-text-color);
+  color: var(--black-color);
   display: flex;
   flex-direction: row;
 }
@@ -246,9 +246,8 @@
   border-radius: 10px;
   overflow-y: scroll;
   transform: translateY(10%);
-  background-color: #f0f0f0;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
-    150ms;
+  background-color: var(--white-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -256,12 +255,12 @@
 .roomMobile {
   font-size: 12px;
   font-weight: 500;
-  color: #0d0d0d;
+  color: var(--black-color);
 }
 .usersMobile {
   font-size: 12px;
   font-weight: 500;
-  color: #0d0d0d;
+  color: var(--black-color);
 }
 .roomOnlineMobile {
   display: flex;
@@ -269,7 +268,7 @@
   width: 200px;
   margin-top: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #0d0d0d;
+  border-bottom: 2px solid var(--black-color);
 }
 .buttonClose {
   position: absolute;
@@ -279,7 +278,7 @@
   justify-content: center;
   border: none;
   &:hover {
-    color: #ffbf00;
+    color: var(--bg-btn-hover-color);
   }
 }
 .nameMobile {
@@ -290,7 +289,7 @@
   font-size: 12px;
   font-weight: 500;
   font-style: italic;
-  color: #0d0d0d;
+  color: var(--black-color);
 }
 
 .roomItemMobile {
@@ -304,14 +303,14 @@
   align-items: center;
   border: none;
   margin-top: 66px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--white-color);
   margin-bottom: 5px;
   background: transparent;
   font-weight: 500;
   font-size: 14px;
-  color: #f0f0f0;
+  color: var(--white-color);
   &:hover {
-    color: #ffbf00;
+    color: var(--bg-btn-hover-color);
   }
   @media screen and (min-width: 768px) {
     display: none;

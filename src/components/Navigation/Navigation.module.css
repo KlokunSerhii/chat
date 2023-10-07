@@ -9,7 +9,7 @@
   padding: 5px;
   text-decoration: none;
   font-size: 14px;
-  color: #000;
+  color: var(--black-color);
   &:hover,
   &:focus {
     color: var(--bg-btn-hover-color);

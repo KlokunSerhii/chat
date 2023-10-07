@@ -1,31 +1,40 @@
 .backGround {
-  height: 657px;
-  background-color: var(--bg-color);
-  background-image: url(../../img/4535353.jpg);
-  background-position: bottom right -260px;
+  height: 100vh;
+  background-color: var(--white-color);
+  background-image: url(../../img/4567777.jpg);
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: contain;
-  padding-top: 50px;
+
+  @media screen and (min-width: 1200px) {
+    height: 647px;
+    padding-top: 60px;
+    background-position: bottom right -250px;
+  }
 }
 
 .ContainerTitle {
   display: flex;
-  width: 40%;
-  padding-top: 50px;
-  padding-left: 50px;
+  padding: 16px;
+
   text-align: center;
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
+  @media screen and (min-width: 1200px) {
+    width: 40%;
+    padding-top: 50px;
+    padding-left: 50px;
+  }
 }
 .link {
   margin-left: 5px;
-  color: var(--main-text-color);
+  color: var(--black-color);
   text-decoration: underline;
 }
 .noaccount {
   margin-top: 12px;
-  color: var(--main-text-color);
+  color: var(--black-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
