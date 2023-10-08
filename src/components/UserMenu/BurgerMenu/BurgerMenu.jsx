@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './BurgerMenu.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { MdLogout } from 'react-icons/md';
 import { RiCloseFill } from 'react-icons/ri';
 import { useEffect } from 'react';
+import imgDefault from '../../../img/bot.jpg';
+import { socket } from 'options/socket';
 
 function BurgerMenu({ leftRoom, active, setActive }) {
+  const [params, setParams] = useState({
+    room: '',
+    user: '',
+    avatar: imgDefault,
+  });
+  const { search } = useLocation();
+
+  useEffect(() => {
+    const searchParams = Object.fromEntries(
+      new URLSearchParams(search)
+    );
+    setParams(searchParams);
+  }, [search]);
+
   const LogOutBtn = () => {
     leftRoom();
     setActive(false);
@@ -35,6 +51,14 @@ function BurgerMenu({ leftRoom, active, setActive }) {
       window.removeEventListener('keydown', handleEscape);
     };
   });
+
+  const leftRoomMob = () => {
+    closeMenu();
+    if (!params) {
+      socket.emit('leftRoom', { params });
+    }
+  };
+
   return (
     <>
       {active && (
@@ -55,14 +79,14 @@ function BurgerMenu({ leftRoom, active, setActive }) {
           <NavLink
             className={styles.navItem}
             to="/join"
-            onClick={closeMenu}
+            onClick={leftRoomMob}
           >
             Join
           </NavLink>
           <NavLink
             className={styles.navItem}
             to="/profile"
-            onClick={closeMenu}
+            onClick={leftRoomMob}
           >
             Profile
           </NavLink>

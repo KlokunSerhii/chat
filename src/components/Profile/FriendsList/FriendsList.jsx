@@ -24,30 +24,28 @@ function FriendsList() {
       <h2 className={styles.title}>Friends List</h2>
       <div className={styles.boxList}>
         <ul className={styles.roomList}>
-          {(friendsList.name !== '') &
-            (friendsList.avatarURL !== '') &&
-            friendsList.map(({ name, avatarURL, _id }) => (
-              <li key={_id} className={styles.roomItem}>
-                <div className={styles.userContainer}>
-                  <img
-                    className={styles.avatarRoom}
-                    src={avatarURL}
-                    alt="avatar"
-                  />
-                  <p className={styles.nameUser}>{name}</p>
-                </div>
-                <div className={styles.btnContainer}>
-                  {user.name !== name && (
-                    <button
-                      className={styles.btnDelete}
-                      onClick={() => handlerDelete(_id)}
-                    >
-                      <AiOutlineUsergroupDelete />
-                    </button>
-                  )}
-                </div>
-              </li>
-            ))}
+          {friendsList?.map(({ name, avatarURL, _id }) => (
+            <li key={_id} className={styles.roomItem}>
+              <div className={styles.userContainer}>
+                <img
+                  className={styles.avatarRoom}
+                  src={avatarURL}
+                  alt="avatar"
+                />
+                <p className={styles.nameUser}>{name}</p>
+              </div>
+              <div className={styles.btnContainer}>
+                {user.name !== name && (
+                  <button
+                    className={styles.btnDelete}
+                    onClick={() => handlerDelete(_id)}
+                  >
+                    <AiOutlineUsergroupDelete />
+                  </button>
+                )}
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

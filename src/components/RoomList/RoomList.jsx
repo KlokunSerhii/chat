@@ -6,11 +6,16 @@ import { AiOutlineUsergroupAdd } from 'react-icons/ai';
 import { useAuth } from 'hooks/auth';
 import { useDispatch } from 'react-redux';
 import { addFriend } from 'redux/friend/operations';
+import { useFriends } from 'hooks/friend';
+import Notiflix from 'notiflix';
+import { options } from 'options/configMessage';
 
 function RoomList({ isOpen, params }) {
   const [users, setUsers] = useState(0);
   const [userList, setUserList] = useState('');
   const { user } = useAuth();
+  const { friendsList } = useFriends();
+  const message = Notiflix.Notify;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,8 +26,19 @@ function RoomList({ isOpen, params }) {
   }, []);
 
   const handlerAddFriends = (name, avatar) => {
+    const friends = friendsList
+      .map(el => el.name)
+      .filter(el => el === name);
+
     const { _id } = user;
+    if (friends && friends.length > 0)
+      return message.info(
+        'The user is already added to the friends list',
+        options
+      );
+
     dispatch(addFriend({ name, avatarURL: avatar, _id }));
+    message.success('Friend add', options);
   };
 
   return (
@@ -48,7 +64,7 @@ function RoomList({ isOpen, params }) {
                   {user.name !== name && (
                     <button
                       className={styles.btnAdd}
-                      onClick={handlerAddFriends(name, avatar)}
+                      onClick={() => handlerAddFriends(name, avatar)}
                     >
                       <AiOutlineUsergroupAdd />
                     </button>

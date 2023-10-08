@@ -26,7 +26,6 @@ export const addFriend = createAsyncThunk(
         name,
         avatarURL,
       });
-      console.log(response.data);
       return response.data;
     } catch (e) {
       return rejectWithValue(e.message);

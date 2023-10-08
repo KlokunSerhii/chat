@@ -35,7 +35,7 @@
   }
   @media (min-width: 1200px) {
     display: flex;
-    height: 549px;
+    height: 579px;
   }
 }
 .roomOnline {
@@ -77,7 +77,7 @@
 
   width: 25px;
   height: 25px;
-  border-radius: 10px;
+  border-radius: 50%;
 }
 .roomOnlineMobile {
   display: flex;
@@ -124,24 +124,8 @@
     background-color: var(--bg-btn-hover-color);
   }
 }
-.btnDelete {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
-  width: 30px;
-  margin-left: 10px;
-  font-weight: 500;
-  font-size: 20px;
-  background: var(--black-color);
-  color: var(--white-color);
-  border-radius: 12px;
-  border: 1px solid var(--white-color);
-  cursor: pointer;
-  &:hover {
-    border: 1px solid var(--bg-btn-hover-color);
-    color: var(--bg-btn-hover-color);
-  }
+.btnAddDisabled {
+  display: none;
 }
 
 .nameUser {

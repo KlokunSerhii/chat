@@ -5,18 +5,14 @@ import { getAllFriends, addFriend, deleteFriend } from './operations';
 const friendsSlice = createSlice({
   name: 'friends',
   initialState: {
-    friendsList: {
-      name: '',
-      avatarURL: '',
-      _id: '',
-    },
+    friendsList: [],
   },
   extraReducers: {
     [getAllFriends.fulfilled](state, { payload }) {
       state.friendsList = payload;
     },
     [addFriend.fulfilled](state, { payload }) {
-      // state.friendsList = [...state.friendsList, payload];
+      state.friendsList.push(payload);
     },
 
     [deleteFriend.fulfilled](state, { payload }) {
