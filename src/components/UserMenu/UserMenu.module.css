@@ -79,7 +79,7 @@
   margin-left: 5px;
 }
 .btnBurger {
-  position: relative;
+  /* position: relative; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,7 +89,7 @@
   padding: 0;
   border: none;
   cursor: pointer;
-  z-index: 200;
+  /* z-index: 200; */
   &:hover {
     fill: var(--bg-btn-color);
   }
@@ -98,11 +98,11 @@
   }
 }
 .btnBurger svg {
-  width: 25px;
-  height: 25px;
-  &:hover {
+  width: 20px;
+  height: 20px;
+  /* &:hover {
     fill: var(--bg-btn-color);
-  }
+  } */
 }
 
 .buttonLogout {
