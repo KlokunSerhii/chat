@@ -7,8 +7,8 @@ import imgDefault from '../../img/bot.jpg';
 import { NavLink, useLocation } from 'react-router-dom';
 import { socket } from '../../options/socket';
 import { RxExit } from 'react-icons/rx';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import BurgerMenu from './BurgerMenu/BurgerMenu';
+// import { GiHamburgerMenu } from 'react-icons/gi';
+// import BurgerMenu from './BurgerMenu/BurgerMenu';
 
 function UserMenu() {
   const [params, setParams] = useState({
@@ -16,7 +16,7 @@ function UserMenu() {
     user: '',
     avatar: imgDefault,
   });
-  const [menuActive, setMenuActive] = useState(false);
+  // const [menuActive, setMenuActive] = useState(false);
 
   const { search } = useLocation();
   const dispatch = useDispatch();
@@ -64,7 +64,7 @@ function UserMenu() {
         </button>
       </div>
       <div className={styles.containerMobile}>
-        {/* <div className={styles.mobContainer}>
+        <div className={styles.mobContainer}>
         <NavLink
           to={`/profile`}
           onClick={() => socket.emit('leftRoom', { params })}
@@ -81,8 +81,8 @@ function UserMenu() {
           Logout
           <RxExit className={styles.icon} />
         </button>
-      </div> */}
-        <button
+      </div>
+        {/* <button
           className={styles.btnBurger}
           onClick={() => {
             setMenuActive(true);
@@ -96,7 +96,7 @@ function UserMenu() {
             active={menuActive}
             setActive={setMenuActive}
           />
-        )}
+        )} */}
       </div>
     </>
   );
