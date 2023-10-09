@@ -104,3 +104,28 @@
     fill: var(--bg-btn-color);
   }
 }
+
+.buttonLogout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 75px;
+  font-weight: 500;
+  font-size: 12px;
+  /* margin-left: 30px; */
+  background: var(--black-color);
+  color: var(--white-color);
+  border-radius: 12px;
+  border: 1px solid var(--white-color);
+  cursor: pointer;
+  &:hover {
+    border: 1px solid var(--bg-btn-hover-color);
+    color: var(--bg-btn-hover-color);
+  }
+}
+.mobContainer{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
