@@ -21,7 +21,7 @@
   height: 50px;
   margin: auto;
   @media screen and (min-width: 1200px) {
-    position: fixed;
+    /* position: fixed; */
     gap: 400px;
   }
 }

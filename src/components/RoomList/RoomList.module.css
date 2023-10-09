@@ -58,13 +58,17 @@
   }
 }
 .roomList {
+  display: flex;
   margin-top: 10px;
+  gap: 5px;
+  flex-direction: column;
 }
 .roomItemMobile {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 50px;
+  /* gap: 50px; */
+  justify-content: space-between;
 }
 .roomItem {
   color: var(--black-color);
@@ -124,9 +128,6 @@
     background-color: var(--bg-btn-hover-color);
   }
 }
-.btnAddDisabled {
-  display: none;
-}
 
 .nameUser {
   outline: none;
@@ -134,6 +135,19 @@
   font-weight: 500;
   font-style: italic;
   color: var(--black-color);
+  @media (min-width: 768px) and (max-width: 1199px) {
+    font-size: 12px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 14px;
+  }
+}
+.nameUserFriend {
+  outline: none;
+  font-size: 10px;
+  font-weight: 500;
+  font-style: italic;
+  color: green;
   @media (min-width: 768px) and (max-width: 1199px) {
     font-size: 12px;
   }

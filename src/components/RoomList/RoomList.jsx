@@ -85,7 +85,7 @@ function RoomList({ isOpen, params }) {
           <ul className={styles.roomList}>
             {userList &&
               userList.map(({ name, avatar }, i) => (
-                <li key={i} className={styles.roomItemMobile}>
+                <li key={i} className={styles.roomItem}>
                   <div className={styles.userContainer}>
                     <img
                       className={styles.avatarRoom}
@@ -99,7 +99,9 @@ function RoomList({ isOpen, params }) {
                     {user.name !== name && (
                       <button
                         className={styles.btnAdd}
-                        onClick={() => handlerAddFriends(name, avatar)}
+                        onClick={() =>
+                          handlerAddFriends(name, avatar)
+                        }
                       >
                         <AiOutlineUsergroupAdd />
                       </button>
