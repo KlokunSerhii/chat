@@ -79,6 +79,7 @@
   margin-left: 5px;
 }
 .btnBurger {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,6 +89,7 @@
   padding: 0;
   border: none;
   cursor: pointer;
+  z-index: 200;
   &:hover {
     fill: var(--bg-btn-color);
   }

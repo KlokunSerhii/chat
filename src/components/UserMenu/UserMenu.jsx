@@ -68,9 +68,6 @@ function UserMenu() {
         onClick={() => {
           setMenuActive(true);
         }}
-        onTouchStart={()=>{
-          setMenuActive(true);
-        }}
       >
         <GiHamburgerMenu />
       </button>
