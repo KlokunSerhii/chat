@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/chat/static/css/main.797a13cc.css",
-    "main.js": "/chat/static/js/main.35427945.js",
+    "main.js": "/chat/static/js/main.62fe362a.js",
     "static/css/35.3f5e3a44.chunk.css": "/chat/static/css/35.3f5e3a44.chunk.css",
     "static/js/35.b078c982.chunk.js": "/chat/static/js/35.b078c982.chunk.js",
     "static/css/23.8d8df388.chunk.css": "/chat/static/css/23.8d8df388.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/726.4a295158.chunk.js": "/chat/static/js/726.4a295158.chunk.js",
     "static/css/478.9090741b.chunk.css": "/chat/static/css/478.9090741b.chunk.css",
     "static/js/478.04f3b050.chunk.js": "/chat/static/js/478.04f3b050.chunk.js",
-    "static/css/503.1fa97d17.chunk.css": "/chat/static/css/503.1fa97d17.chunk.css",
+    "static/css/503.d11158db.chunk.css": "/chat/static/css/503.d11158db.chunk.css",
     "static/js/503.80d119f4.chunk.js": "/chat/static/js/503.80d119f4.chunk.js",
     "static/css/638.99a14295.chunk.css": "/chat/static/css/638.99a14295.chunk.css",
     "static/js/638.ad18a37f.chunk.js": "/chat/static/js/638.ad18a37f.chunk.js",
@@ -27,7 +27,7 @@
     "static/media/checkMark.svg": "/chat/static/media/checkMark.4f18833acded6e437555.svg",
     "index.html": "/chat/index.html",
     "main.797a13cc.css.map": "/chat/static/css/main.797a13cc.css.map",
-    "main.35427945.js.map": "/chat/static/js/main.35427945.js.map",
+    "main.62fe362a.js.map": "/chat/static/js/main.62fe362a.js.map",
     "35.3f5e3a44.chunk.css.map": "/chat/static/css/35.3f5e3a44.chunk.css.map",
     "35.b078c982.chunk.js.map": "/chat/static/js/35.b078c982.chunk.js.map",
     "23.8d8df388.chunk.css.map": "/chat/static/css/23.8d8df388.chunk.css.map",
@@ -36,7 +36,7 @@
     "726.4a295158.chunk.js.map": "/chat/static/js/726.4a295158.chunk.js.map",
     "478.9090741b.chunk.css.map": "/chat/static/css/478.9090741b.chunk.css.map",
     "478.04f3b050.chunk.js.map": "/chat/static/js/478.04f3b050.chunk.js.map",
-    "503.1fa97d17.chunk.css.map": "/chat/static/css/503.1fa97d17.chunk.css.map",
+    "503.d11158db.chunk.css.map": "/chat/static/css/503.d11158db.chunk.css.map",
     "503.80d119f4.chunk.js.map": "/chat/static/js/503.80d119f4.chunk.js.map",
     "638.99a14295.chunk.css.map": "/chat/static/css/638.99a14295.chunk.css.map",
     "638.ad18a37f.chunk.js.map": "/chat/static/js/638.ad18a37f.chunk.js.map",
@@ -51,6 +51,6 @@
   },
   "entrypoints": [
     "static/css/main.797a13cc.css",
-    "static/js/main.35427945.js"
+    "static/js/main.62fe362a.js"
   ]
 }
