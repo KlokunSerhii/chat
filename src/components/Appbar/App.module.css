@@ -8,7 +8,6 @@
   height: 50px;
   margin: auto;
   @media screen and (min-width: 1200px) {
-    position: fixed;
     background-color: transparent;
   }
 }
@@ -22,6 +21,7 @@
   height: 50px;
   margin: auto;
   @media screen and (min-width: 1200px) {
+    position: fixed;
     gap: 400px;
   }
 }
