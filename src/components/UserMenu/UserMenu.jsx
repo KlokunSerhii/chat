@@ -37,7 +37,7 @@ function UserMenu() {
   };
 
   return (
-    <div className={styles.containerMobile}>
+    <>
       <div className={styles.container}>
         <span className={styles.span}>
           <p className={styles.name_title}>Hello,</p>
@@ -63,7 +63,8 @@ function UserMenu() {
           <RxExit className={styles.icon} />
         </button>
       </div>
-      {/* <div className={styles.mobContainer}>
+      <div className={styles.containerMobile}>
+        {/* <div className={styles.mobContainer}>
         <NavLink
           to={`/profile`}
           onClick={() => socket.emit('leftRoom', { params })}
@@ -81,22 +82,23 @@ function UserMenu() {
           <RxExit className={styles.icon} />
         </button>
       </div> */}
-      <button
-        className={styles.btnBurger}
-        onClick={() => {
-          setMenuActive(true);
-        }}
-      >
-        <GiHamburgerMenu />
-      </button>
-      {menuActive && (
-        <BurgerMenu
-          leftRoom={leftRoom}
-          active={menuActive}
-          setActive={setMenuActive}
-        />
-      )}
-    </div>
+        <button
+          className={styles.btnBurger}
+          onClick={() => {
+            setMenuActive(true);
+          }}
+        >
+          <GiHamburgerMenu />
+        </button>
+        {menuActive && (
+          <BurgerMenu
+            leftRoom={leftRoom}
+            active={menuActive}
+            setActive={setMenuActive}
+          />
+        )}
+      </div>
+    </>
   );
 }
 
