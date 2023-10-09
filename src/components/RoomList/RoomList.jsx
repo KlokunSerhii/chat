@@ -99,7 +99,7 @@ function RoomList({ isOpen, params }) {
                     {user.name !== name && (
                       <button
                         className={styles.btnAdd}
-                        onClick={handlerAddFriends(name, avatar)}
+                        onClick={() => handlerAddFriends(name, avatar)}
                       >
                         <AiOutlineUsergroupAdd />
                       </button>
