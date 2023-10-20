@@ -6,7 +6,7 @@ import { logout } from '../../redux/auth/operations';
 import imgDefault from '../../img/bot.jpg';
 import { NavLink, useLocation } from 'react-router-dom';
 import { socket } from '../../options/socket';
-import { Button, Nav } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 function UserMenu() {
   const [params, setParams] = useState({
@@ -37,7 +37,7 @@ function UserMenu() {
     <div className={styles.container}>
       <span className={styles.span}>
         <p className={styles.name_title}>Hello,</p>
-        <Nav.Link
+        <NavLink
           to={`/profile`}
           onClick={() => socket.emit('leftRoom', { params })}
           className={styles.UserProfile}
@@ -48,10 +48,10 @@ function UserMenu() {
             alt="avatar"
           />
           {user.name}
-        </Nav.Link>
+        </NavLink>
       </span>
       <NavLink
-        to={`/profile`}
+        to={'/profile'}
         onClick={() => socket.emit('leftRoom', { params })}
         className={styles.UserProfileMobile}
       >
@@ -72,7 +72,7 @@ function UserMenu() {
         size="sm"
       >
         Logout
-      </Button>{' '}
+      </Button>
     </div>
   );
 }

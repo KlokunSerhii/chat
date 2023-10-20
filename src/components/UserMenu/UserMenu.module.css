@@ -52,7 +52,7 @@
   &:hover {
     color: var(--bg-btn-hover-color);
   }
-  @media screen and (min-width: 677px) {
+  @media screen and (min-width: 992px) {
     display: none;
   }
 }
@@ -60,13 +60,13 @@
   padding: 0;
   text-decoration: none;
 
-  @media screen and (min-width: 677px) {
+  @media screen and (min-width: 992px) {
     display: none;
   }
 }
 .btn {
   display: none;
-  @media screen and (min-width: 677px) {
+  @media screen and (min-width: 992px) {
     display: block;
   }
 }

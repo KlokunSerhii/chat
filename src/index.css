@@ -1,4 +1,6 @@
 @import-normalize;
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 /* bring in normalize.css styles */
 
