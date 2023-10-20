@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {Formik, Form } from 'formik';
 import { MdOutlineEmail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
+import symbolDefs from '../../img/symbol-defs.svg';
 
 import styles from './Login.module.css';
 import { SignupSchemaLogin } from '../../options/validForm';
@@ -14,10 +15,17 @@ function Login() {
   const password = '';
   const dispatch = useDispatch();
   const formik = useRef();
+  const [eye, setEye] = useState(false);
+  const [typePas, setTypePas] = useState("password")
 
   const handleSubmitLogin = ({ email, password }, { resetForm }) => {
     dispatch(login({ email, password }));
     resetForm();
+  };
+  const handlerEye = () => {
+    setEye(!eye);
+    !eye ? setTypePas("text") : setTypePas("password")
+
   };
   return (
     <Formik
@@ -40,13 +48,44 @@ function Login() {
           </label>
           <label className={styles.label}>
             <FormField
-              type="password"
+              type={typePas}
               name="password"
               placeholder="enter your"
               onChange={handleChange}
               autoComplete="off"
             />
             <RiLockPasswordFill className={styles.iconPassword} />
+            {!eye && (
+              <button
+                className={styles.btnEyeOffIcon}
+                type="buttun"
+                onClick={handlerEye}
+              >
+                <svg className={styles.eyeOffIcon}>
+                  <use
+                    href={symbolDefs + '#eye-off-icon'}
+                    width="16"
+                    height="16"
+                  ></use>
+                </svg>
+              </button>
+            )}
+
+            {eye && (
+              <button
+                className={styles.btnEyeIcon}
+                type="buttun"
+                onClick={handlerEye}
+              >
+                <svg className={styles.eyeIcon}>
+                  <use
+                    href={symbolDefs + '#eye-icon'}
+                    width="16"
+                    height="16"
+                  ></use>
+                </svg>
+              </button>
+            )}
           </label>
           <button className={styles.buttonIn} type="submit">
             LogIn

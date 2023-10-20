@@ -27,14 +27,14 @@
   }
   
   .inputInvalid {
-    border-color: red;
+    border-color: var(--negative-color);
   }
   .inputValid {
-    border-color: green;
+    border-color: var(--positive-color);
   }
   
   .errorMessage {
-    color: red;
+    color: var(--negative-color);
     font-size: 12px;
     line-height: calc(18 / 12);
     letter-spacing: 0.12px;
@@ -46,7 +46,7 @@
       }
   }
   .successMessage {
-    color: green;
+    color: var(--positive-color);
     font-size: 12px;
     line-height: calc(18 / 12);
     letter-spacing: 0.12px;
@@ -64,7 +64,15 @@
     height: 20px;
   }
   .ErrorInfo{
-    max-width: 283px;
-
-  
+    max-width: 270px;
+  }
+  .successIcon {
+    width: 16px;
+    display: inline-block;
+    fill: var(--positive-color);
+  }
+  .errorIcon {
+    width: 16px;
+    display: inline-block;
+    fill: var(--negative-color);
   }

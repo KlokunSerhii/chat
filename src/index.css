@@ -11,6 +11,8 @@
   --bg-chat-color: rgba(45, 181, 45, 0.5);
   --bg-burger-color: rgba(45, 181, 45);
   --black-color: rgb(40, 43, 46);
+  --positive-color: #3cbf61;
+  --negative-color: #d80027;
 }
 
 body {

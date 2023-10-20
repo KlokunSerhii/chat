@@ -1,5 +1,6 @@
 import { Field, useFormikContext } from 'formik';
 import styles from './FormField.module.css';
+import symbolDefs from '../../img/symbol-defs.svg';
 
 const FormField = props => {
   const { name, className, ...rest } = props;
@@ -25,6 +26,13 @@ const FormField = props => {
       {values[name] !== '' ? (
         invalid ? (
           <div className={styles.errorMessage}>
+             <svg className={styles.errorIcon}>
+              <use
+                href={symbolDefs + '#checkbox-circle-fill-icon'}
+                width="16"
+                height="16"
+              ></use>
+            </svg>
             {name === "email" ? 
             (<p>Error {name}</p>) : 
             (<p className={styles.ErrorInfo}>
@@ -34,6 +42,13 @@ const FormField = props => {
           </div>
         ) : (
           <div className={styles.successMessage}>
+             <svg className={styles.successIcon}>
+              <use
+                href={symbolDefs + '#checkbox-circle-fill-icon'}
+                width="16"
+                height="16"
+              ></use>
+            </svg>
             Success {name}
           </div>
         )
