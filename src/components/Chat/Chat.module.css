@@ -1,7 +1,7 @@
 .ChatBox {
   display: flex;
   width: 100%;
-  height: calc(100vh - 125px);
+  height: calc(100vh - 150px);
   @media (min-width: 768px) and (max-width: 1199px) {
     height: calc(100vh - 116px);
   }
@@ -15,6 +15,7 @@
   flex-direction: column;
   align-items: center;
   background-color: var(--bg-chat-color);
+  height: calc(100vh - 150px);
   @media (min-width: 1200px) {
     background-color: var(--bg-chat-color);
   }

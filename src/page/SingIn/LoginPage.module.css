@@ -1,5 +1,5 @@
 .backGround {
-  height: 100vh;
+  height: calc(100vh - 62px);
   background-color: var(--white-color);
   background-image: url(../../img/4567777.jpg);
   background-position: bottom;
