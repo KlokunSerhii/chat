@@ -16,9 +16,7 @@
   &:hover {
     background-color: var(--bg-btn-hover-color);
   }
-  @media screen and (min-width: 1200px) {
-    margin-top: 40px;
-  }
+
 }
 .form {
   width: 600px;

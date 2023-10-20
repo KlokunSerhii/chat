@@ -6,6 +6,7 @@
   background-color: var(--white-color);
   overflow-y: scroll;
   @media screen and (min-width: 1200px) {
+    height: calc(100vh - 56px);
     flex-direction: row;
     align-items: normal;
   }

@@ -23,7 +23,7 @@
   justify-content: flex-start;
   flex-direction: column;
   width: 350px;
-  height: 530px;
+  /* height: 530px; */
   padding: 10px;
   border: 1px solid var(--black-color);
   background-color: transparent;
@@ -31,11 +31,11 @@
   @media (min-width: 768px) and (max-width: 1199px) {
     display: flex;
     width: 130px;
-    height: 350px;
+    /* height: 350px; */
   }
   @media (min-width: 1200px) {
     display: flex;
-    height: 579px;
+    /* height: 579px; */
   }
 }
 .roomOnline {
