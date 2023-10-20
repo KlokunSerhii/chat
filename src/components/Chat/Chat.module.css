@@ -15,7 +15,6 @@
   flex-direction: column;
   align-items: center;
   background-color: var(--bg-chat-color);
-  height: calc(100vh - 150px);
   @media (min-width: 1200px) {
     background-color: var(--bg-chat-color);
   }
