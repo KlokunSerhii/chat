@@ -1,5 +1,5 @@
-import React from 'react';
-import { ErrorMessage, Formik, Field, Form } from 'formik';
+import React, { useRef } from 'react';
+import {Formik, Form } from 'formik';
 import { MdOutlineEmail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
 
@@ -7,69 +7,52 @@ import styles from './Login.module.css';
 import { SignupSchemaLogin } from '../../options/validForm';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth/operations';
+import FormField from 'components/FormField/FormField';
 
 function Login() {
   const email = '';
   const password = '';
   const dispatch = useDispatch();
+  const formik = useRef();
 
-  const handleSubmitLogin = (
-    { email, password },
-    { resetForm }
-  ) => {
+  const handleSubmitLogin = ({ email, password }, { resetForm }) => {
     dispatch(login({ email, password }));
     resetForm();
   };
   return (
     <Formik
+      innerRef={formik}
       initialValues={{ email, password }}
       validationSchema={SignupSchemaLogin}
       onSubmit={handleSubmitLogin}
     >
-      <Form className={styles.form}>
-        <label className={styles.label}>
-          <Field
-            className={styles.input}
-            type="email"
-            name="email"
-            placeholder="enter your email"
-            autoComplete="off"
-          />
-          <MdOutlineEmail className={styles.iconEmail} />
-        </label>
-        <ErrorMessage
-          name="email"
-          render={() => (
-            <div className={styles.errorMessage}>
-              {'Please enter your email'}
-            </div>
-          )}
-        />
-
-        <label className={styles.label}>
-          <Field
-            className={styles.input}
-            type="password"
-            name="password"
-            placeholder="enter your"
-            autoComplete="off"
-          />
-          <RiLockPasswordFill
-            className={styles.iconPassword}
-          />
-        </label>
-        <ErrorMessage
-          name="password"
-          render={() => (
-            <div className={styles.errorMessage}>
-              {'Please enter your password'}
-            </div>
-          )}
-        />
-        <button className={styles.buttonIn} type="submit">
-          LogIn
-        </button>
-      </Form>
+      {({ handleChange, handleSubmit, errors }) => (
+        <Form className={styles.form}>
+          <label className={styles.label}>
+            <FormField
+              type="email"
+              name="email"
+              placeholder="enter your email"
+              onChange={handleChange}
+              autoComplete="off"
+            />
+            <MdOutlineEmail className={styles.iconEmail} />
+          </label>
+          <label className={styles.label}>
+            <FormField
+              type="password"
+              name="password"
+              placeholder="enter your"
+              onChange={handleChange}
+              autoComplete="off"
+            />
+            <RiLockPasswordFill className={styles.iconPassword} />
+          </label>
+          <button className={styles.buttonIn} type="submit">
+            LogIn
+          </button>
+        </Form>
+      )}
     </Formik>
   );
 }
